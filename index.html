@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#662483">
 <title>Menschen mit Krebs – dynamische Seite (Funktionsdummy)</title>
 <link rel="stylesheet" href="css/basis.css?v=2">
-<link rel="stylesheet" href="css/app.css?v=5">
+<link rel="stylesheet" href="css/app.css?v=6">
 </head>
 <body class="laedt">
 <header class="kopf">
@@ -74,7 +74,7 @@
       </div>
 
       <div class="text" id="text">
-        <div class="sprecher" id="sprecher"><span class="rolle" id="sprecherRolle"></span><span class="name" id="sprecherName"></span></div>
+        <div class="sprecher" id="sprecher"><span class="sprecher-text"><span class="rolle" id="sprecherRolle"></span><span class="name" id="sprecherName"></span></span><button type="button" class="sprecher-info" id="sprecherInfo" aria-label="Mehr zur Person" title="Mehr zur Person" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.2v.1"/></svg></button></div>
         <div class="transkript" id="transkript" role="region" aria-label="Wortlaut" tabindex="0"></div>
         <button type="button" class="zur-stelle" id="zurStelle" hidden>Zur aktuellen Stelle</button>
       </div>
@@ -112,6 +112,7 @@
 
 <div class="dialog" id="infoDialog" role="dialog" aria-modal="true" aria-labelledby="infoTitel" hidden>
   <div class="dialog-innen">
+    <img class="dialog-foto" id="infoFoto" alt="" hidden>
     <p class="dialog-art" id="infoArt"></p>
     <h2 id="infoTitel"></h2>
     <p class="dialog-status" id="infoStatus" hidden></p>
@@ -128,6 +129,6 @@
 <pre class="diagnose" id="diagnose" hidden></pre>
 
 <script src="js/player-vorrat.js?v=2"></script>
-<script src="js/app.js?v=4"></script>
+<script src="js/app.js?v=5"></script>
 </body>
 </html>
