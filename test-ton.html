@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Ton-Test – Funktionsdummy Menschen mit Krebs</title>
+<link rel="stylesheet" href="css/basis.css">
+<style>
+  body { padding: 0 0 2rem; }
+  header { padding: 0.75rem var(--abstand); border-bottom: 1px solid #E4DCE2; }
+  header h1 { font-size: 1.125rem; margin: 0; color: var(--lila-dunkel); }
+  header p { margin: 0.25rem 0 0; font-size: 0.875rem; }
+  main { max-width: 40rem; margin: 0 auto; }
+  section { padding: 0.75rem var(--abstand); }
+  h2 { font-size: 1rem; margin: 0 0 0.5rem; }
+  fieldset { border: 1px solid #E4DCE2; border-radius: var(--radius); padding: 0.5rem 0.75rem; margin: 0; }
+  legend { font-weight: 600; padding: 0 0.25rem; }
+  .wahl { display: flex; align-items: flex-start; gap: 0.5rem; min-height: var(--touch); padding: 0.375rem 0; }
+  .wahl input { width: 1.25rem; height: 1.25rem; margin-top: 0.15rem; accent-color: var(--lila-dunkel); flex: none; }
+  .buehne { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #1E1E1E; overflow: hidden; }
+  .video { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+  .video.aktiv { opacity: 1; }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .ebene { position: absolute; inset: 0; z-index: 2; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; touch-action: manipulation; }
+  .halt { position: absolute; right: 0.5rem; top: 0.4rem; z-index: 3; font-size: 0.75rem; color: #FFF; background: rgba(0,0,0,0.55); padding: 0.1rem 0.4rem; border-radius: 0.3rem; pointer-events: none; }
+  .zeitzeile { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; font-size: 0.875rem; padding: 0.25rem var(--abstand) 0; }
+  .steuerung { display: grid; grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)); gap: 0.5rem; padding: 0.5rem var(--abstand); }
+  .steuerung button { border: 2px solid var(--lila-dunkel); background: #FFF; color: var(--lila-dunkel); font-weight: 600; padding: 0.4rem; }
+  #tonAn { background: var(--lila-hell); border-color: var(--lila-hell); color: #FFF; }
+  .kacheln { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+  .kacheln button { width: 100%; text-align: left; background: var(--flaeche-hell); border: 2px solid transparent; padding: 0.6rem 0.75rem; color: var(--grau-text); }
+  .kacheln button[aria-current="true"] { border-color: var(--lila-dunkel); }
+  .kacheln .titel { display: block; font-weight: 600; }
+  .kacheln .veranstaltung { display: block; font-size: 0.8125rem; }
+  .ergebnisse { margin: 0; padding-left: 1.25rem; }
+  .ergebnisse li { margin-bottom: 0.25rem; }
+  .ok { color: #1B6B2F; font-weight: 600; }
+  .nein { color: #A1121A; font-weight: 600; }
+  pre#log { white-space: pre-wrap; font-size: 0.75rem; background: #F5F5F5; padding: 0.5rem; border-radius: 0.5rem; max-height: 16rem; overflow: auto; }
+  .gross { width: 100%; background: var(--lila-dunkel); color: #FFF; border: 0; font-weight: 600; padding: 0.6rem; }
+  textarea#kopie { width: 100%; height: 10rem; font-size: 0.75rem; }
+  footer { padding: 1rem var(--abstand); font-size: 0.8125rem; border-top: 1px solid #E4DCE2; margin-top: 1rem; }
+</style>
+<script src="https://player.vimeo.com/api/player.js"></script>
+</head>
+<body>
+<header>
+  <h1>Ton-Test</h1>
+  <p>Funktionsdummy „Menschen mit Krebs“ · Startet das Video nach dem Antippen einer Kachel mit Ton?</p>
+</header>
+<main>
+  <section>
+    <fieldset>
+      <legend>Variante (Wechsel lädt die Seite neu)</legend>
+      <label class="wahl"><input type="radio" name="variante" value="1"><span><b>1</b> – ein Player, Start nach dem Laden (bisher A)</span></label>
+      <label class="wahl"><input type="radio" name="variante" value="2"><span><b>2</b> – ein Player, Laden und Start im selben Antippen</span></label>
+      <label class="wahl"><input type="radio" name="variante" value="3"><span><b>3</b> – je Kachel ein vorgeladener Player</span></label>
+    </fieldset>
+  </section>
+
+  <div class="buehne" id="buehne">
+    <div class="halt" id="halt" hidden>angehalten</div>
+    <div class="ebene" id="ebene" aria-hidden="true"></div>
+  </div>
+  <div class="zeitzeile"><span id="zeit">0:00</span><span id="status">lädt</span></div>
+  <div class="steuerung" role="group" aria-label="Wiedergabe">
+    <button id="spielen" type="button">Abspielen / Pause</button>
+    <button id="tempo" type="button">2×</button>
+    <button id="tonAn" type="button" hidden>Ton an</button>
+  </div>
+
+  <section>
+    <h2>Testkacheln</h2>
+    <ul class="kacheln" id="kacheln"><li>Lädt …</li></ul>
+  </section>
+  <section>
+    <h2>Ergebnisse</h2>
+    <ol class="ergebnisse" id="ergebnisse"></ol>
+  </section>
+  <section>
+    <button class="gross" id="kopieren" type="button">Ergebnis kopieren</button>
+    <div class="steuerung" style="padding: 0.5rem 0 0">
+      <button id="loeschen" type="button">Ergebnisse löschen</button>
+    </div>
+    <p id="kopiertHinweis" hidden></p>
+    <textarea id="kopie" hidden readonly></textarea>
+  </section>
+  <section>
+    <details><summary>Protokoll</summary><pre id="log"></pre></details>
+  </section>
+</main>
+<footer>Diese Inhalte dienen ausschließlich der Information und ersetzen keine Diagnose oder Therapieentscheidung.</footer>
+
+<script>
+(function () {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const frist = (p, ms) => Promise.race([
+    p.then((v) => ({ ok: true, v })).catch((e) => ({ ok: false, e: e.name + ': ' + e.message })),
+    sleep(ms).then(() => ({ ok: false, e: 'keine Antwort' }))
+  ]);
+  const bis = async (bedingung, ms) => { const ende = performance.now() + ms; while (performance.now() < ende) { if (bedingung()) return true; await sleep(100); } return false; };
+  const uhr = (s) => { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+
+  const sp = new URLSearchParams(location.search);
+  const variante = ['1', '2', '3'].includes(sp.get('variante')) ? sp.get('variante') : '2';
+  document.querySelector('input[name="variante"][value="' + variante + '"]').checked = true;
+
+  /* ---------- Ergebnisse, über Neuladen hinweg ---------- */
+  const SPEICHER = 'mmk-ton-test';
+  let ergebnisse = [], logZeilen = [];
+  function sichern() { try { sessionStorage.setItem(SPEICHER, JSON.stringify({ ergebnisse, log: logZeilen.slice(-150) })); } catch (e) { /* egal */ } }
+  function log(text) {
+    logZeilen.push((performance.now() / 1000).toFixed(1).padStart(6, ' ') + ' s  V' + variante + '  ' + text);
+    $('log').textContent = logZeilen.join('\n');
+  }
+  function zeige(text, ok) {
+    const li = document.createElement('li');
+    if (ok === true || ok === false) { const s = document.createElement('span'); s.className = ok ? 'ok' : 'nein'; s.textContent = ok ? 'ja: ' : 'nein: '; li.appendChild(s); }
+    li.appendChild(document.createTextNode(text));
+    $('ergebnisse').appendChild(li);
+  }
+  function ergebnis(text, ok) {
+    ergebnisse.push((ok === true ? '[ja] ' : ok === false ? '[nein] ' : '') + text);
+    zeige(text, ok); log('ERGEBNIS ' + text); sichern();
+  }
+  try {
+    const d = JSON.parse(sessionStorage.getItem(SPEICHER) || 'null');
+    if (d) {
+      logZeilen = d.log || [];
+      (d.ergebnisse || []).forEach((z) => { ergebnisse.push(z); const m = z.match(/^\[(ja|nein)\] (.*)$/); if (m) zeige(m[2], m[1] === 'ja'); else zeige(z); });
+    }
+  } catch (e) { /* egal */ }
+  ergebnis('— Variante ' + variante + ' geladen —');
+
+  /* ---------- Player ---------- */
+  const EMBED = { controls: '0', playsinline: '1', autopause: '0', dnt: '1', title: '0', byline: '0', portrait: '0', keyboard: '0', muted: '0' };
+  const embedUrl = (v, start) => { const p = new URLSearchParams(EMBED); if (v.h) p.set('h', v.h); return 'https://player.vimeo.com/video/' + v.id + '?' + p + (start ? '#t=' + Math.floor(start) + 's' : ''); };
+  const ladeUrl = (v, start) => 'https://player.vimeo.com/video/' + v.id + (v.h ? '?h=' + v.h : '') + (start ? '#t=' + Math.floor(start) + 's' : '');
+
+  let tests = [], player = [], einzel = null, aktiv = null;
+
+  function neuerPlayer(video, start, name) {
+    const box = document.createElement('div');
+    box.className = 'video';
+    const f = document.createElement('iframe');
+    f.src = embedUrl(video, start);
+    f.setAttribute('allow', 'autoplay; fullscreen');
+    f.setAttribute('title', 'Video');
+    box.appendChild(f);
+    $('buehne').insertBefore(box, $('halt'));
+    const w = { name, box, p: new Vimeo.Player(f), videoId: String(video.id), spielt: false, t: start || 0, tStempel: performance.now(), ziel: null, gespielt: false };
+    w.p.on('loaded', (d) => { w.videoId = String(d.id); log(name + ': loaded ' + d.id); });
+    w.p.on('playing', () => { w.spielt = true; w.gespielt = true; w.tStempel = performance.now(); log(name + ': playing'); });
+    w.p.on('pause', () => { w.spielt = false; log(name + ': pause'); });
+    w.p.on('timeupdate', (d) => {
+      w.t = d.seconds; w.tStempel = performance.now();
+      if (w.ziel !== null) { if (Math.abs(d.seconds - w.ziel) > 1.5) { log(name + ': Startposition nachgeholt ' + w.ziel.toFixed(1)); w.p.setCurrentTime(w.ziel).catch(() => {}); } w.ziel = null; }
+    });
+    w.p.on('volumechange', (d) => log(name + ': Lautstärke ' + d.volume));
+    w.p.on('error', (e) => log(name + ': Fehler ' + e.name + ' – ' + e.message));
+    return w;
+  }
+
+  function zeigeAktiv(w) {
+    document.querySelectorAll('.video').forEach((b) => b.classList.toggle('aktiv', b === w.box));
+  }
+
+  /* ---------- Antippen einer Kachel: alle Player-Aufrufe ohne Wartezeit im selben Antippen ---------- */
+  function kachel(i) {
+    const z = tests[i];
+    const t0 = performance.now();
+    document.querySelectorAll('.kacheln button').forEach((b, k) => b.setAttribute('aria-current', String(k === i)));
+    log('--- Kachel ' + (i + 1));
+    let w;
+    if (variante === '3') {
+      w = player[i];
+      player.forEach((x) => { if (x !== w && x.spielt) x.p.pause().catch(() => {}); });
+      zeigeAktiv(w);
+      w.p.setMuted(false).catch(() => {});
+      if (w.gespielt) { w.ziel = z.start; w.p.setCurrentTime(z.start).catch(() => {}); }
+      w.p.play().catch((e) => log('play(): ' + e.name));
+    } else if (variante === '2') {
+      w = einzel;
+      w.p.setMuted(false).catch(() => {});
+      if (w.videoId !== String(z.video.id)) {
+        w.p.loadVideo(ladeUrl(z.video, z.start)).catch((e) => log('loadVideo: ' + e.name));
+      }
+      w.ziel = z.start;
+      w.p.setCurrentTime(z.start).catch(() => {});
+      w.p.play().catch((e) => log('play(): ' + e.name));
+    } else {
+      w = einzel;
+      (async () => {
+        if (w.videoId !== String(z.video.id)) await frist(w.p.loadVideo(ladeUrl(z.video)), 8000);
+        w.ziel = z.start;
+        w.p.setCurrentTime(z.start).catch(() => {});
+        w.p.play().catch((e) => log('play(): ' + e.name));
+      })();
+    }
+    aktiv = { w, z, endeGemeldet: false };
+    auswerten(w, z, t0);
+  }
+
+  async function auswerten(w, z, t0) {
+    const gestartet = await bis(() => w.spielt && w.videoId === String(z.video.id), 9000);
+    const dauer = ((performance.now() - t0) / 1000).toFixed(1);
+    if (!gestartet) { ergebnis('V' + variante + ', ' + z.kurz + ': kein Start', false); return; }
+    await sleep(1500);
+    const m = await frist(w.p.getMuted(), 2000);
+    const vol = await frist(w.p.getVolume(), 2000);
+    const t = await frist(w.p.getCurrentTime(), 2000);
+    const ton = m.ok && vol.ok ? (!m.v && vol.v > 0) : null;
+    ergebnis('V' + variante + ', ' + z.kurz + ': Start nach ' + dauer + ' s, Ton ' + (ton === null ? 'unbekannt' : ton ? 'an' : 'aus') +
+      ' (muted=' + m.v + ', volume=' + vol.v + '), Position ' + uhr(t.v) + ', Soll ' + uhr(z.start), ton === true);
+    $('tonAn').hidden = ton !== false;
+  }
+
+  /* ---------- Bedienung ---------- */
+  $('tonAn').addEventListener('click', () => {
+    if (!aktiv) return;
+    const w = aktiv.w;
+    w.p.setMuted(false).catch(() => {});
+    w.p.setVolume(1).catch(() => {});
+    w.p.play().catch(() => {});
+    (async () => {
+      await sleep(1500);
+      const m = await frist(w.p.getMuted(), 2000);
+      ergebnis('V' + variante + ': „Ton an“ – ' + (w.spielt ? 'läuft' : 'gestoppt') + ', muted=' + m.v, w.spielt && m.v === false);
+      $('tonAn').hidden = w.spielt && m.v === false;
+    })();
+  });
+  $('spielen').addEventListener('click', () => {
+    if (!aktiv) return;
+    const w = aktiv.w;
+    if (w.spielt) w.p.pause().catch(() => {}); else w.p.play().catch(() => {});
+  });
+  $('tempo').addEventListener('click', () => {
+    if (!aktiv) return;
+    aktiv.w.p.setPlaybackRate(2).then(() => ergebnis('V' + variante + ': 2×', true)).catch((e) => ergebnis('V' + variante + ': 2× – ' + e.name, false));
+  });
+  document.querySelectorAll('input[name="variante"]').forEach((r) => r.addEventListener('change', () => {
+    sichern();
+    location.search = '?variante=' + r.value;
+  }));
+
+  (function gesten() {
+    const ebene = $('ebene');
+    let timer = null, gehalten = false, warAn = false;
+    ebene.addEventListener('contextmenu', (e) => e.preventDefault());
+    ebene.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      if (!aktiv) return;
+      gehalten = false;
+      warAn = aktiv.w.spielt;
+      timer = setTimeout(() => { timer = null; gehalten = true; if (warAn) { aktiv.w.p.pause().catch(() => {}); $('halt').hidden = false; } }, 300);
+    });
+    ebene.addEventListener('pointerup', () => {
+      if (!aktiv) return;
+      const w = aktiv.w;
+      if (timer) {
+        clearTimeout(timer); timer = null;
+        if (w.spielt) w.p.pause().catch(() => {}); else w.p.play().catch(() => {});
+      } else if (gehalten) {
+        $('halt').hidden = true;
+        if (warAn) {
+          w.p.play().catch(() => {});
+          (async () => {
+            const ok = await bis(() => w.spielt, 3000);
+            const m = await frist(w.p.getMuted(), 2000);
+            ergebnis('V' + variante + ': Gedrückthalten hält an, Loslassen setzt fort, muted=' + m.v, ok);
+          })();
+        }
+      }
+      gehalten = false;
+    });
+    ebene.addEventListener('pointercancel', () => { if (timer) clearTimeout(timer); timer = null; });
+  })();
+
+  (function takt() {
+    if (aktiv) {
+      const w = aktiv.w, z = aktiv.z;
+      const t = w.spielt ? w.t + (performance.now() - w.tStempel) / 1000 : w.t;
+      $('zeit').textContent = uhr(t) + ' · Segment ' + uhr(z.start) + '–' + uhr(z.ende);
+      $('status').textContent = w.spielt ? 'spielt' : 'pausiert';
+      if (w.spielt && !aktiv.endeGemeldet && w.videoId === String(z.video.id) && t >= z.start - 1 && t >= z.ende) {
+        aktiv.endeGemeldet = true;
+        w.p.pause().catch(() => {});
+        ergebnis('V' + variante + ': Segmentende angehalten bei ' + t.toFixed(2) + ' s (Soll ' + z.ende.toFixed(2) + ' s)', Math.abs(t - z.ende) < 0.6);
+      }
+    }
+    requestAnimationFrame(takt);
+  })();
+
+  $('kopieren').addEventListener('click', async () => {
+    const ua = navigator.userAgent;
+    const text = ['Ton-Test Funktionsdummy, ' + new Date().toLocaleString('de-DE'), 'User-Agent: ' + ua, '', 'Ergebnisse:']
+      .concat(ergebnisse, ['', 'Protokoll:'], logZeilen.slice(-60)).join('\n');
+    try {
+      await navigator.clipboard.writeText(text);
+      $('kopiertHinweis').hidden = false; $('kopiertHinweis').textContent = 'Kopiert. Text in den Chat einfügen.';
+    } catch (e) {
+      $('kopie').hidden = false; $('kopie').value = text; $('kopie').select();
+      $('kopiertHinweis').hidden = false; $('kopiertHinweis').textContent = 'Automatisches Kopieren nicht möglich. Text im Feld markieren und kopieren.';
+    }
+  });
+  $('loeschen').addEventListener('click', () => { try { sessionStorage.removeItem(SPEICHER); } catch (e) { /* egal */ } location.reload(); });
+
+  /* ---------- Start ---------- */
+  fetch('daten/elemente.json').then((r) => r.json()).then(async (d) => {
+    const gesehen = new Set();
+    for (const id of [d.start].concat(d.reihenfolge)) {
+      const e = d.elemente[id];
+      if (!e || e.typ !== 'videosegment' || gesehen.has(e.veranstaltung)) continue;
+      gesehen.add(e.veranstaltung);
+      const v = d.veranstaltungen[e.veranstaltung];
+      tests.push({ titel: e.titel, start: e.start, ende: e.ende, kurz: v.titel, anzeige: v.anzeigename, video: { id: v.vimeo.id, h: v.vimeo.h } });
+    }
+    const ul = $('kacheln'); ul.innerHTML = '';
+    tests.forEach((z, i) => {
+      const li = document.createElement('li'), b = document.createElement('button');
+      b.type = 'button';
+      b.innerHTML = '<span class="titel"></span><span class="veranstaltung"></span>';
+      b.querySelector('.titel').textContent = (i + 1) + '. ' + z.titel;
+      b.querySelector('.veranstaltung').textContent = z.anzeige + ' · ab ' + uhr(z.start);
+      b.addEventListener('click', () => kachel(i));
+      li.appendChild(b); ul.appendChild(li);
+    });
+    if (variante === '3') {
+      player = tests.map((z, i) => neuerPlayer(z.video, z.start, 'P' + (i + 1)));
+      zeigeAktiv(player[0]);
+      const bereit = await Promise.all(player.map((w) => frist(w.p.ready(), 10000)));
+      log('Player bereit: ' + bereit.filter((x) => x.ok).length + ' von ' + player.length);
+    } else {
+      einzel = neuerPlayer(tests[0].video, tests[0].start, 'P');
+      zeigeAktiv(einzel);
+      const r = await frist(einzel.p.ready(), 10000);
+      log('Player bereit: ' + r.ok);
+    }
+    $('status').textContent = 'bereit';
+  }).catch((e) => ergebnis('Daten nicht geladen: ' + e.message, false));
+})();
+</script>
+</body>
+</html>
