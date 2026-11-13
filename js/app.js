@@ -19,6 +19,10 @@
   const MERK_SCHLUESSEL = 'mmk-merkliste-v1';
   const AUFTEILUNG_SCHLUESSEL = 'mmk-aufteilung';
   const VERLAUF_BEHALTEN = 2; // so viele zurückliegende Elemente behalten ihren Player
+  const INFO_RUECKSPRUNG = 5;  // Sekunden zurück nach dem Schließen einer Zusatzinformation
+  const UT_MAX = 84;           // Untertitel im Querformat: höchstens so viele Zeichen (zwei Zeilen)
+  const UT_KURZ = 22;          // kürzere Blöcke werden mit einem Nachbarblock zusammengelegt
+  const UT_PAUSE = 1.5;        // Sprechpause (Sekunden zwischen Wortanfängen), die einen Block beendet
 
   const S = {
     daten: null, vorrat: null,
@@ -27,6 +31,7 @@
     wortlaut: new Map(),
     aktivId: null, element: null, seg: null, segId: null, segIdZiel: null,
     worte: [], wortIndex: -1, absatzIndex: -1,
+    bloecke: [], blockVon: [], blockIndex: -1,
     marker: [], markerGezeigt: new Set(),
     mitlaufen: true, nutzerBis: 0, programmBis: 0,
     gesamt: false, segmentEnde: false, imSegment: false,
@@ -453,6 +458,7 @@
     if (!seg) {
       box.innerHTML = '<p class="transkript-hinweis">Für diesen Teil der Veranstaltung gibt es keinen Wortlaut (zum Beispiel Begrüßung oder Abmoderation).</p>';
       sprecherZeigen(null);
+      untertitelBauen();
       return;
     }
     const frag = document.createDocumentFragment();
@@ -489,12 +495,79 @@
       S.marker.push({ ref: m.ref, t: m.t / 100 });
     });
     sprecherZeigen(seg.absaetze[0]);
+    untertitelBauen();
   }
+
+  /* Untertitel für das Querformat: ganze Blöcke statt mitlaufender Wörter.
+     Grenzen: Sprecherwechsel, Satzende, Sprechpause; lange Sätze werden gleichmäßig geteilt, bevorzugt am Komma. */
+  function untertitelBauen() {
+    const W = S.worte, text = (i) => W[i].el.textContent;
+    const laenge = (a, b) => { let n = -1; for (let k = a; k <= b; k++) n += text(k).length + 1; return n; };
+    const saetze = [];
+    let anfang = 0;
+    for (let i = 0; i < W.length; i++) {
+      const letztes = i === W.length - 1;
+      if (letztes || W[i + 1].a !== W[i].a || /[.!?…][“”"»«]?$/.test(text(i)) || W[i + 1].t - W[i].t > UT_PAUSE) {
+        saetze.push([anfang, i]);
+        anfang = i + 1;
+      }
+    }
+    let bloecke = [];
+    saetze.forEach(([a, b]) => {
+      const L = laenge(a, b);
+      if (L <= UT_MAX) { bloecke.push([a, b]); return; }
+      const ziel = L / Math.ceil(L / UT_MAX);
+      let start = a;
+      for (let i = a; i < b; i++) {
+        const bisher = laenge(start, i), mitNaechstem = laenge(start, i + 1);
+        const komma = /[,;:–]$/.test(text(i)) && bisher >= ziel - 14;
+        if (komma || mitNaechstem > ziel + 6 || mitNaechstem > UT_MAX) {
+          if (laenge(i + 1, b) < UT_KURZ && laenge(start, b) <= UT_MAX + 8) continue; // kein kurzer Rest am Satzende
+          bloecke.push([start, i]);
+          start = i + 1;
+        }
+      }
+      bloecke.push([start, b]);
+    });
+    // sehr kurze Blöcke zusammenlegen: Satzrest nach einer Pause an den vorigen Block, sonst („Ja.“) an den folgenden
+    const satzEnde = (i) => /[.!?…][“”"»«]?$/.test(text(i));
+    const zusammen = [];
+    for (let k = 0; k < bloecke.length; k++) {
+      let [a, b] = bloecke[k];
+      const vorher = zusammen[zusammen.length - 1];
+      if (vorher && laenge(a, b) < UT_KURZ && W[vorher[0]].a === W[a].a && !satzEnde(vorher[1]) &&
+          laenge(vorher[0], b) <= UT_MAX + 8) {
+        vorher[1] = b;
+        continue;
+      }
+      while (k + 1 < bloecke.length && laenge(a, b) < UT_KURZ && W[bloecke[k + 1][0]].a === W[a].a &&
+             laenge(a, bloecke[k + 1][1]) <= UT_MAX) {
+        b = bloecke[++k][1];
+      }
+      zusammen.push([a, b]);
+    }
+    S.bloecke = zusammen.map(([a, b]) => ({ a, b, text: W.slice(a, b + 1).map((w) => w.el.textContent).join(' ') }));
+    S.blockVon = new Array(W.length);
+    S.bloecke.forEach((bl, k) => { for (let i = bl.a; i <= bl.b; i++) S.blockVon[i] = k; });
+    S.blockIndex = -1;
+    $('zeileQuer').textContent = '';
+  }
+  function untertitelSetzen(i) {
+    const k = i >= 0 && S.blockVon.length ? S.blockVon[i] : -1;
+    if (k === S.blockIndex) return;
+    S.blockIndex = k;
+    $('zeileQuer').textContent = k >= 0 ? S.bloecke[k].text : '';
+  }
+
   function platzhalterText(e) {
     S.seg = null;
     S.segId = null;
     S.worte = [];
     S.marker = [];
+    S.bloecke = [];
+    S.blockVon = [];
+    S.blockIndex = -1;
+    $('zeileQuer').textContent = '';
     const box = $('transkript');
     box.innerHTML = '<p><span class="kennzeichnung">Platzhalter</span></p><p class="ph"></p><p class="transkript-hinweis">Hier stünde je nach Typ der Wortlaut, ein Textauszug oder Kontaktinformationen. Keine echten Inhalte, keine Kontaktdaten.</p>';
     box.querySelector('.ph').textContent = e.zusammenfassung;
@@ -514,6 +587,7 @@
     const alt = S.worte[S.wortIndex];
     if (alt) alt.el.classList.remove('jetzt');
     S.wortIndex = i;
+    untertitelSetzen(i);
     const w = S.worte[i];
     if (!w) return;
     w.el.classList.add('jetzt');
@@ -522,7 +596,6 @@
       sprecherZeigen(S.seg.absaetze[w.a]);
     }
     if (S.mitlaufen) mitscrollen(w.el);
-    $('zeileQuer').textContent = S.worte.slice(Math.max(0, i - 5), i + 7).map((x) => x.el.textContent).join(' ');
   }
   function mitscrollen(span) {
     const box = $('transkript');
@@ -591,7 +664,14 @@
   }
   function infoSchliessen() {
     $('infoDialog').hidden = true;
-    if (S.dialogLiefVorher) S.vorrat.abspielen();
+    if (S.dialogLiefVorher) {
+      // ein Stück zurück, damit der Faden nach dem Lesen nicht verloren ist; nicht vor den Anfang des Abschnitts
+      const e = S.element;
+      let ziel = S.vorrat.zeit() - INFO_RUECKSPRUNG;
+      if (!S.gesamt && istVideo(e)) ziel = Math.max(e.start, ziel);
+      S.vorrat.springen(Math.max(0, ziel));
+      S.vorrat.abspielen();
+    }
     S.dialogLiefVorher = false;
     S.dialogInfo = null;
   }
@@ -909,6 +989,7 @@
     document.body.classList.remove('laedt');
     requestAnimationFrame(takt);
     log('Start ' + startId + ', Modus ' + modus);
+    if (DIAGNOSE) window.MMKZustand = S; // nur zur Prüfung
   }
 
   start().catch((e) => {
