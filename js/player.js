@@ -118,8 +118,9 @@
       if (video.h) p.set('h', video.h);
       return 'https://player.vimeo.com/video/' + video.id + '?' + p.toString();
     }
-    static seitenUrl(video) {
-      return 'https://vimeo.com/' + video.id + (video.h ? '/' + video.h : '');
+    // Für loadVideo(): Player-URL mit h-Parameter (die Form vimeo.com/ID/HASH bleibt bei nicht gelisteten Videos ohne Antwort)
+    static ladeUrl(video) {
+      return 'https://player.vimeo.com/video/' + video.id + (video.h ? '?h=' + video.h : '');
     }
     async erstellen(video) {
       if (!global.Vimeo || !global.Vimeo.Player) throw new Error('player.js nicht geladen');
@@ -178,18 +179,20 @@
       if (!this.player) {
         await this.erstellen(video);
       } else if (this.aktuell !== video.id) {
-        try {
-          await this.player.loadVideo(VimeoAdapter.seitenUrl(video));
-          this.log('loadVideo per URL ok');
-        } catch (e1) {
-          this.log('loadVideo per URL fehlgeschlagen: ' + e1.name + ' – ' + e1.message);
-          await this.player.loadVideo({ url: VimeoAdapter.embedUrl(video) });
-          this.log('loadVideo per Embed-URL ok');
+        if (!(await frist(this.player.loadVideo(VimeoAdapter.ladeUrl(video)), 8000))) {
+          throw new Error('loadVideo nach 8 s ohne Antwort (' + video.id + ')');
         }
+        this.log('loadVideo ok (' + video.id + ')');
         this.aktuell = video.id;
         if (this.rate !== 1) await this.geschwindigkeit(this.rate);
       }
-      await this.springen(start || 0);
+      // Startposition setzen, ohne zu warten: Vor dem ersten Abspielen bestätigt Vimeo den Sprung oft nicht.
+      // Weicht die erste Zeitmeldung ab, wird der Sprung nachgeholt (siehe timeupdate).
+      this.t = Math.max(0, start || 0);
+      this.tStempel = jetzt();
+      this.ziel = this.t;
+      this.player.setCurrentTime(this.t).then(() => { this.ziel = null; }).catch((e) => this.log('setCurrentTime: ' + e.name + ' – ' + e.message));
+      this.melde('Zeit', this.t);
       this.melde('Status', 'geladen');
       return true;
     }
