@@ -33,9 +33,10 @@ Referenz: `UEBERGABE.md` (Hauptteil der Übergabe vom 13.11.2026). Bei Abweichun
 
 - Wissensbasis bei Sebastian: `~/Library/Mobile Documents/com~apple~CloudDocs/wissensbasis-mmk` (iCloud Drive). Nur lesen, nie schreiben. Regeln dort in `anleitung.md` und `schema.md`.
 - Export: `python3 werkzeuge/export.py "<pfad-zur-wissensbasis>"` erzeugt `daten/elemente.json` (Index, Veranstaltungen, Elemente, Glossar, Zusatzinfos) und `daten/wortlaut/<veranstaltung>.json` (Wortlaut mit Wortzeiten in Hundertstelsekunden). Dateien der Wissensbasis nie ins Repository kopieren.
-- Nicht übernehmen: `hinweis`, `einwilligung`, `bearbeitung`, Transkripthinweise, `interessenkonflikt`, `funktion`, `sponsorenbereich`, Deepgram-Metadaten, `patient_journey`, `krebsarten`, Kernaussagen. Das Skript prüft das am Ende und bricht bei Verstoß ab.
+- Nicht übernehmen: `hinweis`, `einwilligung`, `bearbeitung`, Transkripthinweise, `interessenkonflikt`, `anrede_korrespondenz`, `aliases`, `sponsorenbereich`, Deepgram-Metadaten, `patient_journey`, `krebsarten`, Kernaussagen. Das Skript prüft das am Ende und bricht bei Verstoß ab.
+- Personen (Freigabe Sebastian 13.11.2026): Name, Rolle, `funktion` je Veranstaltung (ohne interne Herkunftsvermerke wie „(laut Begrüßung)“), `website`, Foto. Fotos stammen von der Veranstaltungsseite bei SURVIVORS HOME; ohne Foto wird keins angezeigt. Anzeige im Personen-Fenster (Info-Symbol hinter dem Namen in der Sprecherzeile), merkbar.
 - Sponsorennamen im Wortlaut werden als „[Sponsor]“ maskiert.
-- von Hand gepflegt: `inhalte/glossar.json`, `inhalte/zusatzinfos.json`, `inhalte/platzhalter.json`; Fundstellen und Zeiten berechnet das Skript.
+- von Hand gepflegt: `inhalte/glossar.json`, `inhalte/zusatzinfos.json`, `inhalte/platzhalter.json`, `inhalte/personen.json` (Foto-Adresse je Person-ID: `{"<id>": {"foto": "<url>"}}`); Fundstellen und Zeiten berechnet das Skript.
 - Platzhalter und Beispiele sichtbar kennzeichnen; keine erfundenen Kontaktdaten; in eigenen Texten keine Produktnamen verschreibungspflichtiger Arzneimittel, keine Wirksamkeits- oder Überlegenheitsaussagen.
 - Vorschlagsliste ohne Segmente mit Hinweis auf eigenes Angebot, Off-Label-, Überlegenheits- oder Sponsorbezug.
 
