@@ -7,7 +7,10 @@ Aufruf (im Repository-Ordner):
 
 - liest nur; in der Wissensbasis wird nichts geschrieben
 - Auswahl und Reihenfolge: werkzeuge/auswahl.json
-- von Hand gepflegte Zusatzinhalte: inhalte/glossar.json, inhalte/zusatzinfos.json, inhalte/platzhalter.json
+- von Hand gepflegte Zusatzinhalte: inhalte/glossar.json, inhalte/zusatzinfos.json, inhalte/platzhalter.json,
+  inhalte/personen.json (Foto-Adressen je Person, aus der Veranstaltungsseite von SURVIVORS HOME)
+- Personen (Freigabe Sebastian 13.11.2026): Name, Rolle, Funktion je Veranstaltung (ohne interne Herkunftsvermerke),
+  Website, Foto; Interessenkonflikt-Vermerke, Anrede, Aliasse und Einwilligungsvermerke bleiben intern
 - schreibt daten/elemente.json und daten/wortlaut/<veranstaltung>.json
 - prüft am Ende, dass kein ausgeschlossenes Feld in daten/ steht
 
@@ -29,7 +32,7 @@ INHALTE = ROOT / "inhalte"
 # Felder der Wissensbasis, die nie in daten/ stehen dürfen (interne redaktionelle Angaben)
 AUSGESCHLOSSEN = {
     "hinweis", "einwilligung", "bearbeitung", "transkripthinweise", "interessenkonflikt",
-    "sponsorenbereich", "funktion", "anrede_korrespondenz", "aliases", "website",
+    "sponsorenbereich", "anrede_korrespondenz", "aliases",
     "deepgram_request_id", "deepgram_modell", "deepgram_speaker", "master_version",
     "dauer_geprueft", "vokabular_stand", "patient_journey", "krebsarten", "kernaussagen",
 }
@@ -77,14 +80,24 @@ def lies_themen(kb):
 
 
 def lies_personen(kb, ids):
-    personen, namen = {}, {}
+    personen, namen, websites = {}, {}, {}
     for pid in ids:
         kopf, _ = lies_md(kb / "personen" / f"{pid}.md")
         bez = str(kopf.get("bezeichnung_im_text", kopf["name"])).split(";")[0].strip()
         personen[pid] = bez
+        if kopf.get("website"):
+            websites[pid] = str(kopf["website"]).strip()
         for n in [kopf["name"], bez] + list(kopf.get("aliases") or []):
             namen[norm(str(n))] = pid
-    return personen, namen
+    return personen, namen, websites
+
+
+def funktion_oeffentlich(f):
+    """Funktion für die Anzeige: ohne interne Herkunftsvermerke wie „(laut Begrüßung)“."""
+    f = str(f or "").strip()
+    if f.lower() in ("", "nicht erfasst", "keiner bekannt"):
+        return ""
+    return re.sub(r"\s*\((?:laut|lt\.|Angabe|Quelle)\b[^)]*\)", "", f).strip()
 
 
 def deepgram_woerter(pfad):
@@ -194,6 +207,7 @@ def main():
     glossar = json.loads((INHALTE / "glossar.json").read_text(encoding="utf-8"))
     zusatz = json.loads((INHALTE / "zusatzinfos.json").read_text(encoding="utf-8"))
     platzhalter = json.loads((INHALTE / "platzhalter.json").read_text(encoding="utf-8"))
+    fotos = json.loads((INHALTE / "personen.json").read_text(encoding="utf-8"))
     themen = lies_themen(kb)
 
     veranst, seg_dateien, person_ids, sponsoren, interne_texte = {}, {}, set(), set(), set()
@@ -218,7 +232,7 @@ def main():
                     person_ids.add(s["person"])
             if skopf.get("hinweis"):
                 interne_texte.add(str(skopf["hinweis"]))
-    personen, namen = lies_personen(kb, sorted(person_ids))
+    personen, namen, websites = lies_personen(kb, sorted(person_ids))
 
     bericht = {"segmente": [], "stellen": [], "sponsor_maskiert": 0, "unbekannte_labels": set()}
     sponsor_normen = {norm(s) for s in sponsoren}
@@ -310,8 +324,11 @@ def main():
             "vimeo": {"id": vimeo[0], "h": vimeo[1] if len(vimeo) > 1 else ""},
             "beitrag_url": kopf["beitrag_url"],
             "wortlaut": f"daten/wortlaut/{vid}.json",
-            "teilnehmer": [{"person": t["person"], "name": personen.get(t["person"], "Moderation"),
-                            "rolle": t["rolle"]} for t in kopf.get("teilnehmer") or []],
+            "teilnehmer": [dict({"person": t["person"], "name": personen.get(t["person"], "Moderation"),
+                                 "rolle": t["rolle"]},
+                                **({"funktion": funktion_oeffentlich(t.get("funktion"))}
+                                   if funktion_oeffentlich(t.get("funktion")) else {}))
+                           for t in kopf.get("teilnehmer") or []],
             "segmente": tabelle,
         }
         if abs(dauer - float(kopf["dauer_sekunden"])) > 0.5:
@@ -331,6 +348,10 @@ def main():
         "reihenfolge": auswahl["reihenfolge"],
         "veranstaltungen": out_v,
         "elemente": out_e,
+        "personen": {pid: dict({"name": personen[pid]},
+                               **({"website": websites[pid]} if pid in websites else {}),
+                               **({"foto": fotos[pid]["foto"]} if fotos.get(pid, {}).get("foto") else {}))
+                     for pid in sorted(personen)},
         "glossar": {g["id"]: {k: v for k, v in g.items() if k != "suchmuster"} for g in glossar},
         "zusatzinfos": {z["id"]: {k: v for k, v in z.items() if k not in ("suchmuster", "segment", "zeit_relativ")} for z in zusatz},
     }
