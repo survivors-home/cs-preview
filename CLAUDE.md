@@ -13,12 +13,16 @@ Referenz: `UEBERGABE.md` (Hauptteil der Übergabe vom 13.11.2026). Bei Abweichun
 
 - Repository öffentlich: `github.com/survivors-home/cs-preview`; einziger und Standardzweig: `claude/ecstatic-brown-cfkhic`
 - Auslieferung: GitHub Pages, `https://survivors-home.github.io/cs-preview/`; `.nojekyll` liegt im Repository
-- Sitzungen mit Schreibzugriff (Claude Code) pushen auf den Standardzweig. Sitzungen ohne Schreibzugriff (Cowork) liefern ein ZIP, Sebastian lädt es im Browser hoch („Add file → Upload files“). Lesen geht immer per `git clone` (öffentlich).
+- Sitzungen mit Schreibzugriff (Claude Code) pushen auf den Standardzweig. Sitzungen ohne Schreibzugriff (Cowork) ersetzen Textdateien über Claude in Chrome im GitHub-Webeditor und committen dort; sonst lädt Sebastian per Drag-and-drop hoch („Add file → Upload files“) und Claude committet. Nach jedem Commit per `git clone` und `diff` prüfen. Lesen geht immer per `git clone` (öffentlich).
 - Datenexport braucht Zugriff auf die Wissensbasis auf Sebastians Mac; das geht nur aus einer Sitzung, die mit dem Mac verbunden ist.
 - statische Seite (HTML, CSS, JavaScript), keine Build-Kette, Daten als JSON
-- Vimeo-Player mit `controls=0`, Steuerung über player.js, ein Player-Objekt, Videowechsel per `loadVideo()` mit vollständiger URL inklusive Hash
-- Betriebsarten: Simulation (Standard) und Vimeo (`?modus=vimeo`); Adapter in `js/player.js` mit gleicher Schnittstelle. `test-vimeo.html` startet im Vimeo-Modus.
-- Vimeo Premium; 2× per `setPlaybackRate` testen, bei Fehler Schaltfläche ausblenden
+- Vimeo-Player mit `controls=0`, Steuerung über player.js
+- **Je sichtbarer Kachel ein eigener, vorgeladener Player** (aktives Element, drei Vorschläge, zwei Elemente zurück und eines vor im Verlauf), iframe mit Startzeit `#t=`; kein `loadVideo()`. Grund: iPhone-Test 13.11.2026 – Ton gibt es nur, wenn der Startbefehl im selben Antippen an einen bereits geladenen Player geht. `vorrat.starten()` / `vorrat.abspielen()` daher immer als Erstes und ohne vorheriges `await` im Klick-Handler aufrufen.
+- Adapter: `js/player-vorrat.js` (Simulation und Vimeo mit gleicher Schnittstelle). `js/player.js` gehört nur zu `test-vimeo.html`.
+- Betriebsarten: Simulation (Standard) und Vimeo (`?modus=vimeo`); weitere Parameter `?aufteilung=zwei-drittel`, `?diagnose=1`; Element-Link `#seg-<id>`
+- Vimeo Premium; 2× per `setPlaybackRate` funktioniert (Desktop und iPhone geprüft)
+- Tonzustand aus `getMuted()`/`getVolume()` ist auf dem iPhone nicht verlässlich; nur Hörtest zählt
+- `loadVideo()` nur mit `https://player.vimeo.com/video/ID?h=HASH`, die Form `vimeo.com/ID/HASH` bleibt ohne Antwort
 - echte Wiedergabe nur auf freigegebener Domain `survivors-home.github.io` (in Vimeo je Video eintragen)
 - keine Master-Videos lokal: Startbilder als neutrale Fläche mit Segmenttitel
 - Rolle im Textbereich = Typ der Passage aus der Segmentdatei (`sprecher[].typ`): „Expertenwissen · Name“, „Erfahrung · Name“, „Moderation · Name“; keine `rollen.json`
@@ -68,8 +72,12 @@ Referenz: `UEBERGABE.md` (Hauptteil der Übergabe vom 13.11.2026). Bei Abweichun
 
 | Schritt | Stand |
 | --- | --- |
-| 1 Repository, GitHub Pages | Klickanleitung geliefert, Ausführung durch Sebastian |
+| 1 Repository, GitHub Pages | erledigt |
 | 2 Wissensbasis gelesen, Datenmodell | bestätigt 13.11.2026 |
 | 3 Export-Skript, `daten/` | erledigt 13.11.2026; 99,7 % der Wortzeiten direkt aus Deepgram |
-| 4 Vimeo-Adapter, Autostart-Test | `test-vimeo.html` bereit; Test auf dem iPhone offen |
-| 5–9 | offen |
+| 4 Vimeo-Adapter, Autostart-Test | erledigt; iPhone: Start mit Ton nur mit vorgeladenem Player je Kachel (`test-ton.html`, Variante 3) |
+| 5 Auswertung | erledigt 13.11.2026: Player-Vorrat statt eines Players |
+| 6 Oberfläche | erster Stand 13.11.2026 (`index.html`, `css/app.css`, `js/app.js`, `js/player-vorrat.js`), in Simulation automatisiert geprüft, live |
+| 7 Test iPhone und Android | offen |
+| 8 Rückmeldungen | offen |
+| 9 README für Merona | offen |
