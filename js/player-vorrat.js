@@ -6,8 +6,13 @@
  * dem Videowechsel stumm oder gar nicht. Deshalb hält der Vorrat je sichtbarer Kachel einen eigenen,
  * vorgeladenen Player bereit (iframe mit Startzeit im Fragment #t=).
  *
+ * Befund 13.11.2026, 11:08: Der erste Start nach dem Laden der Seite kommt auf dem iPhone oft stumm
+ * (Vimeo schaltet selbst stumm, getMuted() = true). Nach einem Antippen von „Ton an“ laufen alle Player
+ * dieser Seite mit Ton. Der Vorrat meldet den Zustand deshalb über onStumm; die Oberfläche bietet dann
+ * „Ton einschalten“ an.
+ *
  * Schnittstelle (Simulation und Vimeo gleich):
- *   const v = MMKVorrat.erzeugen(container, 'vimeo' | 'simulation', { onZeit, onStatus, onLog })
+ *   const v = MMKVorrat.erzeugen(container, 'vimeo' | 'simulation', { onZeit, onStatus, onStumm, onLog })
  *   v.vorbereiten(schluessel, video, start)   video = { id, h, dauer }; legt den Player an, falls nötig
  *   v.hat(schluessel)                         -> true, wenn ein Player bereitliegt
  *   v.starten(schluessel, start)              im Antippen aufrufen, ohne vorheriges await
@@ -16,7 +21,9 @@
  *   v.abspielen() / v.pausieren()             im Antippen aufrufen
  *   v.springen(sekunden)
  *   v.geschwindigkeit(1 | 2)                  -> Promise<boolean>
- *   v.zeit(), v.pausiert()                    Zeit wird zwischen den Zeitmeldungen fortgeschrieben
+ *   v.tonAn()                                 im Antippen aufrufen, hebt die Stummschaltung auf
+ *   v.zeit(), v.pausiert(), v.stumm()         Zeit wird zwischen den Zeitmeldungen fortgeschrieben
+ * Simulation: ?simstumm=1 lässt den ersten Start stumm melden (zum Prüfen der Oberfläche)
  * Status-Meldungen des aktiven Players: 'spielt', 'pausiert', 'laedt', 'ende'
  */
 (function (global) {
@@ -46,6 +53,7 @@
       this.spielt = false;
       this.gespielt = false;
       this.ziel = null;
+      this.stumm = false;
     }
     zeit() { return this.spielt ? this.t + ((jetzt() - this.tStempel) / 1000) * this.rate : this.t; }
     melde(name, wert) { if (this.vorrat.aktiv === this) this.vorrat.melde(name, wert); }
@@ -76,7 +84,8 @@
         }
         this.melde('Zeit', this.t);
       });
-      p.on('playing', () => { this.spielt = true; this.gespielt = true; this.tStempel = jetzt(); this.melde('Status', 'spielt'); });
+      p.on('playing', () => { this.spielt = true; this.gespielt = true; this.tStempel = jetzt(); this.melde('Status', 'spielt'); this.tonPruefen(); });
+      p.on('volumechange', () => this.tonPruefen());
       p.on('pause', (d) => { this.spielt = false; if (d && typeof d.seconds === 'number') this.t = d.seconds; this.melde('Status', 'pausiert'); });
       p.on('ended', () => { this.spielt = false; this.melde('Status', 'ende'); });
       p.on('bufferstart', () => this.melde('Status', 'laedt'));
@@ -93,6 +102,21 @@
       }
       this.p.setMuted(false).catch(() => {});
       this.p.play().catch((e) => this.vorrat.log('play: ' + e.name));
+    }
+    tonPruefen() {
+      this.p.getMuted().then((m) => {
+        this.stumm = m === true;
+        if (this.stumm) this.vorrat.log(this.schluessel + ': stumm');
+        this.melde('Stumm', this.stumm);
+      }).catch(() => {});
+    }
+    tonAn() {
+      this.p.setMuted(false).catch(() => {});
+      this.p.setVolume(1).catch(() => {});
+      this.stumm = false;
+      this.vorrat.tonFrei = true;
+      this.melde('Stumm', false);
+      setTimeout(() => this.tonPruefen(), 800);
     }
     pausieren() {
       this.t = this.zeit();
@@ -145,6 +169,13 @@
         this.melde('Zeit', Math.min(t, this.dauer));
       }, 250);
       this.melde('Status', 'spielt');
+      if (this.vorrat.simStumm && !this.vorrat.tonFrei) this.stumm = true;
+      this.melde('Stumm', this.stumm);
+    }
+    tonAn() {
+      this.vorrat.tonFrei = true;
+      this.stumm = false;
+      this.melde('Stumm', false);
     }
     pausieren() {
       if (!this.spielt) return;
@@ -174,6 +205,8 @@
       this.opt = opt || {};
       this.plaetze = new Map();
       this.aktiv = null;
+      this.tonFrei = false;
+      this.simStumm = modus === 'simulation' && new URLSearchParams(global.location.search).get('simstumm') === '1';
     }
     log(text) { if (this.opt.onLog) this.opt.onLog(text); }
     melde(name, wert) { const f = this.opt['on' + name]; if (f) f(wert); }
@@ -193,6 +226,7 @@
         if (x.box) x.box.classList.toggle('aktiv', x === platz);
       });
       this.aktiv = platz;
+      this.melde('Stumm', !!(platz && platz.stumm));
       return platz;
     }
     starten(schluessel, start) {
@@ -210,6 +244,8 @@
       });
     }
     abspielen() { if (this.aktiv) this.aktiv.abspielen(); }
+    tonAn() { if (this.aktiv) this.aktiv.tonAn(); }
+    stumm() { return !!(this.aktiv && this.aktiv.stumm); }
     pausieren() { if (this.aktiv) this.aktiv.pausieren(); }
     springen(s) { if (this.aktiv) this.aktiv.springen(s); }
     geschwindigkeit(r) { return this.aktiv ? this.aktiv.geschwindigkeit(r) : Promise.resolve(false); }
