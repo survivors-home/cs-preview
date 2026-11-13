@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Vimeo-Test – Funktionsdummy Menschen mit Krebs</title>
+<link rel="stylesheet" href="css/basis.css">
+<style>
+  body { padding: 0 0 2rem; }
+  header { padding: 0.75rem var(--abstand); border-bottom: 1px solid #E4DCE2; }
+  header h1 { font-size: 1.125rem; margin: 0; color: var(--lila-dunkel); }
+  header p { margin: 0.25rem 0 0; font-size: 0.875rem; }
+  main { max-width: 40rem; margin: 0 auto; }
+  section { padding: 0.75rem var(--abstand); }
+  h2 { font-size: 1rem; margin: 0 0 0.5rem; }
+
+  fieldset { border: 1px solid #E4DCE2; border-radius: var(--radius); padding: 0.5rem 0.75rem; margin: 0; }
+  legend { font-weight: 600; padding: 0 0.25rem; }
+  .wahl { display: flex; align-items: flex-start; gap: 0.5rem; min-height: var(--touch); padding: 0.375rem 0; }
+  .wahl input { width: 1.25rem; height: 1.25rem; margin-top: 0.15rem; accent-color: var(--lila-dunkel); flex: none; }
+
+  .buehne { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #1E1E1E; overflow: hidden; }
+  .buehne iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .ebene {
+    position: absolute; inset: 0; z-index: 2;
+    -webkit-touch-callout: none; -webkit-user-select: none; user-select: none;
+    touch-action: manipulation;
+  }
+  .ebene.durchlaessig { pointer-events: none; }
+  .quelle { position: absolute; left: 0.5rem; top: 0.4rem; z-index: 3; font-size: 0.75rem; color: #FFF;
+    background: rgba(0,0,0,0.45); padding: 0.1rem 0.4rem; border-radius: 0.3rem; pointer-events: none; max-width: 80%; }
+  .hinweis-bild { position: absolute; left: 50%; bottom: 0.75rem; transform: translateX(-50%); z-index: 3;
+    background: var(--lila-dunkel); color: #FFF; padding: 0.4rem 0.75rem; border-radius: 2rem; font-size: 0.9375rem;
+    pointer-events: none; white-space: nowrap; }
+  .halt { position: absolute; right: 0.5rem; top: 0.4rem; z-index: 3; font-size: 0.75rem; color: #FFF;
+    background: rgba(0,0,0,0.55); padding: 0.1rem 0.4rem; border-radius: 0.3rem; pointer-events: none; }
+  .zeitzeile { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; font-size: 0.875rem; padding: 0.25rem var(--abstand) 0; }
+
+  .steuerung { display: grid; grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)); gap: 0.5rem; padding: 0.5rem var(--abstand); }
+  .steuerung button { border: 2px solid var(--lila-dunkel); background: #FFF; color: var(--lila-dunkel); font-weight: 600; padding: 0.4rem; }
+  .steuerung button[aria-pressed="true"] { background: var(--lila-dunkel); color: #FFF; }
+  .steuerung button:disabled { border-color: #BBB; color: #888; }
+  #tonAn { background: var(--lila-hell); border-color: var(--lila-hell); color: #FFF; }
+
+  .kacheln { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+  .kacheln button { width: 100%; text-align: left; background: var(--flaeche-hell); border: 2px solid transparent; padding: 0.6rem 0.75rem; color: var(--grau-text); }
+  .kacheln button[aria-current="true"] { border-color: var(--lila-dunkel); }
+  .kacheln .titel { display: block; font-weight: 600; }
+  .kacheln .veranstaltung { display: block; font-size: 0.8125rem; }
+
+  .ergebnisse { margin: 0; padding-left: 1.25rem; }
+  .ergebnisse li { margin-bottom: 0.25rem; }
+  .ok { color: #1B6B2F; font-weight: 600; }
+  .nein { color: #A1121A; font-weight: 600; }
+  dl.diag { display: grid; grid-template-columns: max-content 1fr; gap: 0.15rem 0.75rem; margin: 0; font-size: 0.875rem; }
+  dl.diag dt { font-weight: 600; }
+  dl.diag dd { margin: 0; overflow-wrap: anywhere; }
+  pre#log { white-space: pre-wrap; font-size: 0.75rem; background: #F5F5F5; padding: 0.5rem; border-radius: 0.5rem; max-height: 16rem; overflow: auto; }
+  .gross { width: 100%; background: var(--lila-dunkel); color: #FFF; border: 0; font-weight: 600; padding: 0.6rem; }
+  textarea#kopie { width: 100%; height: 10rem; font-size: 0.75rem; }
+  footer { padding: 1rem var(--abstand); font-size: 0.8125rem; border-top: 1px solid #E4DCE2; margin-top: 1rem; }
+</style>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="js/player.js"></script>
+</head>
+<body>
+<header>
+  <h1>Vimeo-Test</h1>
+  <p>Funktionsdummy „Menschen mit Krebs“ · Prüfung des Videostarts auf dem Telefon</p>
+</header>
+<main>
+  <section>
+    <fieldset>
+      <legend>Startverfahren</legend>
+      <label class="wahl"><input type="radio" name="verfahren" value="A" checked><span><b>A</b> – direkt starten (Video startet nach Antippen einer Kachel)</span></label>
+      <label class="wahl"><input type="radio" name="verfahren" value="B"><span><b>B</b> – stumm starten, danach „Ton an“</span></label>
+      <label class="wahl"><input type="radio" name="verfahren" value="C"><span><b>C</b> – erster Start per Tipp direkt ins Video, danach direkt</span></label>
+    </fieldset>
+  </section>
+
+  <div class="buehne" id="buehne">
+    <div class="quelle" id="quelle"></div>
+    <div class="halt" id="halt" hidden>angehalten</div>
+    <div class="hinweis-bild" id="tippHinweis" hidden>Zum Starten ins Bild tippen</div>
+    <div class="ebene" id="ebene" aria-hidden="true"></div>
+  </div>
+  <div class="zeitzeile"><span id="zeit">0:00</span><span id="status">–</span></div>
+
+  <div class="steuerung" role="group" aria-label="Wiedergabe">
+    <button id="zurueck" type="button" aria-label="10 Sekunden zurück">−10 s</button>
+    <button id="spielen" type="button">Abspielen</button>
+    <button id="vor" type="button" aria-label="10 Sekunden vor">+10 s</button>
+    <button id="tempo" type="button" aria-pressed="false" aria-label="Doppelte Geschwindigkeit">2×</button>
+    <button id="tonAn" type="button" hidden>Ton an</button>
+  </div>
+
+  <section>
+    <h2>Testkacheln</h2>
+    <ul class="kacheln" id="kacheln"><li>Lädt …</li></ul>
+  </section>
+
+  <section>
+    <h2>Ergebnisse</h2>
+    <ol class="ergebnisse" id="ergebnisse"></ol>
+  </section>
+
+  <section>
+    <button class="gross" id="kopieren" type="button">Ergebnis kopieren</button>
+    <div class="steuerung" style="padding: 0.5rem 0 0">
+      <button id="neuLaden" type="button">Neu laden (Ergebnisse bleiben)</button>
+      <button id="loeschen" type="button">Ergebnisse löschen</button>
+    </div>
+    <p id="kopiertHinweis" hidden></p>
+    <textarea id="kopie" hidden readonly></textarea>
+  </section>
+
+  <section>
+    <h2>Diagnose</h2>
+    <dl class="diag" id="diag"></dl>
+    <details>
+      <summary>Protokoll</summary>
+      <pre id="log"></pre>
+    </details>
+  </section>
+</main>
+<footer>
+  Diese Inhalte dienen ausschließlich der Information und ersetzen keine Diagnose oder Therapieentscheidung.
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+  const parameter = new URLSearchParams(location.search);
+  const modus = parameter.get('modus') === 'simulation' ? 'simulation' : 'vimeo';
+  const logZeilen = [];
+  const ergebnisse = [];
+  let tests = [];
+  let aktiv = null;
+  let status = '–';
+  let wartende = [];
+  let erstTippErfolgt = false;
+  let wartetAufTipp = false;
+
+  function uhr(s) {
+    s = Math.max(0, Math.floor(s));
+    const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = String(s % 60).padStart(2, '0');
+    return h ? h + ':' + String(m).padStart(2, '0') + ':' + x : m + ':' + x;
+  }
+  function log(text) {
+    const z = (performance.now() / 1000).toFixed(1).padStart(6, ' ') + ' s  ' + text;
+    logZeilen.push(z);
+    if (logZeilen.length > 200) logZeilen.shift();
+    $('log').textContent = logZeilen.join('\n');
+  }
+  const SPEICHER = 'mmk-vimeo-test';
+  function sichern() {
+    try { sessionStorage.setItem(SPEICHER, JSON.stringify({ ergebnisse, log: logZeilen.slice(-150) })); } catch (e) { /* ohne Speicher weiter */ }
+  }
+  function ergebnis(text, ok, ohneSpeichern) {
+    ergebnisse.push((ok === true ? '[ja] ' : ok === false ? '[nein] ' : '') + text);
+    if (!ohneSpeichern) sichern();
+    zeigeErgebnis(text, ok);
+  }
+  function zeigeErgebnis(text, ok) {
+    const li = document.createElement('li');
+    if (ok === true || ok === false) {
+      const s = document.createElement('span');
+      s.className = ok ? 'ok' : 'nein';
+      s.textContent = ok ? 'ja: ' : 'nein: ';
+      li.appendChild(s);
+    }
+    li.appendChild(document.createTextNode(text));
+    $('ergebnisse').appendChild(li);
+    if (ok !== null) log('ERGEBNIS ' + text + (ok === undefined ? '' : ok ? ' – ja' : ' – nein'));
+  }
+  (function frueher() {
+    try {
+      const d = JSON.parse(sessionStorage.getItem(SPEICHER) || 'null');
+      if (!d) return;
+      d.log.forEach((z) => logZeilen.push(z));
+      d.ergebnisse.forEach((z) => {
+        ergebnisse.push(z);
+        const m = z.match(/^\[(ja|nein)\] (.*)$/);
+        if (m) zeigeErgebnis(m[2], m[1] === 'ja'); else zeigeErgebnis(z, null);
+      });
+      ergebnis('— Seite neu geladen —');
+    } catch (e) { /* ohne Speicher weiter */ }
+  })();
+  function verfahren() { return document.querySelector('input[name="verfahren"]:checked').value; }
+
+  /* ---------- Diagnose ---------- */
+  function plattform() {
+    const ua = navigator.userAgent;
+    const ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    const android = /Android/.test(ua);
+    let browser = 'unbekannt';
+    if (/CriOS/.test(ua)) browser = 'Chrome (iOS)';
+    else if (/FxiOS/.test(ua)) browser = 'Firefox (iOS)';
+    else if (/EdgiOS|EdgA|Edg\//.test(ua)) browser = 'Edge';
+    else if (/SamsungBrowser/.test(ua)) browser = 'Samsung Internet';
+    else if (/Chrome\//.test(ua)) browser = 'Chrome';
+    else if (/Safari\//.test(ua)) browser = 'Safari';
+    const os = ios ? 'iOS ' + ((ua.match(/OS (\d+[_\d]*)/) || [])[1] || '').replace(/_/g, '.') :
+      android ? 'Android ' + ((ua.match(/Android ([\d.]+)/) || [])[1] || '') : 'anderes System';
+    return { os, browser, ua };
+  }
+  function diagnose() {
+    const p = plattform();
+    const werte = [
+      ['System', p.os],
+      ['Browser', p.browser],
+      ['Modus', modus],
+      ['Adresse', location.host || '(lokal)'],
+      ['player.js', window.Vimeo && window.Vimeo.Player ? 'geladen' : 'nicht geladen'],
+      ['Fenster', innerWidth + ' × ' + innerHeight + ' px, Pixeldichte ' + devicePixelRatio],
+      ['Grundschrift', getComputedStyle(document.documentElement).fontSize],
+      ['User-Agent', p.ua]
+    ];
+    $('diag').innerHTML = '';
+    for (const [k, v] of werte) {
+      const dt = document.createElement('dt'); dt.textContent = k;
+      const dd = document.createElement('dd'); dd.textContent = v;
+      $('diag').append(dt, dd);
+    }
+    return werte;
+  }
+
+  /* ---------- Player ---------- */
+  const player = MMKPlayer.erzeugen($('buehne'), modus, {
+    onLog: log,
+    onZeit: () => {},
+    onStatus: (s) => {
+      status = s;
+      $('status').textContent = s;
+      $('spielen').textContent = s === 'spielt' ? 'Pause' : 'Abspielen';
+      if (s === 'spielt') {
+        wartende.forEach((f) => f(true));
+        wartende = [];
+        if (wartetAufTipp) {
+          wartetAufTipp = false;
+          erstTippErfolgt = true;
+          $('ebene').classList.remove('durchlaessig');
+          $('tippHinweis').hidden = true;
+          ergebnis('C: Start per Tipp ins Video', true);
+        }
+      }
+    },
+    onFehler: (e) => { if (e && e.name) ergebnis('Fehlermeldung player.js: ' + e.name + (e.message ? ' – ' + e.message : '')); }
+  });
+
+  function warteAufSpielt(ms) {
+    if (status === 'spielt' && !player.pausiert()) return Promise.resolve(true);
+    return new Promise((res) => {
+      wartende.push(res);
+      setTimeout(() => { wartende = wartende.filter((f) => f !== res); res(false); }, ms);
+    });
+  }
+  function mitFrist(promise, ms, text) {
+    return Promise.race([promise, new Promise((_, rej) => setTimeout(() => rej(new Error(text)), ms))]);
+  }
+
+  async function startTest(i) {
+    const z = tests[i];
+    aktiv = z;
+    document.querySelectorAll('.kacheln button').forEach((b, k) => b.setAttribute('aria-current', String(k === i)));
+    $('quelle').textContent = z.veranstaltungTitel;
+    const v = verfahren();
+    const art = v === 'C' && erstTippErfolgt ? 'C (nach Erst-Tipp direkt)' : v;
+    log('--- Kachel ' + (i + 1) + ', Verfahren ' + art);
+    const t0 = performance.now();
+    try {
+      if (v === 'B') await player.stumm(true);
+      await mitFrist(player.laden(z.video, z.start), 10000, 'Video nicht geladen nach 10 s – Domainfreigabe in Vimeo prüfen');
+    } catch (e) {
+      ergebnis('Laden ' + z.kurz + ': ' + e.message, false);
+      return;
+    }
+    if (v === 'C' && !erstTippErfolgt) {
+      wartetAufTipp = true;
+      $('ebene').classList.add('durchlaessig');
+      $('tippHinweis').hidden = false;
+      ergebnis('C: Video geladen, wartet auf Tipp ins Bild');
+      return;
+    }
+    const zugesagt = await player.abspielen();
+    const laeuft = await warteAufSpielt(4000);
+    const dauer = ((performance.now() - t0) / 1000).toFixed(1);
+    ergebnis('Start ' + art + ', ' + z.kurz + (laeuft ? ' nach ' + dauer + ' s' : '') + (zugesagt ? '' : ' (play() abgelehnt)'), laeuft);
+    if (v === 'B' && laeuft) $('tonAn').hidden = false;
+  }
+
+  /* ---------- Bedienung ---------- */
+  $('spielen').addEventListener('click', async () => {
+    if (status === 'spielt') { player.pausieren(); return; }
+    const ok = await player.abspielen();
+    const laeuft = await warteAufSpielt(3000);
+    ergebnis('Abspielen per Schaltfläche', laeuft && ok);
+  });
+  $('zurueck').addEventListener('click', () => player.springen(player.zeit() - 10));
+  $('vor').addEventListener('click', () => player.springen(player.zeit() + 10));
+  $('tempo').addEventListener('click', async (ev) => {
+    const b = ev.currentTarget;
+    const ziel = b.getAttribute('aria-pressed') === 'true' ? 1 : 2;
+    const ok = await player.geschwindigkeit(ziel);
+    if (ok) {
+      b.setAttribute('aria-pressed', String(ziel === 2));
+      ergebnis('Geschwindigkeit ' + ziel + '×', true);
+    } else {
+      b.disabled = true;
+      b.textContent = '2× nicht verfügbar';
+      ergebnis('Geschwindigkeit ' + ziel + '× (setPlaybackRate)', false);
+    }
+  });
+  $('tonAn').addEventListener('click', async () => {
+    const ok = await player.stumm(false);
+    $('tonAn').hidden = true;
+    await new Promise((r) => setTimeout(r, 1500));
+    const laeuft = !player.pausiert() && status === 'spielt';
+    ergebnis('B: Ton an' + (ok ? '' : ' (setMuted abgelehnt)') + (laeuft ? ', Video läuft weiter' : ', Video gestoppt'), ok && laeuft);
+  });
+  document.querySelectorAll('input[name="verfahren"]').forEach((r) => r.addEventListener('change', () => {
+    $('tonAn').hidden = true;
+    if (verfahren() !== 'C') { wartetAufTipp = false; $('ebene').classList.remove('durchlaessig'); $('tippHinweis').hidden = true; }
+    log('Verfahren gewechselt: ' + verfahren());
+  }));
+
+  /* Gedrückthalten pausiert, Loslassen setzt fort; kurzes Tippen wechselt Abspielen/Pause */
+  (function gesten() {
+    const ebene = $('ebene');
+    let timer = null, gehalten = false, warAn = false;
+    ebene.addEventListener('contextmenu', (e) => e.preventDefault());
+    ebene.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      gehalten = false;
+      warAn = status === 'spielt';
+      timer = setTimeout(() => {
+        timer = null;
+        gehalten = true;
+        if (warAn) { player.pausieren(); $('halt').hidden = false; }
+      }, 300);
+    });
+    const ende = async () => {
+      if (timer) {
+        clearTimeout(timer); timer = null;
+        if (status === 'spielt') player.pausieren();
+        else { await player.abspielen(); }
+      } else if (gehalten) {
+        $('halt').hidden = true;
+        if (warAn) {
+          await player.abspielen();
+          const laeuft = await warteAufSpielt(3000);
+          if (!ergebnisse.some((x) => x.includes('Loslassen'))) ergebnis('Gedrückthalten und Loslassen setzt fort', laeuft);
+        }
+      }
+      gehalten = false;
+    };
+    ebene.addEventListener('pointerup', ende);
+    ebene.addEventListener('pointercancel', () => { if (timer) clearTimeout(timer); timer = null; });
+  })();
+
+  /* Zeitanzeige und Segmentende */
+  (function takt() {
+    const t = player.zeit();
+    $('zeit').textContent = uhr(t) + (aktiv ? ' · Segment ' + uhr(aktiv.start) + '–' + uhr(aktiv.ende) : '');
+    if (aktiv && !player.pausiert() && t >= aktiv.ende) {
+      player.pausieren();
+      ergebnis('Segmentende erkannt bei ' + t.toFixed(2) + ' s (Soll ' + aktiv.ende.toFixed(2) + ' s)', Math.abs(t - aktiv.ende) < 0.6);
+      aktiv = Object.assign({}, aktiv, { ende: Infinity });
+    }
+    requestAnimationFrame(takt);
+  })();
+
+  $('neuLaden').addEventListener('click', () => { sichern(); location.reload(); });
+  $('loeschen').addEventListener('click', () => {
+    try { sessionStorage.removeItem(SPEICHER); } catch (e) { /* egal */ }
+    location.reload();
+  });
+
+  /* Ergebnis kopieren */
+  $('kopieren').addEventListener('click', async () => {
+    const text = ['Vimeo-Test Funktionsdummy, ' + new Date().toLocaleString('de-DE'), '']
+      .concat(diagnose().map(([k, v]) => k + ': ' + v), ['', 'Ergebnisse:'], ergebnisse, ['', 'Protokoll:'], logZeilen.slice(-80))
+      .join('\n');
+    try {
+      await navigator.clipboard.writeText(text);
+      $('kopiertHinweis').hidden = false;
+      $('kopiertHinweis').textContent = 'Kopiert. Text in den Chat einfügen.';
+    } catch (e) {
+      $('kopie').hidden = false;
+      $('kopie').value = text;
+      $('kopie').select();
+      $('kopiertHinweis').hidden = false;
+      $('kopiertHinweis').textContent = 'Automatisches Kopieren nicht möglich. Text im Feld markieren und kopieren.';
+    }
+  });
+
+  /* ---------- Daten laden ---------- */
+  diagnose();
+  log('Seite geladen, Modus ' + modus);
+  fetch('daten/elemente.json').then((r) => r.json()).then(async (d) => {
+    const folge = [d.start].concat(d.reihenfolge);
+    const gesehen = new Set();
+    for (const id of folge) {
+      const e = d.elemente[id];
+      if (!e || e.typ !== 'videosegment' || gesehen.has(e.veranstaltung)) continue;
+      gesehen.add(e.veranstaltung);
+      const v = d.veranstaltungen[e.veranstaltung];
+      tests.push({
+        id, titel: e.titel, start: e.start, ende: e.ende,
+        veranstaltungTitel: v.anzeigename,
+        kurz: v.titel,
+        video: { id: v.vimeo.id, h: v.vimeo.h, dauer: v.dauer }
+      });
+    }
+    const ul = $('kacheln');
+    ul.innerHTML = '';
+    tests.forEach((z, i) => {
+      const li = document.createElement('li');
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.innerHTML = '<span class="titel"></span><span class="veranstaltung"></span>';
+      b.querySelector('.titel').textContent = (i + 1) + '. ' + z.titel;
+      b.querySelector('.veranstaltung').textContent = z.veranstaltungTitel + ' · ab ' + uhr(z.start);
+      b.addEventListener('click', () => startTest(i));
+      li.appendChild(b);
+      ul.appendChild(li);
+    });
+    try {
+      await mitFrist(player.laden(tests[0].video, tests[0].start), 10000, 'Player nicht bereit nach 10 s – Domainfreigabe in Vimeo prüfen');
+      $('quelle').textContent = tests[0].veranstaltungTitel;
+      aktiv = tests[0];
+      log('Erstes Video vorgeladen');
+    } catch (e) {
+      ergebnis('Vorladen: ' + e.message, false);
+    }
+    diagnose();
+  }).catch((e) => ergebnis('Daten nicht geladen: ' + e.message, false));
+})();
+</script>
+</body>
+</html>

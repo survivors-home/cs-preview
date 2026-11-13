@@ -1,57 +1,75 @@
 # CLAUDE.md – Funktionsdummy dynamische Seite „Menschen mit Krebs“
 
-Vollständige Referenz: Übergabedokument „Übergabe: Funktionsdummy dynamische Seite Menschen mit Krebs“ (Stand 13.11.2026). Bei Abweichungen gilt dessen Hauptteil, nicht der Anhang.
+Referenz: `UEBERGABE.md` (Hauptteil der Übergabe vom 13.11.2026). Bei Abweichungen gilt `UEBERGABE.md`, ergänzt um die Festlegungen unten.
 
 ## Auftrag
 
-Klickbarer Prototyp der dynamischen Seite der Mediathek „Menschen mit Krebs“ für Smartphones im Hochformat. Echte Videosegmente aus der Wissensbasis `wissensbasis-mmk`, nur Darstellung und Bedienung. Gesprächsgrundlage für die Webagentur. Auslieferung über GitHub Pages.
-
-Nicht im Umfang: Einstiegsdialog, Suche, Empfehlungslogik, Backend, Benutzerkonten.
+- klickbarer Prototyp der dynamischen Seite der Mediathek „Menschen mit Krebs“ für Smartphones im Hochformat (iPhone Safari, Android Chrome)
+- echte Videosegmente aus der Wissensbasis `wissensbasis-mmk`; nur Darstellung und Bedienung
+- Zweck: Gesprächsgrundlage für die Webagentur Merona
+- nicht im Umfang: Einstiegsdialog, Suche, Empfehlungslogik, Backend, Benutzerkonten
 
 ## Feste Entscheidungen
 
-- Repository öffentlich, Hosting GitHub Pages (`survivors-home.github.io/cs-preview/`)
-- Statische Seite (HTML, CSS, JavaScript), keine Build-Kette, Daten als JSON
-- Vimeo Premium; Player mit `controls=0`, Steuerung über player.js, eigene Bedienelemente als Ebene darüber
-- Ein einziges Player-Objekt, Videowechsel per `loadVideo()` mit vollständiger URL inkl. `h`-Parameter
-- Zwei Betriebsarten mit gleicher Adapter-Schnittstelle (play, pause, seek, rate, Zeitereignis): Simulation (Standard) und Vimeo (`?modus=vimeo`)
-- Zielgeräte: iPhone (Safari), Android (Chrome), Hochformat
-- Größtes Risiko: Autostart auf iOS – vor dem Ausbau auf echtem iPhone testen, Diagnoseanzeige abschaltbar
+- Repository öffentlich: `github.com/survivors-home/cs-preview`; einziger und Standardzweig: `claude/ecstatic-brown-cfkhic`
+- Auslieferung: GitHub Pages, `https://survivors-home.github.io/cs-preview/`; `.nojekyll` liegt im Repository
+- Sitzungen mit Schreibzugriff (Claude Code) pushen auf den Standardzweig. Sitzungen ohne Schreibzugriff (Cowork) liefern ein ZIP, Sebastian lädt es im Browser hoch („Add file → Upload files“). Lesen geht immer per `git clone` (öffentlich).
+- Datenexport braucht Zugriff auf die Wissensbasis auf Sebastians Mac; das geht nur aus einer Sitzung, die mit dem Mac verbunden ist.
+- statische Seite (HTML, CSS, JavaScript), keine Build-Kette, Daten als JSON
+- Vimeo-Player mit `controls=0`, Steuerung über player.js, ein Player-Objekt, Videowechsel per `loadVideo()` mit vollständiger URL inklusive Hash
+- Betriebsarten: Simulation (Standard) und Vimeo (`?modus=vimeo`); Adapter in `js/player.js` mit gleicher Schnittstelle. `test-vimeo.html` startet im Vimeo-Modus.
+- Vimeo Premium; 2× per `setPlaybackRate` testen, bei Fehler Schaltfläche ausblenden
+- echte Wiedergabe nur auf freigegebener Domain `survivors-home.github.io` (in Vimeo je Video eintragen)
+- keine Master-Videos lokal: Startbilder als neutrale Fläche mit Segmenttitel
+- Rolle im Textbereich = Typ der Passage aus der Segmentdatei (`sprecher[].typ`): „Expertenwissen · Name“, „Erfahrung · Name“, „Moderation · Name“; keine `rollen.json`
+- Inhalte: Pilot „Klinische Studien“ komplett plus Bewegung/Sport/Fatigue, CLL, BRCA1 und ich, Lymphome – Ängste (Auswahl und feste Reihenfolge in `werkzeuge/auswahl.json`)
+- Glossar: nur „Phase-1-Studie“ (Entwurf, Freigabe durch Sebastian ausstehend)
 
 ## Datenregeln
 
-- Wissensbasis nur lesen, nie schreiben; `quellen/` nie verändern; Dateien der Wissensbasis nicht ins Repository kopieren
-- `werkzeuge/export.py` erzeugt `daten/elemente.json`
-- Übernehmen: Veranstaltung (ID, Titel, Reihe, Vimeo-ID, Privacy-Hash, Dauer, Segmenttabelle), Segment (ID, Start, Ende, Titel, Zusammenfassung, Themen), Wortlaut mit Wortzeiten, Personen (Bezeichnung im Text, Rolle)
-- Nie übernehmen: `hinweis`, `einwilligung`, `bearbeitung`, Transkripthinweise, interne Notizen, Prüfvermerke. Nach jedem Export prüfen, dass keines dieser Felder in `daten/` steht
-- Wortzeiten aus Deepgram `results.channels[0].alternatives[0].words[]`; Artefakt-Tokens nach `anleitung.md` entfernen
-- Sprecher aus den Segmentdateien, nicht aus der Deepgram-Diarisierung; korrigierten Wortlaut anzeigen, Zeiten zuordnen, nicht zuordenbare Stellen melden
-- Rollen: `daten/rollen.json`, von Hand gepflegt, Vorschlag vom Auftraggeber bestätigen lassen
-- Glossar (3–5 Begriffe aus dem Pilot): Erklärtexte sichtbar als Entwurf kennzeichnen bis zur fachlichen Freigabe
-- Platzhalter (andere Elementtypen, Beispiel-Zusatzinformationen) sichtbar kennzeichnen; keine erfundenen Kontaktdaten
+- Wissensbasis bei Sebastian: `~/Library/Mobile Documents/com~apple~CloudDocs/wissensbasis-mmk` (iCloud Drive). Nur lesen, nie schreiben. Regeln dort in `anleitung.md` und `schema.md`.
+- Export: `python3 werkzeuge/export.py "<pfad-zur-wissensbasis>"` erzeugt `daten/elemente.json` (Index, Veranstaltungen, Elemente, Glossar, Zusatzinfos) und `daten/wortlaut/<veranstaltung>.json` (Wortlaut mit Wortzeiten in Hundertstelsekunden). Dateien der Wissensbasis nie ins Repository kopieren.
+- Nicht übernehmen: `hinweis`, `einwilligung`, `bearbeitung`, Transkripthinweise, `interessenkonflikt`, `funktion`, `sponsorenbereich`, Deepgram-Metadaten, `patient_journey`, `krebsarten`, Kernaussagen. Das Skript prüft das am Ende und bricht bei Verstoß ab.
+- Sponsorennamen im Wortlaut werden als „[Sponsor]“ maskiert.
+- von Hand gepflegt: `inhalte/glossar.json`, `inhalte/zusatzinfos.json`, `inhalte/platzhalter.json`; Fundstellen und Zeiten berechnet das Skript.
+- Platzhalter und Beispiele sichtbar kennzeichnen; keine erfundenen Kontaktdaten; in eigenen Texten keine Produktnamen verschreibungspflichtiger Arzneimittel, keine Wirksamkeits- oder Überlegenheitsaussagen.
+- Vorschlagsliste ohne Segmente mit Hinweis auf eigenes Angebot, Off-Label-, Überlegenheits- oder Sponsorbezug.
 
 ## Inhaltsregeln (Organisation)
 
-- Nur allgemeine wissenschaftliche Einordnung, keine individuellen Therapieempfehlungen
-- Keine Produktnamen verschreibungspflichtiger Arzneimittel, keine Überlegenheits- oder Wirksamkeitsvergleiche, keine Off-Label-Darstellung
+- nur allgemeine wissenschaftliche Einordnung, keine individuellen Therapieempfehlungen, keine Bewertung einzelner Patientensituationen
+- keine Produktnamen verschreibungspflichtiger Arzneimittel, keine Überlegenheits- oder Wirksamkeitsvergleiche, keine Off-Label-Darstellung
 - Studieninhalte mit Phase und vorläufigem Charakter; „Noch keine zugelassene Therapie“ kennzeichnen, wo zutreffend
-- Keine Heilsversprechen, keine Zeitprognosen; Verweis auf behandelnde Ärzte
-- Hinweis dauerhaft erreichbar: „Diese Inhalte dienen ausschließlich der Information und ersetzen keine Diagnose oder Therapieentscheidung.“
-- Keine Sponsorennamen im Dummy
+- keine Heilsversprechen, keine Zeitprognosen; Verweis auf die behandelnden Ärzte
 
-## Gestaltungsregeln
+## Gestaltung
 
-- Farben: Light Violett `#AC3F90`, Dark Violett `#662483`, Dunkelgrau `#3C3C3B` (Fließtext), Grundfläche Weiß
-- Theme-Farben der Website (`foreground`, `ecru-white`, `thunder`, `primary`) als CSS-Variablen mit gekennzeichneten Platzhalterwerten
-- Expertenwissen und Erfahrung farblich unterscheidbar
-- Logo nur mit gelieferter Datei: komplett, zweifarbig, auf Weiß, mit Schutzraum
-- Schreibweisen: „Menschen mit Krebs“; „SURVIVORS HOME“ in Versalien, ohne Fettdruck, Unterstreichung, Apostroph, Einfärbung
+- Farben: Light Violett `#AC3F90`, Dark Violett `#662483`, Dunkelgrau `#3C3C3B` (Fließtext), Grundfläche Weiß; Variablen in `css/basis.css`
+- Theme-Farben der Website (`foreground`, `ecru-white`, `thunder`, `primary`) sind Platzhalter, bis Hex-Werte vorliegen
+- Vorschlag Rollenfarben: Expertenwissen Dark Violett, Erfahrung Light Violett; zusätzlich immer Textlabel (nicht nur Farbe)
+- „SURVIVORS HOME“ in Versalien, ohne Fettdruck, Unterstreichung, Apostroph, Einfärbung; Mediathek als „Menschen mit Krebs“
 - Deutsch, Präsens, keine Gendersprache, deutsche Anführungszeichen; Oberflächentexte ohne direkte Anrede
-- Ruhig, gut lesbar, Zielgruppe ab 50; Bewegung nur als Antwort auf Bedienung; `prefers-reduced-motion` beachten
-- Schrift in `rem`, Layout hält 200 % Textgröße, Touch-Flächen ≥ 44 × 44 px, sichtbarer Fokus
+- Hinweis dauerhaft erreichbar: „Diese Inhalte dienen ausschließlich der Information und ersetzen keine Diagnose oder Therapieentscheidung.“
+- keine Sponsorennamen; ruhig, gut lesbar, Zielgruppe ab 50; Bewegung nur als Antwort auf Bedienung
+- Schrift in `rem`, Layout hält 200 % Textgröße, Touch-Flächen mindestens 44 × 44 px, `prefers-reduced-motion`, sichtbarer Fokus
 
-## Arbeitsweise
+## GitHub Pages
 
-- Der Auftraggeber programmiert nicht: Alles, was er selbst tun muss (GitHub, Vimeo, Tests auf dem Telefon), als Schritt-für-Schritt-Klickanleitung
-- Antworten auf Deutsch, knapp, sachlich; Unklares offen benennen statt raten
-- Entwicklungszweig: `claude/ecstatic-brown-cfkhic`
+- keine Dateien oder Ordner mit führendem Unterstrich (Jekyll ignoriert sie)
+- in Markdown-Dateien keine doppelten geschweiften Klammern und keine Kombination aus geschweifter Klammer und Prozentzeichen (Liquid-Syntax, bricht den Pages-Build ab)
+
+## Arbeitsweise mit Sebastian
+
+- programmiert nicht: alles, was er tun muss, als nummerierte Klickanleitung
+- knapp, sachlich, Deutsch, keine Gendersprache, offene Kritik
+- Stand und Entscheidungen zusätzlich im Claude-Projekt „Redaktionsassistent CS“ unter `claude/dummy-dynamische-seite-stand.md`
+
+## Stand (Abschnitt 9 der Übergabe)
+
+| Schritt | Stand |
+| --- | --- |
+| 1 Repository, GitHub Pages | Klickanleitung geliefert, Ausführung durch Sebastian |
+| 2 Wissensbasis gelesen, Datenmodell | bestätigt 13.11.2026 |
+| 3 Export-Skript, `daten/` | erledigt 13.11.2026; 99,7 % der Wortzeiten direkt aus Deepgram |
+| 4 Vimeo-Adapter, Autostart-Test | `test-vimeo.html` bereit; Test auf dem iPhone offen |
+| 5–9 | offen |

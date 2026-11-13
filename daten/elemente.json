@@ -1,0 +1,3518 @@
+{
+ "info": "Erzeugt mit werkzeuge/export.py aus der Wissensbasis wissensbasis-mmk. Nicht von Hand bearbeiten.",
+ "stand": "2026-11-13",
+ "typen": {
+  "expertenwissen": "Expertenwissen",
+  "erfahrung": "Erfahrung",
+  "moderation": "Moderation",
+  "publikumsfrage": "Publikumsfrage"
+ },
+ "start": "2026-09-24_im-fokus_klinische-studien_s02",
+ "reihenfolge": [
+  "2026-09-24_im-fokus_klinische-studien_s05",
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s03",
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s05",
+  "platzhalter-einzelaussage",
+  "2026-09-25_im-fokus_cll_s16",
+  "2026-09-24_im-fokus_klinische-studien_s06",
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s06",
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s02",
+  "platzhalter-textbeitrag",
+  "2026-09-24_im-fokus_klinische-studien_s11",
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s08",
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s15",
+  "2026-09-25_im-fokus_cll_s06",
+  "platzhalter-selbsthilfegruppe",
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s18",
+  "2026-09-24_im-fokus_klinische-studien_s18",
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s18",
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s09",
+  "2026-09-24_im-fokus_klinische-studien_s21",
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s13",
+  "2026-09-25_im-fokus_cll_s17",
+  "2026-09-24_im-fokus_klinische-studien_s23"
+ ],
+ "veranstaltungen": {
+  "2026-09-24_im-fokus_klinische-studien": {
+   "id": "2026-09-24_im-fokus_klinische-studien",
+   "titel": "Klinische Studien für Krebsbetroffene",
+   "reihe": "Im Fokus",
+   "anzeigename": "Im Fokus: Klinische Studien für Krebsbetroffene",
+   "format": "gespraechsrunde",
+   "aufnahmedatum": "2026-09-24",
+   "dauer": 3955.73,
+   "vimeo": {
+    "id": "1229847613",
+    "h": "44603b86c8"
+   },
+   "beitrag_url": "https://menschen-mit-krebs.de/20323-klinische-studien-fuer-krebsbetroffene/",
+   "wortlaut": "daten/wortlaut/2026-09-24_im-fokus_klinische-studien.json",
+   "teilnehmer": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "rolle": "moderation"
+    },
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "rolle": "experte"
+    },
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "rolle": "betroffen"
+    }
+   ],
+   "segmente": [
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s01",
+     "start": 27.78,
+     "ende": 137.01,
+     "titel": "Einführung und Vorstellung der Gäste"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s02",
+     "start": 137.5,
+     "ende": 322.79,
+     "titel": "Wie eine Studie zur Option wurde – Motivation und Gefühle"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s03",
+     "start": 323.67,
+     "ende": 436.46,
+     "titel": "Warum der Zugang zu Studien schwierig ist"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s04",
+     "start": 437.01,
+     "ende": 633.46,
+     "titel": "Begleitete Studiensuche – Ablauf und wer anfragt"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s05",
+     "start": 634.11,
+     "ende": 873.24,
+     "titel": "Mythos Versuchskaninchen – Sicherheit und Aufsicht"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s06",
+     "start": 873.24,
+     "ende": 1055.78,
+     "titel": "Endpunkte, Placebo und Vergleichsgruppen"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s07",
+     "start": 1055.78,
+     "ende": 1241.83,
+     "titel": "Unterschiedliche Informationsbedürfnisse und Aufklärung über Nebenwirkungen"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s08",
+     "start": 1242.41,
+     "ende": 1479.9,
+     "titel": "Studien nur als letzte Hoffnung?"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s09",
+     "start": 1480.1,
+     "ende": 1627.7,
+     "titel": "Ausscheiden aus Studien und Umgang mit Hoffnung"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s10",
+     "start": 1627.88,
+     "ende": 1762.83,
+     "titel": "Weiß der behandelnde Arzt von passenden Studien?"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s11",
+     "start": 1764.83,
+     "ende": 1916.12,
+     "titel": "Jederzeit aussteigen – Einwilligung und Lebensqualität"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s12",
+     "start": 1916.12,
+     "ende": 2077.02,
+     "titel": "Studienregister, Studienfinder und Versorgungslücke"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s13",
+     "start": 2077.02,
+     "ende": 2283.14,
+     "titel": "Schlagzeilen einordnen – Biologie statt Ursprungsort"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s14",
+     "start": 2283.55,
+     "ende": 2384.54,
+     "titel": "Korbstudien – Forschung nach biologischem Merkmal"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s15",
+     "start": 2385.39,
+     "ende": 2592.52,
+     "titel": "KI und Informationssuche aus Betroffenensicht"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s16",
+     "start": 2592.76,
+     "ende": 2753.88,
+     "titel": "KI aus ärztlicher Sicht und Appell zur Information"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s17",
+     "start": 2753.88,
+     "ende": 2947.66,
+     "titel": "Wissen ist ungleich verteilt – unbequem sein und individueller Spielraum"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s18",
+     "start": 2947.66,
+     "ende": 3267.05,
+     "titel": "Gemeinsame Entscheidungsfindung und Umgang mit mehreren Optionen"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s19",
+     "start": 3267.05,
+     "ende": 3340.8,
+     "titel": "Behandelnde Ärzte einbeziehen und Zweitmeinung"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s20",
+     "start": 3341.57,
+     "ende": 3446.44,
+     "titel": "Publikumsfrage: Daten einer vorzeitig beendeten Studie"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s21",
+     "start": 3446.6,
+     "ende": 3616.68,
+     "titel": "Gute Gründe gegen eine Teilnahme"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s22",
+     "start": 3616.68,
+     "ende": 3722.36,
+     "titel": "Wunsch nach individuellem Blick"
+    },
+    {
+     "id": "2026-09-24_im-fokus_klinische-studien_s23",
+     "start": 3723.07,
+     "ende": 3887.82,
+     "titel": "Schlussappelle: informieren, unterstützen lassen, Selbsthilfe"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "titel": "Bewegung und Sport bei Fatigue",
+   "reihe": "Im Fokus",
+   "anzeigename": "Im Fokus: Bewegung und Sport bei Fatigue",
+   "format": "gespraechsrunde",
+   "aufnahmedatum": "2026-05-21",
+   "dauer": 3158.93,
+   "vimeo": {
+    "id": "1194368793",
+    "h": ""
+   },
+   "beitrag_url": "https://menschen-mit-krebs.de/19979-im-fokus-bewegung-und-sport-bei-fatigue/",
+   "wortlaut": "daten/wortlaut/2026-05-21_im-fokus_bewegung-sport-fatigue.json",
+   "teilnehmer": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "rolle": "moderation"
+    },
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "rolle": "experte"
+    },
+    {
+     "person": "anne-luise-kitzerow",
+     "name": "Anne-Luise Kitzerow",
+     "rolle": "betroffen"
+    },
+    {
+     "person": "ralf-hafner",
+     "name": "Prof. Ralf Hafner",
+     "rolle": "betroffen"
+    }
+   ],
+   "segmente": [
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s01",
+     "start": 29.38,
+     "ende": 187.6,
+     "titel": "Einführung: dritter Teil der Reihe zur Tumor-Fatigue und Vorstellung der Gäste"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s02",
+     "start": 187.6,
+     "ende": 317.99,
+     "titel": "Begriffsklärung: Sport, Bewegung und körperliche Aktivität"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s03",
+     "start": 317.99,
+     "ende": 510.07,
+     "titel": "Fatigue erleben, einordnen und erster Zugang über Spaziergänge"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s04",
+     "start": 511.19,
+     "ende": 737.6,
+     "titel": "Vom Reha-Training zum Volkstriathlon"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s05",
+     "start": 737.6,
+     "ende": 933.7,
+     "titel": "Angeleitet beginnen und Tumor-Fatigue von ME/CFS abgrenzen"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s06",
+     "start": 933.7,
+     "ende": 1007.42,
+     "titel": "Anlaufstellen: Charité Fatigue Centrum und regionale OnkoAktiv-Zentren"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s07",
+     "start": 1008.7,
+     "ende": 1173.96,
+     "titel": "Wendepunkt in der Reha, Gruppe und eigenes Ziel"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s08",
+     "start": 1174.37,
+     "ende": 1308.76,
+     "titel": "Druck durch Empfehlungen und der innere Schweinehund"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s09",
+     "start": 1309.08,
+     "ende": 1467.81,
+     "titel": "Druck, Schuldfragen und individueller Zugang aus Beratungssicht"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s10",
+     "start": 1468.5,
+     "ende": 1572.88,
+     "titel": "Was die Studienlage zu Bewegung und Fatigue zeigt"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s11",
+     "start": 1573.85,
+     "ende": 1659.05,
+     "titel": "Zeitpunkt des Einstiegs und Prähabilitation"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s12",
+     "start": 1659.05,
+     "ende": 1731.96,
+     "titel": "Trainingsempfehlungen: Ausdauer und Kraft"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s13",
+     "start": 1732.04,
+     "ende": 1891.62,
+     "titel": "Yoga und Progressive Muskelentspannung als Ausgleich"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s14",
+     "start": 1892.08,
+     "ende": 1955.88,
+     "titel": "Niedrige Schwelle: Walken und Laufen"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s15",
+     "start": 1955.96,
+     "ende": 2144.91,
+     "titel": "Krankheit verstehen, verlässliche Quellen und Unterstützung"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s16",
+     "start": 2148.05,
+     "ende": 2374.32,
+     "titel": "Zugangswege und Kosten: Rehasport und Krankengymnastik am Gerät"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s17",
+     "start": 2374.48,
+     "ende": 2444.22,
+     "titel": "Der konkrete Weg: wer berät und wer verordnet"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s18",
+     "start": 2446.93,
+     "ende": 2590.76,
+     "titel": "Was Neubetroffenen wichtig ist: anfangen und erschöpft sein dürfen"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s19",
+     "start": 2592.59,
+     "ende": 2794.49,
+     "titel": "Wearables und telefonische Betreuung"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s20",
+     "start": 2794.49,
+     "ende": 2899.3,
+     "titel": "MoveOnco: Wissen über Bewegung zu den Betroffenen bringen"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s21",
+     "start": 2899.78,
+     "ende": 3035.28,
+     "titel": "Schlussworte: verlässliche Quellen, Dranbleiben und Zeit für sich"
+    },
+    {
+     "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s22",
+     "start": 3041.86,
+     "ende": 3104.77,
+     "titel": "Zusammenfassung der Moderation und Anlaufstellen"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll": {
+   "id": "2026-09-25_im-fokus_cll",
+   "titel": "Im Fokus CLL: beobachten, mitentscheiden, behandeln",
+   "reihe": "Im Fokus",
+   "anzeigename": "Im Fokus CLL: beobachten, mitentscheiden, behandeln",
+   "format": "gespraechsrunde",
+   "aufnahmedatum": "2026-09-25",
+   "dauer": 2765.81,
+   "vimeo": {
+    "id": "1230161603",
+    "h": ""
+   },
+   "beitrag_url": "https://menschen-mit-krebs.de/20333-im-fokus-cll-beobachten-mitentscheiden-behandeln/",
+   "wortlaut": "daten/wortlaut/2026-09-25_im-fokus_cll.json",
+   "teilnehmer": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "rolle": "moderation"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "rolle": "experte"
+    },
+    {
+     "person": "johannes-foerner",
+     "name": "Johannes Förner",
+     "rolle": "betroffen"
+    }
+   ],
+   "segmente": [
+    {
+     "id": "2026-09-25_im-fokus_cll_s01",
+     "start": 28.21,
+     "ende": 130.5,
+     "titel": "Einführung: Diagnose Leukämie und zunächst keine Behandlung"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s02",
+     "start": 130.57,
+     "ende": 244.28,
+     "titel": "Erfahrung: Was nach der Diagnose gefehlt hat"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s03",
+     "start": 244.28,
+     "ende": 386.81,
+     "titel": "Was Leukämie bedeutet und warum die CLL schon lange besteht"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s04",
+     "start": 387.44,
+     "ende": 576.03,
+     "titel": "Warum zunächst nicht behandelt wird"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s05",
+     "start": 576.43,
+     "ende": 668.66,
+     "titel": "Warum die CLL oft erst spät auffällt"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s06",
+     "start": 668.66,
+     "ende": 834.68,
+     "titel": "Überwachen statt behandeln: Kontrollabstände und Ansprechbarkeit"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s07",
+     "start": 834.84,
+     "ende": 957.92,
+     "titel": "Veränderte Behandlung und ein Weg in die Therapie"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s08",
+     "start": 958.0,
+     "ende": 1163.28,
+     "titel": "Dauertherapie oder zeitlich befristete Kombinationstherapie"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s09",
+     "start": 1164.32,
+     "ende": 1392.68,
+     "titel": "Mitentscheiden: Lebenssituation und Nebenwirkungen abwägen"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s10",
+     "start": 1392.68,
+     "ende": 1512.68,
+     "titel": "Erfahrung: Entscheidung für die zeitlich begrenzte Therapie"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s11",
+     "start": 1512.68,
+     "ende": 1704.92,
+     "titel": "MRD-Negativität: Studieninstrument statt Routinewert"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s12",
+     "start": 1705.69,
+     "ende": 1780.94,
+     "titel": "Gibt es den einen besten Wirkmechanismus?"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s13",
+     "start": 1781.42,
+     "ende": 1927.18,
+     "titel": "Genetische Risikoprofile und Therapiewahl"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s14",
+     "start": 1927.89,
+     "ende": 2062.39,
+     "titel": "Studienausstieg und die Psychologie der Therapiewahl"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s15",
+     "start": 2062.39,
+     "ende": 2218.79,
+     "titel": "Zeit für Gespräche und die Rolle von Patientenorganisationen"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s16",
+     "start": 2219.21,
+     "ende": 2359.16,
+     "titel": "Seriöse Informationsquellen"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s17",
+     "start": 2359.16,
+     "ende": 2479.08,
+     "titel": "Alltagsfragen neben der Erkrankung und Austausch mit Betroffenen"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s18",
+     "start": 2480.65,
+     "ende": 2585.8,
+     "titel": "Wunsch an das Arztgespräch: Vertrauen"
+    },
+    {
+     "id": "2026-09-25_im-fokus_cll_s19",
+     "start": 2586.84,
+     "ende": 2676.07,
+     "titel": "Appell: aktiv und fordernd sein"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "titel": "InfoReihe KREBS: Familiäres Krebsrisiko",
+   "reihe": "InfoReihe KREBS",
+   "anzeigename": "InfoReihe KREBS: Familiäres Krebsrisiko",
+   "format": "interview",
+   "aufnahmedatum": "2026-06-17",
+   "dauer": 2849.93,
+   "vimeo": {
+    "id": "1203867173",
+    "h": "db614e70fa"
+   },
+   "beitrag_url": "https://menschen-mit-krebs.de/20002-inforeihe-krebs-familiaeres-krebsrisiko-2/",
+   "wortlaut": "daten/wortlaut/2026-06-17_inforeihe-krebs_brca1-und-ich.json",
+   "teilnehmer": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "rolle": "betroffen"
+    },
+    {
+     "person": "martina-preisler",
+     "name": "Dr. Martina Preisler",
+     "rolle": "moderation"
+    },
+    {
+     "person": "ute-goerling",
+     "name": "Ute Goerling",
+     "rolle": "moderation"
+    }
+   ],
+   "segmente": [
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s01",
+     "start": 17.41,
+     "ende": 117.83,
+     "titel": "Begrüßung und Videoeinspielung: Eine Familiengeschichte mit BRCA1"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s02",
+     "start": 120.58,
+     "ende": 260.68,
+     "titel": "Erkrankung der Mutter und Weg zur genetischen Abklärung"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s03",
+     "start": 262.35,
+     "ende": 334.92,
+     "titel": "Der eigene Genbefund mit 18"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s04",
+     "start": 335.31,
+     "ende": 459.75,
+     "titel": "Beratung, Früherkennung und fehlende Gleichaltrige"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s05",
+     "start": 460.9,
+     "ende": 540.12,
+     "titel": "Leben mit dem Risiko: Angst vor Untersuchungen und Folgen für die Beziehung"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s06",
+     "start": 540.27,
+     "ende": 636.53,
+     "titel": "Angst vor Leiden und Tod und ein neuer Blick auf die Operationen"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s07",
+     "start": 638.08,
+     "ende": 752.55,
+     "titel": "Körpergefühl und Folgen für Stillen, Kinderwunsch und Sexualität"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s08",
+     "start": 752.55,
+     "ende": 867.46,
+     "titel": "Prophylaktische Mastektomie mit 24: Entscheidung und Kostenübernahme"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s09",
+     "start": 867.53,
+     "ende": 1004.57,
+     "titel": "Entscheidung mit 29: Kinderwunschbehandlung vor der Operation"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s10",
+     "start": 1004.57,
+     "ende": 1133.18,
+     "titel": "Genetische Testung befruchteter Eizellen und Appell an die Ethikkommission"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s11",
+     "start": 1134.86,
+     "ende": 1244.99,
+     "titel": "Hormonstimulation und Abschied vom romantischen Kinderwunsch"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s12",
+     "start": 1245.48,
+     "ende": 1383.45,
+     "titel": "Entfernung der Eierstöcke, Hormonersatz und unauffälliger Befund"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s13",
+     "start": 1385.61,
+     "ende": 1484.76,
+     "titel": "Weg zum Buusenkollektiv: Zugehörigkeit als nicht erkrankte Genträgerin"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s14",
+     "start": 1484.84,
+     "ende": 1628.14,
+     "titel": "Die GENial WhatsApp-Gruppe: Aufbau und Themen"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s15",
+     "start": 1629.58,
+     "ende": 1739.74,
+     "titel": "Versorgungslücke niedrigschwelliger Austausch und Anfänge des Blogs"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s16",
+     "start": 1740.16,
+     "ende": 1864.7,
+     "titel": "Sichtbar werden als Provivor"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s17",
+     "start": 1866.79,
+     "ende": 1992.54,
+     "titel": "Anfeindungen im Netz und Reichweite für das Thema"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s18",
+     "start": 1993.18,
+     "ende": 2071.33,
+     "titel": "Die Mutter als Kraftquelle"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s19",
+     "start": 2100.61,
+     "ende": 2181.02,
+     "titel": "Schlusswort: Über Krebs sprechen, bevor er ausbricht"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s20",
+     "start": 2214.03,
+     "ende": 2345.72,
+     "titel": "Online-Frage: Hormonelle Veränderungen nach Entfernung der Eierstöcke"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s21",
+     "start": 2351.14,
+     "ende": 2509.56,
+     "titel": "Publikumsfrage: Umgang der Familie mit dem Genbefund"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s22",
+     "start": 2516.91,
+     "ende": 2675.14,
+     "titel": "Publikumsfrage: Angst vor dem Wissen und der eigene Weg"
+    },
+    {
+     "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s23",
+     "start": 2679.86,
+     "ende": 2788.51,
+     "titel": "Online-Frage: Einem neuen Partner von der Mutation erzählen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "titel": "Leben mit einem Lymphom: Umgang mit Ängsten und Unsicherheiten",
+   "reihe": "InfoReihe KREBS",
+   "anzeigename": "InfoReihe KREBS: Leben mit einem Lymphom: Umgang mit Ängsten und Unsicherheiten",
+   "format": "vortrag",
+   "aufnahmedatum": "2026-09-16",
+   "dauer": 2298.82,
+   "vimeo": {
+    "id": "1227696892",
+    "h": "b47f5a54e6"
+   },
+   "beitrag_url": "https://menschen-mit-krebs.de/20296-leben-mit-einem-lymphom-umgang-mit-aengsten-und-unsicherheiten/",
+   "wortlaut": "daten/wortlaut/2026-09-16_inforeihe-krebs_lymphome-aengste.json",
+   "teilnehmer": [
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "rolle": "experte"
+    },
+    {
+     "person": "moderation",
+     "name": "Moderation",
+     "rolle": "moderation"
+    }
+   ],
+   "segmente": [
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s01",
+     "start": 16.89,
+     "ende": 110.62,
+     "titel": "Einführung und Aufbau des Vortrags"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s02",
+     "start": 112.98,
+     "ende": 273.11,
+     "titel": "Besonderheiten von Lymphomen aus psychoonkologischer Sicht"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s03",
+     "start": 273.5,
+     "ende": 470.13,
+     "titel": "Körperliche Veränderungen: Immunsystem, Appetit, Erschöpfung, Aussehen"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s04",
+     "start": 472.44,
+     "ende": 732.18,
+     "titel": "Psychische und soziale Auswirkungen"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s05",
+     "start": 735.85,
+     "ende": 922.02,
+     "titel": "Angst als normale Reaktion und ihre Ausdrucksformen"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s06",
+     "start": 923.62,
+     "ende": 1174.6,
+     "titel": "Basisstrategien: Selbstmitgefühl, Bewegung, Ablenkung, Sinnesreize, Entspannung"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s07",
+     "start": 1174.6,
+     "ende": 1359.71,
+     "titel": "Umgang mit Grübeln: angemessen informieren, aufschreiben, zu Ende denken"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s08",
+     "start": 1361.32,
+     "ende": 1481.32,
+     "titel": "Ängste vor und nach Kontrolluntersuchungen"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s09",
+     "start": 1485.4,
+     "ende": 1613.94,
+     "titel": "Wann mehr Unterstützung nötig ist und wo es sie gibt"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s10",
+     "start": 1614.42,
+     "ende": 1666.54,
+     "titel": "Zusammenfassung"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s11",
+     "start": 1692.59,
+     "ende": 1797.9,
+     "titel": "Publikumsfrage: Druck, stark zu sein und positiv zu denken"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s12",
+     "start": 1807.28,
+     "ende": 1886.68,
+     "titel": "Publikumsfrage: Freudlosigkeit trotz guter Heilungschancen"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s13",
+     "start": 1886.68,
+     "ende": 1967.82,
+     "titel": "Ergänzung aus dem Publikum: Routinen und Schreiben als Hilfe"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s14",
+     "start": 1974.46,
+     "ende": 2041.42,
+     "titel": "Publikumsfrage: Belastung je nach Krebsart"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s15",
+     "start": 2043.27,
+     "ende": 2142.65,
+     "titel": "Nachfrage: Belastung durch Stammzelltransplantation"
+    },
+    {
+     "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s16",
+     "start": 2145.93,
+     "ende": 2268.64,
+     "titel": "Publikumsfrage: Abwarten und Kontrollieren aushalten"
+    }
+   ]
+  }
+ },
+ "elemente": {
+  "2026-09-24_im-fokus_klinische-studien_s01": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s01",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 27.78,
+   "ende": 137.01,
+   "titel": "Einführung und Vorstellung der Gäste",
+   "zusammenfassung": "Marco Ammer führt in das Thema ein: Klinische Studien können eine Behandlungsoption sein, viele Betroffene erfahren aber spät oder gar nicht davon. Er stellt Dr. Mridul Agrawal, Arzt und Gründer von iuvando, und Fluky vor. Bei Fluky wurde im Oktober 2022 ein uterines Leiomyosarkom diagnostiziert; seit Januar 2024 erfolgt eine palliative Behandlung, inzwischen im Rahmen einer Phase-1-Studie.",
+   "themen": [
+    "Klinische Studien"
+   ],
+   "schwerpunkt": "moderation",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s02": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s02",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 137.5,
+   "ende": 322.79,
+   "titel": "Wie eine Studie zur Option wurde – Motivation und Gefühle",
+   "zusammenfassung": "Fluky beschreibt, wie das Lesen wissenschaftlicher Studien hilft, Erkrankung, Prognose und Behandlungsmöglichkeiten zu verstehen. Das Studienangebot kam vom Behandlungsteam. Die Entscheidung zur Teilnahme war von widersprüchlichen Gefühlen begleitet.",
+   "themen": [
+    "Klinische Studien",
+    "Hoffnung und Erwartungen",
+    "Selbstwirksamkeit",
+    "Informationssuche"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s03": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s03",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 323.67,
+   "ende": 436.46,
+   "titel": "Warum der Zugang zu Studien schwierig ist",
+   "zusammenfassung": "Dr. Mridul Agrawal schildert seine Erfahrung als Studienarzt in der Leukämieforschung: viele Behandlungsmöglichkeiten in Studien, zugleich die wachsende Schwierigkeit, Studien außerhalb der eigenen Einrichtung zu finden.",
+   "themen": [
+    "Studiensuche",
+    "Zugang zur Versorgung"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s04": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s04",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 437.01,
+   "ende": 633.46,
+   "titel": "Begleitete Studiensuche – Ablauf und wer anfragt",
+   "zusammenfassung": "Dr. Mridul Agrawal beschreibt den Ablauf der Studiensuche bei iuvando: Prüfung der Ein- und Ausschlusskriterien anhand der Befunde, softwaregestützt und ärztlich eingeordnet, anschließend ein Gespräch über persönliche Bedürfnisse und Ziele. Viele Anfragen kommen von Angehörigen.",
+   "themen": [
+    "Studiensuche",
+    "Angehörige"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s05": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s05",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 634.11,
+   "ende": 873.24,
+   "titel": "Mythos Versuchskaninchen – Sicherheit und Aufsicht",
+   "zusammenfassung": "Ob das Bild vom Versuchskaninchen zutrifft. Fluky hat das Aufklärungsgespräch vor einer Phase-1-Studie als Sicherheit gebend erlebt. Dr. Mridul Agrawal erläutert die Aufsicht durch Behörden und Ethikkommissionen sowie die fortlaufende Sicherheitsüberwachung.",
+   "themen": [
+    "Klinische Studien",
+    "Studienphasen",
+    "Krebsmythen"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    },
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s06": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s06",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 873.24,
+   "ende": 1055.78,
+   "titel": "Endpunkte, Placebo und Vergleichsgruppen",
+   "zusammenfassung": "Dr. Mridul Agrawal erklärt, dass Studien kontrolliert sind und Endpunkte haben, und warum in der Onkologie die Standardbehandlung nicht vorenthalten werden darf. Er betont, Ungewissheiten offen zu benennen.",
+   "themen": [
+    "Placebo und Vergleichsgruppen",
+    "Studienphasen",
+    "Einordnung von Studiendaten",
+    "Arzt-Patienten-Kommunikation"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s07": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s07",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 1055.78,
+   "ende": 1241.83,
+   "titel": "Unterschiedliche Informationsbedürfnisse und Aufklärung über Nebenwirkungen",
+   "zusammenfassung": "Fluky beschreibt unterschiedliche Bewältigungsstrategien: Manche Betroffene wollen möglichst viel wissen, andere wenig. Die ausführliche Aufklärung über erwartbare Nebenwirkungen half, als diese in der Woche vor der Veranstaltung auftraten.",
+   "themen": [
+    "Informationssuche",
+    "Nebenwirkungen",
+    "Arzt-Patienten-Kommunikation",
+    "Klinische Studien"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s08": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s08",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 1242.41,
+   "ende": 1479.9,
+   "titel": "Studien nur als letzte Hoffnung?",
+   "zusammenfassung": "Fluky schildert anfänglich unrealistische Hoffnungen an Studien und die heute realistischen Erwartungen. Dr. Mridul Agrawal erläutert, dass Studien heute in allen Phasen einer Erkrankung infrage kommen können.",
+   "themen": [
+    "Klinische Studien",
+    "Hoffnung und Erwartungen",
+    "Seltene Krebserkrankungen"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s09": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s09",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 1480.1,
+   "ende": 1627.7,
+   "titel": "Ausscheiden aus Studien und Umgang mit Hoffnung",
+   "zusammenfassung": "Die Moderation spricht an, dass veränderte Rahmenbedingungen zum Ausscheiden aus einer Studie führen können. Dr. Mridul Agrawal beschreibt Hoffnung als lebenswichtig und betont, keine falsche Hoffnung zu machen.",
+   "themen": [
+    "Hoffnung und Erwartungen",
+    "Arzt-Patienten-Kommunikation",
+    "Klinische Studien"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s10": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s10",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 1627.88,
+   "ende": 1762.83,
+   "titel": "Weiß der behandelnde Arzt von passenden Studien?",
+   "zusammenfassung": "Bei Fluky kam das Studienangebot von den behandelnden Onkologinnen. Dr. Mridul Agrawal erläutert, warum niemand alle laufenden Studien kennen kann und der Zugang teils vom Zufall abhängt.",
+   "themen": [
+    "Studiensuche",
+    "Zugang zur Versorgung",
+    "Arzt-Patienten-Kommunikation"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s11": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s11",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 1764.83,
+   "ende": 1916.12,
+   "titel": "Jederzeit aussteigen – Einwilligung und Lebensqualität",
+   "zusammenfassung": "Fluky beschreibt, dass die Einwilligung jederzeit widerrufbar ist und dies im Aufklärungsgespräch klar vermittelt wurde. Therapie und Lebensqualität müssen in einem stimmigen Verhältnis stehen.",
+   "themen": [
+    "Klinische Studien",
+    "Nebenwirkungen",
+    "Lebensqualität"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s12": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s12",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 1916.12,
+   "ende": 2077.02,
+   "titel": "Studienregister, Studienfinder und Versorgungslücke",
+   "zusammenfassung": "Die Moderation fragt, warum es so viele Studienfinder gibt. Dr. Mridul Agrawal beschreibt öffentliche Register als technisch und sieht eine Versorgungslücke, deren Lösung im Gesundheitssystem verankert werden muss.",
+   "themen": [
+    "Studiensuche",
+    "Zugang zur Versorgung"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s13": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s13",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 2077.02,
+   "ende": 2283.14,
+   "titel": "Schlagzeilen einordnen – Biologie statt Ursprungsort",
+   "zusammenfassung": "Die Moderation fragt nach Durchbruchmeldungen und ihrer Übertragbarkeit. Dr. Mridul Agrawal plädiert dafür, sich eng an veröffentlichten Ergebnissen zu orientieren, und erklärt, warum der Ursprungsort wenig über die Tumorbiologie aussagt.",
+   "themen": [
+    "Einordnung von Studiendaten",
+    "Molekulare Tumordiagnostik",
+    "Zielgerichtete Therapie"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s14": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s14",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 2283.55,
+   "ende": 2384.54,
+   "titel": "Korbstudien – Forschung nach biologischem Merkmal",
+   "zusammenfassung": "Fluky berichtet, dass die eigene Studie Menschen mit verschiedenen Tumorarten einschließt, sofern der Tumor ein bestimmtes Merkmal aufweist. Dr. Mridul Agrawal erklärt das Prinzip der Korbstudien.",
+   "themen": [
+    "Korbstudien",
+    "Molekulare Tumordiagnostik",
+    "Seltene Krebserkrankungen"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s15": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s15",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 2385.39,
+   "ende": 2592.52,
+   "titel": "KI und Informationssuche aus Betroffenensicht",
+   "zusammenfassung": "Fluky nutzt KI-Anwendungen vorsichtig und kritisch, angestoßen durch einen KI-Workshop im SURVIVORS HOME. Voraussetzung ist, die Technik zu verstehen und Antworten an Quellen zu prüfen.",
+   "themen": [
+    "Künstliche Intelligenz",
+    "Informationssuche",
+    "Gesundheitskompetenz"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s16": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s16",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 2592.76,
+   "ende": 2753.88,
+   "titel": "KI aus ärztlicher Sicht und Appell zur Information",
+   "zusammenfassung": "Dr. Mridul Agrawal bestätigt Anfragen mit Verweis auf KI-Ergebnisse. KI hilft, komplexe Informationen zu strukturieren, Antworten sind aber nicht immer richtig und klingen dennoch überzeugend.",
+   "themen": [
+    "Künstliche Intelligenz",
+    "Gesundheitskompetenz"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s17": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s17",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 2753.88,
+   "ende": 2947.66,
+   "titel": "Wissen ist ungleich verteilt – unbequem sein und individueller Spielraum",
+   "zusammenfassung": "Fluky sieht Informiertheit als Vorteil, der aber ungleich verteilt ist: Sprache, Bildung und selbstbewusstes Auftreten stehen nicht allen zur Verfügung. Bei einer seltenen Erkrankung mit wenigen Daten gibt es mehr individuellen Spielraum, als viele annehmen.",
+   "themen": [
+    "Gesundheitskompetenz",
+    "Zugang zur Versorgung",
+    "Arzt-Patienten-Kommunikation",
+    "Seltene Krebserkrankungen",
+    "Therapieentscheidung"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s18": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s18",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 2947.66,
+   "ende": 3267.05,
+   "titel": "Gemeinsame Entscheidungsfindung und Umgang mit mehreren Optionen",
+   "zusammenfassung": "Fluky beschreibt Shared Decision Making als passend: Entscheidungen auf informierter Basis werden auch rückblickend nicht bereut. Dr. Mridul Agrawal sieht gemeinsame Entscheidungsfindung im Alltag oft noch als Vision und erläutert, wie mehrere Studienoptionen eingeordnet werden.",
+   "themen": [
+    "Gemeinsame Entscheidungsfindung",
+    "Therapieentscheidung",
+    "Studiensuche"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s19": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s19",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 3267.05,
+   "ende": 3340.8,
+   "titel": "Behandelnde Ärzte einbeziehen und Zweitmeinung",
+   "zusammenfassung": "Die Moderation fragt, ob iuvando das Gespräch mit den behandelnden Ärzten übernimmt. Dr. Mridul Agrawal: Die Betroffenen entscheiden, ob die Ärzte einbezogen werden.",
+   "themen": [
+    "Arzt-Patienten-Kommunikation",
+    "Zweitmeinung"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s20": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s20",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 3341.57,
+   "ende": 3446.44,
+   "titel": "Publikumsfrage: Daten einer vorzeitig beendeten Studie",
+   "zusammenfassung": "Eine Online-Frage zu einer nach einigen Monaten geschlossenen Darmkrebsstudie: Sind die erhobenen Daten nutzlos? Dr. Mridul Agrawal betont den Wert von Erkenntnissen unabhängig vom Ausgang.",
+   "themen": [
+    "Einordnung von Studiendaten",
+    "Klinische Studien"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "publikumsfrage"
+    },
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    },
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s21": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s21",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 3446.6,
+   "ende": 3616.68,
+   "titel": "Gute Gründe gegen eine Teilnahme",
+   "zusammenfassung": "Die Moderation verweist auf Selbsthilfe und Landeskrebsgesellschaften und fragt nach guten Gründen gegen eine Studienteilnahme. Fluky nennt eine starke Einschränkung der Lebensqualität bei fortgeschrittener Erkrankung.",
+   "themen": [
+    "Therapieentscheidung",
+    "Lebensqualität",
+    "Selbsthilfe",
+    "Beratungsangebote",
+    "Klinische Studien"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    },
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s22": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s22",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 3616.68,
+   "ende": 3722.36,
+   "titel": "Wunsch nach individuellem Blick",
+   "zusammenfassung": "Fluky wünscht sich, dass Behandelnde die Person und nicht nur die Aktenlage sehen. Ob viel oder wenig gemacht wird, die Entscheidung muss stimmig sein.",
+   "themen": [
+    "Therapieentscheidung",
+    "Arzt-Patienten-Kommunikation",
+    "Selbstwirksamkeit"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-24_im-fokus_klinische-studien_s23": {
+   "id": "2026-09-24_im-fokus_klinische-studien_s23",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-24_im-fokus_klinische-studien",
+   "start": 3723.07,
+   "ende": 3887.82,
+   "titel": "Schlussappelle: informieren, unterstützen lassen, Selbsthilfe",
+   "zusammenfassung": "Dr. Mridul Agrawal ermutigt, sich zu informieren und dabei Unterstützung aus dem Umfeld anzunehmen. Fluky beschreibt den Wert von Selbsthilfe und Vernetzung.",
+   "themen": [
+    "Informationssuche",
+    "Angehörige",
+    "Selbsthilfe",
+    "Beratungsangebote"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "mridul-agrawal",
+     "name": "Dr. Mridul Agrawal",
+     "typ": "expertenwissen"
+    },
+    {
+     "person": "fluky",
+     "name": "Fluky",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s01": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s01",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 29.38,
+   "ende": 187.6,
+   "titel": "Einführung: dritter Teil der Reihe zur Tumor-Fatigue und Vorstellung der Gäste",
+   "zusammenfassung": "Marco Ammer eröffnet den dritten Teil der Im-Fokus-Reihe zur tumorassoziierten Fatigue und fasst die ersten beiden Teile zusammen (Abgrenzung zu ME/CFS und Long Covid, psychologische Aspekte). Leitfrage des Abends: Wie kann Bewegung trotz Erschöpfung gelingen? Er stellt Anne-Luise Kitzerow, Prof. Ralf Hafner und Verena Krell vor.",
+   "themen": [
+    "Fatigue",
+    "Bewegung und Sport"
+   ],
+   "schwerpunkt": "moderation",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s02": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s02",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 187.6,
+   "ende": 317.99,
+   "titel": "Begriffsklärung: Sport, Bewegung und körperliche Aktivität",
+   "zusammenfassung": "Verena Krell grenzt körperliche Aktivität und Sport voneinander ab. Entscheidend ist nach ihrer Darstellung nicht die Intensität, sondern die Absicht, mit der eine Bewegung ausgeführt wird. Sie selbst spricht meist von Bewegung.",
+   "themen": [
+    "Bewegung und Sport"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s03": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s03",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 317.99,
+   "ende": 510.07,
+   "titel": "Fatigue erleben, einordnen und erster Zugang über Spaziergänge",
+   "zusammenfassung": "Anne-Luise Kitzerow beschreibt die Fatigue, die bei ihr mit der Bestrahlung einsetzte, als andere, plötzliche Form der Erschöpfung, die sich durch Hinlegen nicht wirklich lindern lässt. Eingeordnet hat sie die Erschöpfung erst mit ihrer gynäkologischen Onkologin und einem Fragebogen. Zur Bewegung fand sie über tägliche Spaziergänge, zunächst für die seelische Gesundheit.",
+   "themen": [
+    "Fatigue",
+    "Bewegung und Sport",
+    "Arzt-Patienten-Kommunikation"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "anne-luise-kitzerow",
+     "name": "Anne-Luise Kitzerow",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s04": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s04",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 511.19,
+   "ende": 737.6,
+   "titel": "Vom Reha-Training zum Volkstriathlon",
+   "zusammenfassung": "Prof. Ralf Hafner beschreibt den Wiedereinstieg als stufenweisen Prozess: Nach Operation und Bestrahlung begann er in der Reha mit leichtem Krafttraining an Geräten und wurde anschließend über OnkoAktiv weiter betreut. Den Anstoß zum Triathlon gab ein Workshop auf der YES!CON mit einem jungen Betroffenen; daraufhin meldete er sich zu einem Volkstriathlon in Berlin an.",
+   "themen": [
+    "Bewegung und Sport",
+    "Rehabilitation"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "ralf-hafner",
+     "name": "Prof. Ralf Hafner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s05": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s05",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 737.6,
+   "ende": 933.7,
+   "titel": "Angeleitet beginnen und Tumor-Fatigue von ME/CFS abgrenzen",
+   "zusammenfassung": "Verena Krell empfiehlt, sich zu Beginn zumindest einmal beraten zu lassen, weil Ausgangslage und Vorerfahrung sehr unterschiedlich sind. Bei ME/CFS kann Bewegung kontraindiziert sein. In der Beratung wird deshalb nach Crashs nach intensiver Belastung gefragt und gegebenenfalls zur Abklärung weiterverwiesen.",
+   "themen": [
+    "Bewegung und Sport",
+    "Fatigue",
+    "ME/CFS"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s06": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s06",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 933.7,
+   "ende": 1007.42,
+   "titel": "Anlaufstellen: Charité Fatigue Centrum und regionale OnkoAktiv-Zentren",
+   "zusammenfassung": "Auf die Frage nach Sprechstunden außerhalb Berlins nennt Verena Krell für ME/CFS das Charité Fatigue Centrum unter Leitung von Prof. Carmen Scheibenbogen; ob es vergleichbare Angebote in anderen Städten gibt, weiß sie nicht sicher. Für Beratung zu Bewegung bei Tumor-Fatigue verweist sie auf die regionalen Zentren des Netzwerks OnkoAktiv.",
+   "themen": [
+    "Beratungsangebote",
+    "Bewegung und Sport",
+    "ME/CFS"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s07": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s07",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 1008.7,
+   "ende": 1173.96,
+   "titel": "Wendepunkt in der Reha, Gruppe und eigenes Ziel",
+   "zusammenfassung": "Anne-Luise Kitzerow erlebte in der Reha erstmals, dass sie ihren Körper neu wahrnimmt. Sie kombinierte Spaziergänge mit Schwimmen, fand zur Wassergymnastik im Rehasport und hat inzwischen selbst den Übungsleiterschein erworben. Getragen hat sie vor allem die altersgemischte Gruppe, später das Ziel, selbst eine Gruppe anzuleiten.",
+   "themen": [
+    "Bewegung und Sport",
+    "Rehabilitation",
+    "Selbsthilfe",
+    "Fatigue"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "anne-luise-kitzerow",
+     "name": "Anne-Luise Kitzerow",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s08": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s08",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 1174.37,
+   "ende": 1308.76,
+   "titel": "Druck durch Empfehlungen und der innere Schweinehund",
+   "zusammenfassung": "Marco Ammer fragt, ob ständige Empfehlungen zum Sport unter Druck setzen. Anne-Luise Kitzerow bestätigt das: Man müsse herausfinden, was einem selbst guttut und Freude macht. Prof. Ralf Hafner berichtet aus seiner Selbsthilfegruppe, in der auch ein fast 90-jähriges Mitglied regelmäßig trainiert, und davon, wie er den eigenen Schweinehund überwindet, ohne sich zu überfordern.",
+   "themen": [
+    "Bewegung und Sport",
+    "Selbsthilfe"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "anne-luise-kitzerow",
+     "name": "Anne-Luise Kitzerow",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "ralf-hafner",
+     "name": "Prof. Ralf Hafner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s09": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s09",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 1309.08,
+   "ende": 1467.81,
+   "titel": "Druck, Schuldfragen und individueller Zugang aus Beratungssicht",
+   "zusammenfassung": "Verena Krell kennt den Schweinehund aus eigener Erfahrung und erlebt bei Patientenvorträgen oft Widerstand gegen Bewegungsempfehlungen. Manche Betroffene fragen sich darüber hinaus, ob sie selbst Schuld an ihrer Erkrankung tragen. In der Beratung wird deshalb individuell geschaut, was eine Person braucht; manche müssen auch gebremst werden.",
+   "themen": [
+    "Bewegung und Sport",
+    "Schuldgefühle"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s10": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s10",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 1468.5,
+   "ende": 1572.88,
+   "titel": "Was die Studienlage zu Bewegung und Fatigue zeigt",
+   "zusammenfassung": "Nach Darstellung von Verena Krell untersuchen Hunderte Studien den Einfluss von Bewegung auf Nebenwirkungen der Krebstherapie; maßgeblich ist die Therapieart, nicht die Krebsart. Wer während der Therapie aktiv ist, entwickelt weniger Fatigue. In einer Vergleichsstudie schnitt Bewegungstherapie laut Krell am besten ab, gefolgt von psychoonkologischer Behandlung.",
+   "themen": [
+    "Bewegung und Sport",
+    "Fatigue",
+    "Nebenwirkungen",
+    "Einordnung von Studiendaten",
+    "Psychoonkologie"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s11": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s11",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 1573.85,
+   "ende": 1659.05,
+   "titel": "Zeitpunkt des Einstiegs und Prähabilitation",
+   "zusammenfassung": "Ein Einstieg wirkt nach Darstellung von Verena Krell unabhängig von der sportlichen Vorerfahrung positiv. Empfohlen wird, möglichst früh zu beginnen, idealerweise schon vor Therapiebeginn im Sinne der Prähabilitation. Für frisch Diagnostizierte ist das allerdings eine hohe Erwartung.",
+   "themen": [
+    "Bewegung und Sport",
+    "Fatigue",
+    "Prähabilitation"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s12": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s12",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 1659.05,
+   "ende": 1731.96,
+   "titel": "Trainingsempfehlungen: Ausdauer und Kraft",
+   "zusammenfassung": "Die Daten empfehlen nach Verena Krell eine Kombination aus dreimal wöchentlich 30 Minuten Ausdauertraining und zweimal wöchentlich Krafttraining. Die Empfehlung beruht auf Trainingsformen, die sich in Studien gut standardisieren lassen; andere Bewegungsformen wie Yoga sind damit nicht unwirksam.",
+   "themen": [
+    "Bewegung und Sport",
+    "Fatigue",
+    "Einordnung von Studiendaten"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s13": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s13",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 1732.04,
+   "ende": 1891.62,
+   "titel": "Yoga und Progressive Muskelentspannung als Ausgleich",
+   "zusammenfassung": "Prof. Ralf Hafner lernte Yoga und Progressive Muskelentspannung in beiden Rehas kennen und praktiziert beides seitdem sechsmal pro Woche, teils in der Mittagspause an der Hochschule. Die Kombination aus Ausdauer, Kraft und Entspannung hilft ihm auch, die Diagnose im Kopf zu verarbeiten; was passt, müsse jeder selbst herausfinden.",
+   "themen": [
+    "Bewegung und Sport",
+    "Entspannungsverfahren",
+    "Rehabilitation",
+    "Resilienz und Bewältigung"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "ralf-hafner",
+     "name": "Prof. Ralf Hafner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s14": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s14",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 1892.08,
+   "ende": 1955.88,
+   "titel": "Niedrige Schwelle: Walken und Laufen",
+   "zusammenfassung": "Auf die Frage, wo die Schwelle in der Selbsthilfe am niedrigsten ist, nennt Prof. Ralf Hafner Walken und Laufen: Dafür reichen Sportschuhe, und es geht allein wie in der Gruppe. Er selbst hatte Sportschuhe auch auf Geschäftsreisen dabei und sucht im Urlaub Fitnessstudios mit Einzeleintritt.",
+   "themen": [
+    "Bewegung und Sport",
+    "Selbsthilfe"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "ralf-hafner",
+     "name": "Prof. Ralf Hafner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s15": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s15",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 1955.96,
+   "ende": 2144.91,
+   "titel": "Krankheit verstehen, verlässliche Quellen und Unterstützung",
+   "zusammenfassung": "Für Anne-Luise Kitzerow war es sehr wichtig, die Erkrankung und die Fatigue zu verstehen und den eigenen Körper wieder anzunehmen. Sie hat nicht ungezielt gegoogelt, sondern verlässliche Quellen genutzt: Krebsinformationsdienst, Krebsgesellschaften, Webseiten von Kliniken und Selbsthilfegruppen. Sie sieht Versorgungslücken und betont, wie wichtig Ansprechpartner, Austausch und Netzwerke sind.",
+   "themen": [
+    "Informationssuche",
+    "Gesundheitskompetenz",
+    "Fatigue",
+    "Sozialrecht und Beruf",
+    "Zugang zur Versorgung",
+    "Selbsthilfe",
+    "Körperbild"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "anne-luise-kitzerow",
+     "name": "Anne-Luise Kitzerow",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s16": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s16",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 2148.05,
+   "ende": 2374.32,
+   "titel": "Zugangswege und Kosten: Rehasport und Krankengymnastik am Gerät",
+   "zusammenfassung": "Verena Krell erläutert, dass das Netzwerk OnkoAktiv aus der Forschung in die Versorgung gewachsen ist; die Abteilung Sportmedizin der Charité ist das regionale Zentrum Berlin und vermittelt an kooperierende Therapieeinrichtungen. Rehasport ist als Kassenleistung verordnungsfähig, deckt die Kosten der Vereine aber oft nicht; alternativ wird Krankengymnastik am Gerät in Kleingruppen verordnet. Zusatzausbildungen für die Arbeit mit Krebsbetroffenen sind nicht zwingend, nach ihrer Einschätzung aber wichtig.",
+   "themen": [
+    "Bewegung und Sport",
+    "Zugang zur Versorgung",
+    "Beratungsangebote",
+    "Rehabilitation"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s17": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s17",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 2374.48,
+   "ende": 2444.22,
+   "titel": "Der konkrete Weg: wer berät und wer verordnet",
+   "zusammenfassung": "Marco Ammer fragt nach dem konkreten Weg für Betroffene ohne eigene Mittel. Verena Krell nennt als erste Adresse die regionalen OnkoAktiv-Zentren, die an Therapieeinrichtungen vermitteln. Rehasport und Physiotherapie können grundsätzlich alle behandelnden Ärzte verordnen; eine große Klinik ist dafür nicht nötig.",
+   "themen": [
+    "Bewegung und Sport",
+    "Beratungsangebote",
+    "Zugang zur Versorgung"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s18": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s18",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 2446.93,
+   "ende": 2590.76,
+   "titel": "Was Neubetroffenen wichtig ist: anfangen und erschöpft sein dürfen",
+   "zusammenfassung": "Prof. Ralf Hafner rät, nicht lange zu überlegen, sondern anzufangen, bei wenig Sporterfahrung mit einem Spaziergang, und dann zu prüfen, was guttut. Anne-Luise Kitzerow möchte vermitteln, dass man nach einer Krebsdiagnose erschöpft sein darf und jeder kleine Schritt zählt; ihre tägliche Spazierrunde geht sie seit über drei Jahren.",
+   "themen": [
+    "Bewegung und Sport",
+    "Fatigue",
+    "Selbstmitgefühl"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "ralf-hafner",
+     "name": "Prof. Ralf Hafner",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "anne-luise-kitzerow",
+     "name": "Anne-Luise Kitzerow",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s19": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s19",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 2592.59,
+   "ende": 2794.49,
+   "titel": "Wearables und telefonische Betreuung",
+   "zusammenfassung": "Marco Ammer berichtet, wie ihn eine Smartwatch zu mehr Schritten motiviert hat. Verena Krell schildert eine eigene Studie, in der Bewegungstracker mit telefonischen Sprechstunden alle vier Wochen kombiniert wurden: Technikaffine Personen blieben langfristig aktiv, andere fühlten sich überwacht oder legten den Tracker weg. Ihr Fazit: Jede Person braucht ein passendes Format.",
+   "themen": [
+    "Bewegung und Sport",
+    "Zugang zur Versorgung"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "typ": "expertenwissen"
+    },
+    {
+     "person": "anne-luise-kitzerow",
+     "name": "Anne-Luise Kitzerow",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s20": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s20",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 2794.49,
+   "ende": 2899.3,
+   "titel": "MoveOnco: Wissen über Bewegung zu den Betroffenen bringen",
+   "zusammenfassung": "Nach Verena Krell ist die Wirkung von Bewegung gut erforscht, das Wissen kommt aber bei vielen Betroffenen nicht an, weil das Thema in ärztlichen Gesprächen zu kurz kommt. Das von der Deutschen Krebshilfe finanzierte, von Heidelberg geleitete Projekt MoveOnco setzt deshalb bei Pflegepersonal und medizinischem Personal an, das Betroffene während Chemo- und Strahlentherapie eng begleitet.",
+   "themen": [
+    "Bewegung und Sport",
+    "Arzt-Patienten-Kommunikation",
+    "Zugang zur Versorgung"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "verena-krell",
+     "name": "Verena Krell",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s21": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s21",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 2899.78,
+   "ende": 3035.28,
+   "titel": "Schlussworte: verlässliche Quellen, Dranbleiben und Zeit für sich",
+   "zusammenfassung": "Anne-Luise Kitzerow rät, verlässliche Quellen zu suchen, dranzubleiben und herauszufinden, was guttut; sie selbst hat in der folgenden Woche einen Termin bei OnkoAktiv. Prof. Ralf Hafner empfiehlt, mit Spaziergängen an einem ruhigen Ort zu beginnen; Bewegung allein und ohne Ablenkung hilft ihm, Dinge zu verarbeiten.",
+   "themen": [
+    "Bewegung und Sport",
+    "Informationssuche",
+    "Resilienz und Bewältigung"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "anne-luise-kitzerow",
+     "name": "Anne-Luise Kitzerow",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "ralf-hafner",
+     "name": "Prof. Ralf Hafner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-05-21_im-fokus_bewegung-sport-fatigue_s22": {
+   "id": "2026-05-21_im-fokus_bewegung-sport-fatigue_s22",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-05-21_im-fokus_bewegung-sport-fatigue",
+   "start": 3041.86,
+   "ende": 3104.77,
+   "titel": "Zusammenfassung der Moderation und Anlaufstellen",
+   "zusammenfassung": "Marco Ammer fasst die Runde zusammen: Fatigue ist eine reale Belastung, Bewegung hilft nachweislich, es geht nicht um Leistung, und Druck auf Betroffene in Therapie soll vermieden werden. Als Anlaufstelle für den Einstieg empfiehlt er die Landeskrebsgesellschaften, die Betroffene und Angehörige kostenlos beraten und lokale Angebote kennen.",
+   "themen": [
+    "Fatigue",
+    "Bewegung und Sport",
+    "Beratungsangebote"
+   ],
+   "schwerpunkt": "moderation",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s01": {
+   "id": "2026-09-25_im-fokus_cll_s01",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 28.21,
+   "ende": 130.5,
+   "titel": "Einführung: Diagnose Leukämie und zunächst keine Behandlung",
+   "zusammenfassung": "Marco Ammer führt in das Thema ein: Viele Menschen mit chronischer lymphatischer Leukämie (CLL) erhalten die Diagnose und werden zunächst nicht behandelt. Er stellt Dr. Ingo Schwaner, Hämatologe und Onkologe, und Johannes Förner vor, der selbst mit CLL lebt und im Patientenbeirat Krebsforschung am DKFZ mitarbeitet. Er betont, dass keine persönlichen Empfehlungen gegeben und keine Medikamenten- oder Markennamen genannt werden.",
+   "themen": [
+    "Aktive Überwachung",
+    "Gemeinsame Entscheidungsfindung",
+    "Therapieentscheidung"
+   ],
+   "schwerpunkt": "moderation",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s02": {
+   "id": "2026-09-25_im-fokus_cll_s02",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 130.57,
+   "ende": 244.28,
+   "titel": "Erfahrung: Was nach der Diagnose gefehlt hat",
+   "zusammenfassung": "Johannes Förner berichtet, dass seine erste Frage nach der Diagnose war, wann die Behandlung beginnt, weil er von soliden Tumoren eine sofortige Therapie kannte. Erklärungen zum Abwarten und zu möglichen Therapieoptionen hätten ihm gefehlt; er habe sich Informationen mühsam im Internet zusammengesucht, darunter auch beängstigende Angaben, und sich daraus ein eigenes Bild gemacht.",
+   "themen": [
+    "Arzt-Patienten-Kommunikation",
+    "Informationssuche",
+    "Aktive Überwachung"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "johannes-foerner",
+     "name": "Johannes Förner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s03": {
+   "id": "2026-09-25_im-fokus_cll_s03",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 244.28,
+   "ende": 386.81,
+   "titel": "Was Leukämie bedeutet und warum die CLL schon lange besteht",
+   "zusammenfassung": "Dr. Ingo Schwaner beschreibt, was er neu Diagnostizierten zuerst vermittelt: Ruhe und Zeit für die Aufklärung. Der Begriff Leukämie bezeichnet zunächst nur eine krankhafte Veränderung der weißen Blutkörperchen; unterschieden werden myeloische und lymphatische, akute und chronische Formen. Die CLL ist nach seiner Darstellung statistisch rund sechs Jahre vor der Diagnose entstanden, in denen sich die Betroffenen meist gesund gefühlt haben.",
+   "themen": [
+    "Arzt-Patienten-Kommunikation",
+    "Aktive Überwachung"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s04": {
+   "id": "2026-09-25_im-fokus_cll_s04",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 387.44,
+   "ende": 576.03,
+   "titel": "Warum zunächst nicht behandelt wird",
+   "zusammenfassung": "Eine Erkrankung, die keine Beschwerden verursacht, lässt sich nach Dr. Ingo Schwaner durch eine Behandlung nicht verbessern. Großen Studien zufolge muss knapp die Hälfte der Betroffenen nie behandelt werden, nach heutigen Schätzungen deutlich mehr. Er spricht die Hilflosigkeit an, die das Abwarten auslöst, und vergleicht das Vorgehen bei der CLL mit dem Stehen auf der Bremse statt auf dem Gaspedal.",
+   "themen": [
+    "Aktive Überwachung",
+    "Therapieentscheidung",
+    "Angst und Unsicherheit"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s05": {
+   "id": "2026-09-25_im-fokus_cll_s05",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 576.43,
+   "ende": 668.66,
+   "titel": "Warum die CLL oft erst spät auffällt",
+   "zusammenfassung": "Die CLL verläuft nach Dr. Ingo Schwaner anfangs oft in Wellen und ist in Laboruntersuchungen lange nicht erkennbar; die veränderten Zellen sehen unter dem Mikroskop wie gesunde aus. Leicht erhöhte weiße Blutkörperchen werden zunächst oft als Infekt gedeutet, bis eine anhaltende Erhöhung zur Überweisung führt und ein Spezialverfahren die Diagnose sichert.",
+   "themen": [
+    "Diagnosestellung"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s06": {
+   "id": "2026-09-25_im-fokus_cll_s06",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 668.66,
+   "ende": 834.68,
+   "titel": "Überwachen statt behandeln: Kontrollabstände und Ansprechbarkeit",
+   "zusammenfassung": "Marco Ammer fragt, was Betroffene selbst tun können, wie oft sie kommen sollen und wann behandelt wird. Dr. Ingo Schwaner erklärt, dass zunächst kontrolliert wird; die Abstände richten sich nach der erkennbaren Dynamik und auch danach, wie sehr sich jemand sorgt. Wichtig ist ein offen kommunizierter Überwachungsplan und eine Praxis, die jederzeit ansprechbar ist.",
+   "themen": [
+    "Aktive Überwachung",
+    "Arzt-Patienten-Kommunikation",
+    "Angst und Unsicherheit"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s07": {
+   "id": "2026-09-25_im-fokus_cll_s07",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 834.84,
+   "ende": 957.92,
+   "titel": "Veränderte Behandlung und ein Weg in die Therapie",
+   "zusammenfassung": "Dr. Ingo Schwaner betont, dass sich die Behandlung der CLL in den letzten zehn Jahren mehrfach grundlegend verändert hat. Johannes Förner schildert seinen Weg: zwei Jahre Beobachtung ohne Beschwerden, Kontrolle der Verdopplungszeit der weißen Blutkörperchen, Wechsel des Hämatologen nach einer Zweitmeinung und schließlich die Teilnahme an einer klinischen Studie mit einer zeitlich begrenzten Therapie.",
+   "themen": [
+    "Therapieentscheidung",
+    "Zweitmeinung",
+    "Klinische Studien",
+    "Aktive Überwachung"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    },
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "johannes-foerner",
+     "name": "Johannes Förner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s08": {
+   "id": "2026-09-25_im-fokus_cll_s08",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 958.0,
+   "ende": 1163.28,
+   "titel": "Dauertherapie oder zeitlich befristete Kombinationstherapie",
+   "zusammenfassung": "Die Standardtherapie der CLL besteht nach Dr. Ingo Schwaner seit Jahren nicht mehr aus Chemotherapie. Es gibt Dauertherapien mit einem Medikament und zeitlich befristete Kombinationstherapien mit mindestens zwei Medikamenten. Weil die neueren Medikamente besser verträglich sind, gibt es nach seiner Darstellung keine starre Altersgrenze mehr; die Wahl richtet sich nach Wünschen, Begleiterkrankungen, Begleitmedikation und Logistik.",
+   "themen": [
+    "Therapieentscheidung",
+    "Leitlinien",
+    "Nebenwirkungen",
+    "Klinische Studien"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s09": {
+   "id": "2026-09-25_im-fokus_cll_s09",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 1164.32,
+   "ende": 1392.68,
+   "titel": "Mitentscheiden: Lebenssituation und Nebenwirkungen abwägen",
+   "zusammenfassung": "Dr. Ingo Schwaner versteht sein Recht als Arzt als Beratungsrecht: Er berät einmal umfassend, danach führen die Patienten. Wünsche und Lebenssituation sind für die Therapiewahl gleichrangig; wer gegen seinen Willen behandelt wird, verträgt die Therapie nach seiner Erfahrung schlechter. Am Beispiel von Marco Ammer zeigt er Abwägungen zwischen Dauertherapie mit wenigen Kontrollen und befristeter Therapie, etwa wegen möglicher Herzrhythmusstörungen unter einer Wirkstoffklasse.",
+   "themen": [
+    "Gemeinsame Entscheidungsfindung",
+    "Therapieentscheidung",
+    "Nebenwirkungen",
+    "Arzt-Patienten-Kommunikation"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s10": {
+   "id": "2026-09-25_im-fokus_cll_s10",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 1392.68,
+   "ende": 1512.68,
+   "titel": "Erfahrung: Entscheidung für die zeitlich begrenzte Therapie",
+   "zusammenfassung": "Johannes Förner erklärt seine Entscheidung mit dem Bild eines Kessels unter Dauerdruck: Eine kurze, befristete Therapie sollte ihm danach eine medikamentenfreie Zeit ermöglichen. Nach seinem Bericht war die Erkrankung schon nach sechs Monaten nicht mehr nachweisbar; die Therapie wurde laut Studienprotokoll fortgesetzt, und er ist seitdem frei von nachweisbarer Erkrankung.",
+   "themen": [
+    "Therapieentscheidung",
+    "Klinische Studien",
+    "Gemeinsame Entscheidungsfindung"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "johannes-foerner",
+     "name": "Johannes Förner",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s11": {
+   "id": "2026-09-25_im-fokus_cll_s11",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 1512.68,
+   "ende": 1704.92,
+   "titel": "MRD-Negativität: Studieninstrument statt Routinewert",
+   "zusammenfassung": "Die Messung der minimalen Resterkrankung (MRD) ist nach Dr. Ingo Schwaner ein wissenschaftliches Instrument, ein Surrogatparameter, mit dem Studien frühzeitig ausgewertet werden können, weil die heutigen Medikamente so lange wirken, dass klassische Endpunkte erst nach vielen Jahren vorliegen. Für die Routineversorgung hat sie nach seiner Einschätzung keine Relevanz; am einzelnen Menschen lässt sich daraus nicht ablesen, wie es weitergeht.",
+   "themen": [
+    "Einordnung von Studiendaten",
+    "Klinische Studien",
+    "Studienphasen",
+    "Hoffnung und Erwartungen"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    },
+    {
+     "person": "johannes-foerner",
+     "name": "Johannes Förner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s12": {
+   "id": "2026-09-25_im-fokus_cll_s12",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 1705.69,
+   "ende": 1780.94,
+   "titel": "Gibt es den einen besten Wirkmechanismus?",
+   "zusammenfassung": "Marco Ammer fragt, ob es unter den neuen Medikamenten einen Ansatz gibt, der bei den meisten funktioniert. Dr. Ingo Schwaner erklärt die Entstehung der CLL: Neben vermehrtem Zellwachstum ist der programmierte Zelltod der Leukämiezellen abgeschaltet.",
+   "themen": [
+    "Hoffnung und Erwartungen",
+    "Molekulare Tumordiagnostik"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s13": {
+   "id": "2026-09-25_im-fokus_cll_s13",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 1781.42,
+   "ende": 1927.18,
+   "titel": "Genetische Risikoprofile und Therapiewahl",
+   "zusammenfassung": "Die CLL umfasst nach Dr. Ingo Schwaner grob drei genetisch unterschiedliche Risikoprofile, die sich jeweils gezielt behandeln lassen. Bei sehr hohem Risiko hält er eine Dauertherapie häufig für geeigneter, Studien zeigen aber, dass auch befristete Therapien möglich sind, mit höherer Wahrscheinlichkeit eines früheren Rückfalls. Vor jeder Therapielinie wird das Risiko neu bestimmt; die Leitlinie lässt dabei Spielraum, wenn die Wahl begründet ist.",
+   "themen": [
+    "Molekulare Tumordiagnostik",
+    "Therapieentscheidung",
+    "Leitlinien"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    },
+    {
+     "person": "johannes-foerner",
+     "name": "Johannes Förner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s14": {
+   "id": "2026-09-25_im-fokus_cll_s14",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 1927.89,
+   "ende": 2062.39,
+   "titel": "Studienausstieg und die Psychologie der Therapiewahl",
+   "zusammenfassung": "Johannes Förner betont, dass man eine Studienteilnahme jederzeit beenden und zur Standardtherapie wechseln kann. Die Wahl zwischen befristeter und Dauertherapie hat für ihn viel mit der Psychologie zu tun: Manche fürchten nach einer befristeten Therapie einen unbemerkten Rückfall, andere fühlen sich mit täglicher Tablette und seltenen Kontrollen sicherer. Auch Beruf, Zeit und die Haltung zu Infusionen spielen eine Rolle.",
+   "themen": [
+    "Klinische Studien",
+    "Gemeinsame Entscheidungsfindung",
+    "Angst und Unsicherheit",
+    "Progredienzangst"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "johannes-foerner",
+     "name": "Johannes Förner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s15": {
+   "id": "2026-09-25_im-fokus_cll_s15",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 2062.39,
+   "ende": 2218.79,
+   "titel": "Zeit für Gespräche und die Rolle von Patientenorganisationen",
+   "zusammenfassung": "Auf die Frage, ob alle Ärzte Zeit und Fähigkeit zum Erklären haben, räumt Dr. Ingo Schwaner ein, dass auch er bei vollem Wartezimmer kürzer angebunden ist, und setzt auf Offenheit, etwa durch einen neuen Termin für ausführliche Gespräche. Johannes Förner hält diese Transparenz für wichtig und verweist auf Patientenorganisationen, die zwar nicht medizinisch beraten, aber Erfahrungen teilen.",
+   "themen": [
+    "Arzt-Patienten-Kommunikation",
+    "Selbsthilfe",
+    "Zugang zur Versorgung"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    },
+    {
+     "person": "johannes-foerner",
+     "name": "Johannes Förner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s16": {
+   "id": "2026-09-25_im-fokus_cll_s16",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 2219.21,
+   "ende": 2359.16,
+   "titel": "Seriöse Informationsquellen",
+   "zusammenfassung": "Marco Ammer nennt ergänzend Landeskrebsgesellschaften und Psychoonkologie als Anlaufstellen für Themen jenseits der Medizin. Johannes Förner empfiehlt die Deutsche Leukämie- & Lymphom-Hilfe als Dachverband der Selbsthilfegruppen und die Blauen Ratgeber der Deutschen Krebshilfe. Selbsthilfe und Informationsmaterial entlasten nach seiner Einschätzung auch die begrenzte Zeit der Ärzte.",
+   "themen": [
+    "Informationssuche",
+    "Selbsthilfe",
+    "Beratungsangebote",
+    "Psychoonkologie"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "johannes-foerner",
+     "name": "Johannes Förner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s17": {
+   "id": "2026-09-25_im-fokus_cll_s17",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 2359.16,
+   "ende": 2479.08,
+   "titel": "Alltagsfragen neben der Erkrankung und Austausch mit Betroffenen",
+   "zusammenfassung": "Dr. Ingo Schwaner beschreibt Fragen, die in Aufklärungsgesprächen oft zu kurz kommen: ob ein Schwerbehindertenausweis sinnvoll ist, ob der Arbeitgeber informiert werden muss, wie es um Berufsleben oder einen Kredit steht. Johannes Förner hebt hervor, dass Betroffene in der Selbsthilfe von den Erfahrungen und Fehlern anderer lernen können.",
+   "themen": [
+    "Selbsthilfe",
+    "Sozialrecht und Beruf",
+    "Angst und Unsicherheit"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    },
+    {
+     "person": "johannes-foerner",
+     "name": "Johannes Förner",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s18": {
+   "id": "2026-09-25_im-fokus_cll_s18",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 2480.65,
+   "ende": 2585.8,
+   "titel": "Wunsch an das Arztgespräch: Vertrauen",
+   "zusammenfassung": "Dr. Ingo Schwaner wünscht sich mehr Vertrauen zwischen Ärzten und Patienten. Viele Informationen aus dem Internet seien falsch, und es koste Zeit zu diskutieren, warum sie von der ärztlichen Auskunft abweichen; der Arzt sehe den ganzen Menschen.",
+   "themen": [
+    "Arzt-Patienten-Kommunikation",
+    "Informationssuche"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-25_im-fokus_cll_s19": {
+   "id": "2026-09-25_im-fokus_cll_s19",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-25_im-fokus_cll",
+   "start": 2586.84,
+   "ende": 2676.07,
+   "titel": "Appell: aktiv und fordernd sein",
+   "zusammenfassung": "Johannes Förner appelliert an Betroffene, aktiv und fordernd zu sein, sich mit Augenmaß zu informieren und das Gespräch mit dem Arzt zu suchen. Eine Therapie ist für ihn ein „Package Deal“: Wenn Arzt und Patient gemeinsam entscheiden, ist die Therapietreue höher. Dr. Ingo Schwaner stimmt zu.",
+   "themen": [
+    "Gemeinsame Entscheidungsfindung",
+    "Selbstwirksamkeit",
+    "Gesundheitskompetenz"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "marco-ammer",
+     "name": "Marco Ammer",
+     "typ": "moderation"
+    },
+    {
+     "person": "johannes-foerner",
+     "name": "Johannes Förner",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "ingo-schwaner",
+     "name": "Dr. Ingo Schwaner",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s01": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s01",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 17.41,
+   "ende": 117.83,
+   "titel": "Begrüßung und Videoeinspielung: Eine Familiengeschichte mit BRCA1",
+   "zusammenfassung": "Ute Goerling begrüßt zur InfoReihe KREBS zum Thema familiäres Krebsrisiko und stellt Matea Tadic als Trägerin einer BRCA1-Mutation vor, die Patientinnen und Ratsuchende unterstützt; das Gespräch führt Dr. Martina Preisler. In einer Videoeinspielung fasst Matea Tadic ihre Geschichte zusammen: Tod der Mutter an Eierstockkrebs, prophylaktische Mastektomie mit 24, Kinderwunschbehandlung und Entfernung von Eierstöcken und Eileitern mit 29. Heute spricht sie öffentlich über genetisches Krebsrisiko.",
+   "themen": [
+    "Erbliche Veranlagung",
+    "Risikoreduzierende Operationen",
+    "Trauer"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "ute-goerling",
+     "name": "Ute Goerling",
+     "typ": "moderation"
+    },
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s02": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s02",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 120.58,
+   "ende": 260.68,
+   "titel": "Erkrankung der Mutter und Weg zur genetischen Abklärung",
+   "zusammenfassung": "Matea Tadic war 14, als ihre Mutter an Eierstockkrebs erkrankte; nach fast fünf Jahren kam die Erkrankung zurück und verlief sehr schnell. Weil die Mutter mit Ende 30 ungewöhnlich jung war, ging der behandelnde Arzt von einer genetischen Ursache aus und empfahl die Testung der Kinder; 2013 wurde die BRCA1-Mutation festgestellt. In der Familie, die aus dem ehemaligen Jugoslawien stammt, blieb das Thema weitgehend unbesprochen.",
+   "themen": [
+    "Erbliche Veranlagung",
+    "Angehörige",
+    "Rückfall"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s03": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s03",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 262.35,
+   "ende": 334.92,
+   "titel": "Der eigene Genbefund mit 18",
+   "zusammenfassung": "Mit 18 erhielt Matea Tadic gemeinsam mit ihrer Schwester persönlich und sehr knapp das Ergebnis des Gentests; nur sie trägt die Mutation. Sie reagierte nach eigener Aussage naiv, die Tragweite wurde ihr erst mit dem Tod der Mutter bewusst. Sie geht davon aus, dass die Erfahrung bei der Befundmitteilung beeinflusst, wie ernst junge Menschen das Ergebnis nehmen.",
+   "themen": [
+    "Erbliche Veranlagung",
+    "Arzt-Patienten-Kommunikation"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s04": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s04",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 335.31,
+   "ende": 459.75,
+   "titel": "Beratung, Früherkennung und fehlende Gleichaltrige",
+   "zusammenfassung": "Nach dem Befund nahm Matea Tadic an einem Zentrum für familiären Brust- und Eierstockkrebs zunächst nur Früherkennungstermine wahr; die Mutter fühlte sich schuldig und war überfordert. Nach dem Tod der Mutter wurde sie an der Charité beraten und an das BRCA-Netzwerk verwiesen; nach der Berechnung ihres Risikos stand ihr Weg schnell fest. In Gesprächskreisen traf sie vor allem deutlich ältere, meist erkrankte Frauen.",
+   "themen": [
+    "Erbliche Veranlagung",
+    "Früherkennung",
+    "Beratungsangebote",
+    "Selbsthilfe"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s05": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s05",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 460.9,
+   "ende": 540.12,
+   "titel": "Leben mit dem Risiko: Angst vor Untersuchungen und Folgen für die Beziehung",
+   "zusammenfassung": "Bis zur Operation bestimmte die halbjährliche Früherkennung mit wiederkehrender Angst ihren Alltag; dass es für Eierstockkrebs keine Früherkennung gibt, hat sie in der Familie erlebt. Angst machte ihr nicht die Mutation selbst, sondern deren mögliche Folgen. Nach einer Nekrose infolge der Mastektomie zerbrach ihre damalige Beziehung.",
+   "themen": [
+    "Früherkennung",
+    "Angst und Unsicherheit",
+    "Risikoreduzierende Operationen",
+    "Partnerschaft und Sexualität"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s06": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s06",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 540.27,
+   "ende": 636.53,
+   "titel": "Angst vor Leiden und Tod und ein neuer Blick auf die Operationen",
+   "zusammenfassung": "Ihre Angst galt dem Leiden und dem Tod, die sie bei ihrer Mutter bis zum letzten Atemzug miterlebt hat. Nach der Mastektomie sah sie im Klinikbett ihre Mutter vor sich und hatte das Gefühl, die Geschichte wiederhole sich. Heute versteht sie die Operationen nicht als Entscheidung aus Angst, sondern als Entscheidung für das Leben.",
+   "themen": [
+    "Angst und Unsicherheit",
+    "Trauer",
+    "Risikoreduzierende Operationen"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s07": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s07",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 638.08,
+   "ende": 752.55,
+   "titel": "Körpergefühl und Folgen für Stillen, Kinderwunsch und Sexualität",
+   "zusammenfassung": "Vor den Operationen war vieles vage und von Angst bestimmt; Folgen wie das fehlende Stillen berühren sie heute stärker als erwartet. Obwohl sie aufgeklärt wurde, ist das Erleben im eigenen Leben für sie etwas anderes als das Arztgespräch. Die Nekrose und monatelang sichtbar nur eine Brust erschwerten die Verarbeitung; andere Betroffene erleben etwa ein Fremdkörpergefühl durch Implantate.",
+   "themen": [
+    "Risikoreduzierende Operationen",
+    "Körperbild",
+    "Kinderwunsch",
+    "Partnerschaft und Sexualität",
+    "Arzt-Patienten-Kommunikation"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s08": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s08",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 752.55,
+   "ende": 867.46,
+   "titel": "Prophylaktische Mastektomie mit 24: Entscheidung und Kostenübernahme",
+   "zusammenfassung": "Nach dem Tod der Mutter stand die Entscheidung zur prophylaktischen Mastektomie schnell fest; Matea Tadic beschreibt einen Zustand von Panik und Überlebensmodus. Die Kostenübernahme mit 24 musste sie gegenüber der Krankenkasse hartnäckig durchsetzen, da das intensivierte Früherkennungsprogramm nach ihrer Kenntnis erst ab 25 beginnt. Unterstützung erhielt sie von ihrer Schwester und vom Brustzentrum der Charité.",
+   "themen": [
+    "Risikoreduzierende Operationen",
+    "Therapieentscheidung",
+    "Zugang zur Versorgung",
+    "Angehörige"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s09": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s09",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 867.53,
+   "ende": 1004.57,
+   "titel": "Entscheidung mit 29: Kinderwunschbehandlung vor der Operation",
+   "zusammenfassung": "Die Entscheidung zur Entfernung von Eierstöcken und Eileitern fiel Matea Tadic deutlich schwerer, weil Frauen in ihrer Familie immer jünger an Eierstockkrebs erkrankten. Vor der Operation ließ sie in zwei Zyklen Eizellen einfrieren; nach ihrer Aussage übernehmen die Krankenkassen seit einer Gesetzesänderung im Februar des Vorjahres bis zu drei Zyklen, was ihr damals nicht bekannt war. Die Gebärmutter blieb wegen des Kinderwunsches erhalten; Befruchtung und genetische Testung müsste sie selbst bezahlen.",
+   "themen": [
+    "Risikoreduzierende Operationen",
+    "Kinderwunsch",
+    "Zugang zur Versorgung",
+    "Therapieentscheidung"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s10": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s10",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 1004.57,
+   "ende": 1133.18,
+   "titel": "Genetische Testung befruchteter Eizellen und Appell an die Ethikkommission",
+   "zusammenfassung": "Matea Tadic möchte für eine spätere Schwangerschaft befruchtete Eizellen auf die Mutation testen lassen und nur eine nicht betroffene übertragen lassen. Nach ihrer Darstellung ist das in Deutschland offiziell noch nicht erlaubt, einzelne Fälle wurden jedoch von einer Ethikkommission bewilligt. Sie macht über Instagram auf das Thema aufmerksam und wünscht sich, dass die Ethikkommission mit Betroffenen spricht.",
+   "themen": [
+    "Kinderwunsch",
+    "Erbliche Veranlagung"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s11": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s11",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 1134.86,
+   "ende": 1244.99,
+   "titel": "Hormonstimulation und Abschied vom romantischen Kinderwunsch",
+   "zusammenfassung": "Die hormonelle Stimulation erlebte Matea Tadic körperlich sehr deutlich, mit bis zu 28 heranreifenden Eizellen und einem stark gewölbten Bauch. Rückblickend fühlte sie sich wie in einer industriellen Massentierhaltung. Am schwersten war für sie, sich vom romantischen Bild des Mutterwerdens zu verabschieden, das nun etwas Kalkuliertes und Klinisches geworden ist.",
+   "themen": [
+    "Kinderwunsch",
+    "Nebenwirkungen",
+    "Trauer"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s12": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s12",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 1245.48,
+   "ende": 1383.45,
+   "titel": "Entfernung der Eierstöcke, Hormonersatz und unauffälliger Befund",
+   "zusammenfassung": "Im Dezember ließ Matea Tadic Eierstöcke und Eileiter entfernen; der Eingriff wirkt äußerlich klein, verändert innerlich aber viel. Ein halbes Jahr später ist die Veränderung noch spürbar; die verbreitete Erwartung, mit Hormonersatztherapie sei alles wie vorher, erfüllt sich bei ihr bisher nicht. Die feingewebliche Untersuchung ergab keine veränderten Zellen, was sie sehr erleichtert.",
+   "themen": [
+    "Risikoreduzierende Operationen",
+    "Wechseljahre und hormonelle Veränderungen"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s13": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s13",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 1385.61,
+   "ende": 1484.76,
+   "titel": "Weg zum Buusenkollektiv: Zugehörigkeit als nicht erkrankte Genträgerin",
+   "zusammenfassung": "Über eine Ausstellungseröffnung an der Charité kam Matea Tadic mit dem Buusenkollektiv in Kontakt, dessen Mitglieder offen über Brustkrebs sprechen. Als nicht erkrankte Genträgerin fühlte sie sich zunächst nirgends zugehörig; das Kollektiv nahm sie auf und öffnete sich für das Thema Genmutation. Daraus entstand die Idee, die bestehende WhatsApp-Community um eine Gruppe für Genträgerinnen zu erweitern.",
+   "themen": [
+    "Selbsthilfe",
+    "Erbliche Veranlagung"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s14": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s14",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 1484.84,
+   "ende": 1628.14,
+   "titel": "Die GENial WhatsApp-Gruppe: Aufbau und Themen",
+   "zusammenfassung": "Die WhatsApp-Community ist in Gruppen nach Postleitzahl und Themen gegliedert, darunter eine Gruppe für Genträgerinnen, in der erkrankte und nicht erkrankte Frauen gemeinsam sind. Nach Angabe von Matea Tadic tauschen sich dort inzwischen mehr als anderthalbtausend Frauen aus; eine eigene Gruppe nur für nicht Erkrankte scheitert bisher an fehlenden Kapazitäten in der Administration. Diskutiert wird alles, von der prophylaktischen Mastektomie über Antihormontherapie bis zu Scheidentrockenheit.",
+   "themen": [
+    "Selbsthilfe",
+    "Risikoreduzierende Operationen"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s15": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s15",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 1629.58,
+   "ende": 1739.74,
+   "titel": "Versorgungslücke niedrigschwelliger Austausch und Anfänge des Blogs",
+   "zusammenfassung": "Als Versorgungslücke sieht Matea Tadic das Fehlen niedrigschwelliger Austauschräume für junge Frauen; bestehende Angebote wie die des BRCA-Netzwerks lassen sich nach ihrer Erfahrung nicht für alle in den Alltag integrieren. Ihren Instagram-Blog startete sie anonym, um den Tod der Mutter zu verarbeiten und das Thema sichtbar zu machen. Vielen verunsicherten Frauen zeigte sie per Nachricht das Ergebnis ihrer Operation.",
+   "themen": [
+    "Selbsthilfe",
+    "Zugang zur Versorgung",
+    "Informationssuche",
+    "Trauer"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s16": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s16",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 1740.16,
+   "ende": 1864.7,
+   "titel": "Sichtbar werden als Provivor",
+   "zusammenfassung": "Nach der Mastektomie fand Matea Tadic zunächst niemanden in ihrem Alter, der darüber sprach; Unterstützung bekam sie über eine Facebook-Gruppe. Heute sprechen mehr Frauen offen, und Netzwerke erreichen jüngere Zielgruppen. Als „Provivor“ – zusammengesetzt aus präventiv und Survivor – hatten nicht erkrankte Genträgerinnen lange das Gefühl, sich keinen Raum nehmen zu dürfen; daraus entstand ihr Anliegen, familiäre Veranlagung sichtbar zu machen.",
+   "themen": [
+    "Selbsthilfe",
+    "Informationssuche",
+    "Angst und Unsicherheit"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s17": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s17",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 1866.79,
+   "ende": 1992.54,
+   "titel": "Anfeindungen im Netz und Reichweite für das Thema",
+   "zusammenfassung": "Auf ihre Beiträge erhält Matea Tadic auch abwertende und hasserfüllte Nachrichten, überwiegend von Männern. Diese hätten die Reichweite eines Beitrags auf fast eine halbe Million Aufrufe erhöht und das Thema BRCA1 über die Krebs-Community hinaus sichtbar gemacht. Sie ermutigt, die eigene Familiengeschichte ernst zu nehmen und mit der Gynäkologin darüber zu sprechen, und macht Anfeindungen öffentlich.",
+   "themen": [
+    "Erbliche Veranlagung",
+    "Früherkennung",
+    "Soziales Umfeld"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s18": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s18",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 1993.18,
+   "ende": 2071.33,
+   "titel": "Die Mutter als Kraftquelle",
+   "zusammenfassung": "Kraft gibt Matea Tadic ihre verstorbene Mutter, die sie als starke Persönlichkeit beschreibt und in sich trägt. Trauer sei so stark wie die Liebe. Sie möchte weitertragen, was die Mutter für sie tun wollte, und mögliche eigene Kinder vor der Mutation schützen.",
+   "themen": [
+    "Trauer",
+    "Resilienz und Bewältigung",
+    "Angehörige"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s19": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s19",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 2100.61,
+   "ende": 2181.02,
+   "titel": "Schlusswort: Über Krebs sprechen, bevor er ausbricht",
+   "zusammenfassung": "Matea Tadic appelliert, über Krebs zu sprechen, bevor er ausbricht, nicht nur in Fachkreisen, sondern in der Gesellschaft, etwa im Pinktober. Wer um eine familiäre Veranlagung weiß und Früherkennung ernst nimmt oder vorbeugende Schritte geht, kann sich nach ihrer Überzeugung vor einer spät entdeckten Erkrankung schützen. Betroffene ermutigt sie, laut zu sein, sich ihren Platz zu nehmen und sich zu vernetzen.",
+   "themen": [
+    "Erbliche Veranlagung",
+    "Früherkennung",
+    "Selbsthilfe"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "martina-preisler",
+     "name": "Dr. Martina Preisler",
+     "typ": "moderation"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s20": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s20",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 2214.03,
+   "ende": 2345.72,
+   "titel": "Online-Frage: Hormonelle Veränderungen nach Entfernung der Eierstöcke",
+   "zusammenfassung": "Auf die Frage, woran nach früher Entfernung der Eierstöcke hormonell zu denken ist, berichtet Matea Tadic von der Begleitung durch ihre Gynäkologin und vom Gespräch im Zentrum vor der Operation. Bei der Frage nach Testosteron fehlt nach ihrer Erfahrung oft eine klare Antwort; junge Frauen hören häufig, sie seien zu jung. Sie rät, gezielt nachzufragen, bei Unzufriedenheit eine Zweitmeinung einzuholen und sich mit anderen Betroffenen auszutauschen.",
+   "themen": [
+    "Wechseljahre und hormonelle Veränderungen",
+    "Zweitmeinung",
+    "Arzt-Patienten-Kommunikation",
+    "Selbsthilfe"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "ute-goerling",
+     "name": "Ute Goerling",
+     "typ": "publikumsfrage"
+    },
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s21": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s21",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 2351.14,
+   "ende": 2509.56,
+   "titel": "Publikumsfrage: Umgang der Familie mit dem Genbefund",
+   "zusammenfassung": "Eine Person aus dem Publikum fragt, ob die unterschiedliche Haltung zum Gentest in der Familie etwas verändert hat. Matea Tadic berichtet, dass in der Familie nicht darüber gesprochen wird, und führt das auch auf fehlendes Wissen und traditionelle Rollenbilder im Herkunftsland zurück. Ihr Vater hat sich mit der Zeit auf ihren Weg eingelassen, die Reaktion eines Onkels hat sie verletzt; sie hat gelernt, sich abzugrenzen.",
+   "themen": [
+    "Angehörige",
+    "Erbliche Veranlagung"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "publikum",
+     "name": "Publikum",
+     "typ": "publikumsfrage"
+    },
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s22": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s22",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 2516.91,
+   "ende": 2675.14,
+   "titel": "Publikumsfrage: Angst vor dem Wissen und der eigene Weg",
+   "zusammenfassung": "Auf die Nachfrage aus dem Publikum, wo die Verwandten leben, berichtet Matea Tadic, die Familie sei durch den Krieg verstreut; die Haltung hänge nicht vom Wohnort ab. Hinter der Abwehr vermutet sie vor allem Angst und Unwissen. Sie appelliert, das Testergebnis abzuholen und dann in Ruhe den eigenen Weg zu wählen, ob Operation oder Früherkennung; ein Richtig oder Falsch gebe es nicht.",
+   "themen": [
+    "Erbliche Veranlagung",
+    "Angst und Unsicherheit",
+    "Angehörige",
+    "Früherkennung",
+    "Risikoreduzierende Operationen"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "publikum",
+     "name": "Publikum",
+     "typ": "publikumsfrage"
+    },
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-06-17_inforeihe-krebs_brca1-und-ich_s23": {
+   "id": "2026-06-17_inforeihe-krebs_brca1-und-ich_s23",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-06-17_inforeihe-krebs_brca1-und-ich",
+   "start": 2679.86,
+   "ende": 2788.51,
+   "titel": "Online-Frage: Einem neuen Partner von der Mutation erzählen",
+   "zusammenfassung": "Eine Zuschauerin, Trägerin einer Genmutation vor einer prophylaktischen Mastektomie, fragt, ob sie einem neuen Partner davon erzählen soll. Matea Tadic sieht keine feste Regel: Man erzählt es, wenn man sich wohlfühlt; in einer ernsthaften Verbindung verdient das Gegenüber das Wissen, um sensibel reagieren zu können. Das Thema eignet sich nach ihrer Erfahrung gut für den Austausch mit anderen Betroffenen.",
+   "themen": [
+    "Partnerschaft und Sexualität",
+    "Risikoreduzierende Operationen",
+    "Selbsthilfe"
+   ],
+   "schwerpunkt": "erfahrung",
+   "sprecher": [
+    {
+     "person": "ute-goerling",
+     "name": "Ute Goerling",
+     "typ": "publikumsfrage"
+    },
+    {
+     "person": "matea-tadic",
+     "name": "Matea Tadic",
+     "typ": "erfahrung"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s01": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s01",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 16.89,
+   "ende": 110.62,
+   "titel": "Einführung und Aufbau des Vortrags",
+   "zusammenfassung": "Isabell Schultze knüpft an den medizinischen Vortrag von Dr. Celine Liem an und kündigt an, auf typische Belastungen bei Lymphomen, häufige Ängste und Strategien im Umgang damit einzugehen. Sie betont, dass der Umgang mit Ängsten individuell ist, und ermutigt, Passendes auszuprobieren und anderes beiseitezulassen.",
+   "themen": [
+    "Psychoonkologie",
+    "Angst und Unsicherheit"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s02": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s02",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 112.98,
+   "ende": 273.11,
+   "titel": "Besonderheiten von Lymphomen aus psychoonkologischer Sicht",
+   "zusammenfassung": "Lymphome sind seltener als etwa Brust- oder Prostatakrebs, aber nicht selten, und betreffen vergleichsweise häufig jüngere Menschen. Isabell Schultze beschreibt, dass viele Betroffene einen langen Weg bis zur Diagnose erleben, was sehr belastend ist. Anders als bei vielen anderen Krebsarten steht meist keine Operation, sondern eine Behandlung des ganzen Körpers am Anfang, deren Erfolg sich erst nach einiger Zeit zeigt.",
+   "themen": [
+    "Psychoonkologie",
+    "Arzt-Patienten-Kommunikation",
+    "Diagnosestellung"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s03": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s03",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 273.5,
+   "ende": 470.13,
+   "titel": "Körperliche Veränderungen: Immunsystem, Appetit, Erschöpfung, Aussehen",
+   "zusammenfassung": "Isabell Schultze schildert typische körperliche Veränderungen durch Erkrankung und Behandlung und die Fragen, die daraus entstehen: ein geschwächtes Immunsystem mit Unsicherheit im Alltag, Appetitverlust und Geschmacksveränderungen, ausgeprägte Erschöpfung und ein verändertes Aussehen. Es gibt auch positive Erfahrungen, etwa wenn geschwollene Lymphknoten unter der Therapie sichtbar kleiner werden.",
+   "themen": [
+    "Nebenwirkungen",
+    "Fatigue",
+    "Immunsystem",
+    "Ernährung",
+    "Körperbild",
+    "Mangelernährung"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s04": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s04",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 472.44,
+   "ende": 732.18,
+   "titel": "Psychische und soziale Auswirkungen",
+   "zusammenfassung": "Studien zufolge hat nach Isabell Schultze etwa ein Drittel der Menschen mit Lymphom eine erhöhte psychische Belastung; viele finden zugleich einen guten Umgang. Am Anfang steht oft ein Schock, längere Krankschreibungen nehmen Struktur und Selbstwert aus dem Beruf. Soziale Kontakte verändern sich durch Infektionsschutz, wenig Energie und die Reaktionen des Umfelds; auch Angehörige sind oft ähnlich belastet.",
+   "themen": [
+    "Psychoonkologie",
+    "Angst und Unsicherheit",
+    "Angehörige",
+    "Soziales Umfeld"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s05": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s05",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 735.85,
+   "ende": 922.02,
+   "titel": "Angst als normale Reaktion und ihre Ausdrucksformen",
+   "zusammenfassung": "Angst und Sorgen gehören nach Isabell Schultze zu den häufigsten psychischen Belastungen und sind eine normale, angeborene Schutzreaktion. Sie können motivieren, sich zu informieren und gute Behandlung zu suchen. Angst zeigt sich auch körperlich, etwa durch Herzklopfen, schnelle Atmung, Anspannung oder Zittern, durch verstärktes Hineinhorchen in den Körper, Vermeiden von Informationen oder kurze Momente der Lähmung.",
+   "themen": [
+    "Angst und Unsicherheit",
+    "Psychoonkologie",
+    "Informationssuche",
+    "Progredienzangst"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s06": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s06",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 923.62,
+   "ende": 1174.6,
+   "titel": "Basisstrategien: Selbstmitgefühl, Bewegung, Ablenkung, Sinnesreize, Entspannung",
+   "zusammenfassung": "Als Grundlage im Umgang mit Ängsten nennt Isabell Schultze Selbstmitgefühl: anerkennen, dass die Situation schwer ist, und freundlich mit sich selbst sein. Einfache Dinge helfen, sich zu beruhigen, allen voran Bewegung in jeder möglichen Form, dazu Ablenkung, angenehme Sinnesreize und Entspannungstechniken, die mit Übung besser wirken.",
+   "themen": [
+    "Angst und Unsicherheit",
+    "Selbstmitgefühl",
+    "Bewegung und Sport",
+    "Psychoonkologie",
+    "Entspannungsverfahren"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s07": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s07",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 1174.6,
+   "ende": 1359.71,
+   "titel": "Umgang mit Grübeln: angemessen informieren, aufschreiben, zu Ende denken",
+   "zusammenfassung": "Isabell Schultze empfiehlt, sich so viel zu informieren, wie es guttut, und die Suche zu unterbrechen, wenn sie die Anspannung erhöht. Für wichtige Arztgespräche helfen Notizen, aufgeschriebene Fragen und eine Begleitperson. Bei kreisenden Gedanken helfen feste Zeitfenster, das Aufschreiben oder Besprechen sowie das Zu-Ende-Denken des schlimmsten und des besten Falls.",
+   "themen": [
+    "Angst und Unsicherheit",
+    "Informationssuche",
+    "Arzt-Patienten-Kommunikation"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s08": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s08",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 1361.32,
+   "ende": 1481.32,
+   "titel": "Ängste vor und nach Kontrolluntersuchungen",
+   "zusammenfassung": "Vor und nach Kontrolluntersuchungen und Zwischenstagings sind Sorgen besonders häufig, etwa ob die Therapie wirkt oder das Lymphom zurück ist. Isabell Schultze rät, diese Zeit als anstrengend anzuerkennen, unangenehme Aufgaben zu verschieben, Zeit für Gutes einzuplanen und am Untersuchungstag bewusst etwas Schönes als Gegenpol vorzusehen.",
+   "themen": [
+    "Progredienzangst",
+    "Angst und Unsicherheit"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s09": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s09",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 1485.4,
+   "ende": 1613.94,
+   "titel": "Wann mehr Unterstützung nötig ist und wo es sie gibt",
+   "zusammenfassung": "Nehmen Ängste kaum noch Raum für anderes, verstärken sie Beschwerden oder erschweren sie den Gang zu Terminen, empfiehlt Isabell Schultze professionelle Unterstützung. Anlaufstellen sind der psychoonkologische Dienst der Klinik, Krebsberatungsstellen, die Beratungsstellensuche des Krebsinformationsdienstes, Selbsthilfegruppen und bei hoher Belastung eine Psychotherapie.",
+   "themen": [
+    "Beratungsangebote",
+    "Psychoonkologie",
+    "Selbsthilfe"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s10": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s10",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 1614.42,
+   "ende": 1666.54,
+   "titel": "Zusammenfassung",
+   "zusammenfassung": "Isabell Schultze fasst zusammen: Ängste und Unsicherheiten sind eine normale Reaktion, der passende Umgang ist individuell. Strategien wirken besser, je häufiger sie geübt werden, am besten auch in guten Phasen; bei wachsender Belastung ist Unterstützung sinnvoll.",
+   "themen": [
+    "Angst und Unsicherheit",
+    "Selbstmitgefühl"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s11": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s11",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 1692.59,
+   "ende": 1797.9,
+   "titel": "Publikumsfrage: Druck, stark zu sein und positiv zu denken",
+   "zusammenfassung": "Eine Frage aus dem Chat beschreibt den Druck durch Ratschläge, stark zu sein und positiv zu denken. Isabell Schultze hält diese meist für gut gemeint, rät aber, nahestehenden Menschen zu sagen, dass sie nicht helfen. Für die Annahme, Sorgen oder Angst förderten den Krebs, gibt es nach ihrer Darstellung kaum Belege.",
+   "themen": [
+    "Angst und Unsicherheit",
+    "Hoffnung und Erwartungen",
+    "Soziales Umfeld",
+    "Krebsmythen"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "moderation",
+     "name": "Moderation",
+     "typ": "publikumsfrage"
+    },
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s12": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s12",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 1807.28,
+   "ende": 1886.68,
+   "titel": "Publikumsfrage: Freudlosigkeit trotz guter Heilungschancen",
+   "zusammenfassung": "Eine weitere Chat-Frage beschreibt Scham, sich trotz guter Heilungschancen wertlos und erschöpft zu fühlen. Isabell Schultze ordnet ein: Eine Krebserkrankung ist ein großer Einschnitt, auch bei sehr guten Heilungschancen ist die Behandlung belastend. Traurigkeit ist eine normale Reaktion, auch der Verlust der körperlichen Unversehrtheit.",
+   "themen": [
+    "Psychoonkologie",
+    "Angst und Unsicherheit",
+    "Hoffnung und Erwartungen"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "moderation",
+     "name": "Moderation",
+     "typ": "publikumsfrage"
+    },
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s13": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s13",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 1886.68,
+   "ende": 1967.82,
+   "titel": "Ergänzung aus dem Publikum: Routinen und Schreiben als Hilfe",
+   "zusammenfassung": "Eine Person aus dem Publikum berichtet, dass ihr kleine Routinen gegen Ängste und schlaflose Nächte geholfen haben, etwa die Vorfreude auf den Morgenkaffee, und dass sie das freie Schreiben am Morgen entdeckt hat, als Laufen nicht möglich war. Isabell Schultze bestätigt, dass Routinen ein Stück Kontrolle zurückgeben.",
+   "themen": [
+    "Angst und Unsicherheit",
+    "Selbstwirksamkeit",
+    "Bewegung und Sport"
+   ],
+   "schwerpunkt": "gemischt",
+   "sprecher": [
+    {
+     "person": "publikum",
+     "name": "Publikum",
+     "typ": "erfahrung"
+    },
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s14": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s14",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 1974.46,
+   "ende": 2041.42,
+   "titel": "Publikumsfrage: Belastung je nach Krebsart",
+   "zusammenfassung": "Aus dem Publikum kommt die Frage, ob es Erhebungen gibt, wie Betroffene verschiedener Krebsarten die Erkrankung psychisch verarbeiten. Isabell Schultze kennt keine Studie speziell zu Lymphomen; bekannt ist, dass verschiedene Krebserkrankungen mit unterschiedlich hohen Belastungsraten einhergehen, etwa sichtbare Erkrankungen im Gesichtsbereich.",
+   "themen": [
+    "Psychoonkologie",
+    "Einordnung von Studiendaten"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "publikum",
+     "name": "Publikum",
+     "typ": "publikumsfrage"
+    },
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s15": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s15",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 2043.27,
+   "ende": 2142.65,
+   "titel": "Nachfrage: Belastung durch Stammzelltransplantation",
+   "zusammenfassung": "Auf die Nachfrage, ob die Lymphombehandlung besonders belastet, nennt Isabell Schultze aus ihrer Beratungspraxis die Stammzelltransplantation: Der lange Klinikaufenthalt und die Phase mit stark geschwächtem Immunsystem werden anders verarbeitet als ambulante Chemotherapie-Zyklen. Alte Vorstellungen von völliger Abschirmung treffen heute nicht mehr zu; Angehörige dürfen kommen.",
+   "themen": [
+    "Psychoonkologie",
+    "Immunsystem",
+    "Angehörige",
+    "Stammzelltransplantation"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "moderation",
+     "name": "Moderation",
+     "typ": "moderation"
+    },
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "2026-09-16_inforeihe-krebs_lymphome-aengste_s16": {
+   "id": "2026-09-16_inforeihe-krebs_lymphome-aengste_s16",
+   "typ": "videosegment",
+   "typ_label": "Videosegment",
+   "veranstaltung": "2026-09-16_inforeihe-krebs_lymphome-aengste",
+   "start": 2145.93,
+   "ende": 2268.64,
+   "titel": "Publikumsfrage: Abwarten und Kontrollieren aushalten",
+   "zusammenfassung": "Eine Chat-Frage beschreibt, wie schwer es ist auszuhalten, dass bei einer Watch-and-Wait-Strategie nicht behandelt wird. Isabell Schultze rät, bewusst auch die Vorteile zu sehen: keine Nebenwirkungen, ein ungeschwächter Körper. Es kann helfen, sich über eine spätere Behandlung zu informieren und zugleich festzuhalten, dass dieser Zeitpunkt noch nicht gekommen ist.",
+   "themen": [
+    "Aktive Überwachung",
+    "Angst und Unsicherheit",
+    "Therapieentscheidung"
+   ],
+   "schwerpunkt": "expertenwissen",
+   "sprecher": [
+    {
+     "person": "moderation",
+     "name": "Moderation",
+     "typ": "publikumsfrage"
+    },
+    {
+     "person": "isabell-schultze",
+     "name": "Isabell Schultze",
+     "typ": "expertenwissen"
+    }
+   ]
+  },
+  "platzhalter-einzelaussage": {
+   "id": "platzhalter-einzelaussage",
+   "typ": "einzelaussage",
+   "typ_label": "Einzelaussage",
+   "titel": "Platzhalter: Einzelaussage aus dem Wohnzimmer",
+   "zusammenfassung": "Beispiel für eine kurze Videoaussage einer betroffenen Person mit Link zu ihrem Wohnzimmer. Kein echter Inhalt.",
+   "platzhalter": true
+  },
+  "platzhalter-textbeitrag": {
+   "id": "platzhalter-textbeitrag",
+   "typ": "textbeitrag",
+   "typ_label": "Textbeitrag",
+   "titel": "Platzhalter: Textbeitrag",
+   "zusammenfassung": "Beispiel für einen Beitrag der Mediathek mit Beitragsbild, Überschrift und Textauszug. Kein echter Inhalt.",
+   "platzhalter": true
+  },
+  "platzhalter-selbsthilfegruppe": {
+   "id": "platzhalter-selbsthilfegruppe",
+   "typ": "selbsthilfegruppe",
+   "typ_label": "Selbsthilfegruppe",
+   "titel": "Platzhalter: Selbsthilfegruppe",
+   "zusammenfassung": "Beispiel für eine Organisation mit Logo und Kontaktinformationen. Keine echten Kontaktdaten.",
+   "platzhalter": true
+  }
+ },
+ "glossar": {
+  "glossar-phase-1-studie": {
+   "id": "glossar-phase-1-studie",
+   "begriff": "Phase-1-Studie",
+   "status": "Entwurf – fachliche Freigabe ausstehend",
+   "text": "Erste Prüfung eines neuen Wirkstoffs oder Verfahrens am Menschen. Im Mittelpunkt stehen Sicherheit, Verträglichkeit und die geeignete Dosis. Die Zahl der Studienteilnehmer ist klein. Ob und wie gut eine Behandlung wirkt, wird vor allem in späteren Studienphasen untersucht. Fragen zu einer möglichen Teilnahme gehören in das Gespräch mit dem Behandlungsteam."
+  }
+ },
+ "zusatzinfos": {
+  "link-landeskrebsgesellschaften": {
+   "id": "link-landeskrebsgesellschaften",
+   "art": "link",
+   "titel": "Landeskrebsgesellschaften",
+   "text": "Übersicht der Krebsgesellschaften in den Bundesländern",
+   "url": "https://www.krebsgesellschaft.de/ueber-uns/landeskrebsgesellschaften"
+  },
+  "link-krebsinformationsdienst": {
+   "id": "link-krebsinformationsdienst",
+   "art": "link",
+   "titel": "Krebsinformationsdienst",
+   "text": "Informationsdienst des Deutschen Krebsforschungszentrums",
+   "url": "https://www.krebsinformationsdienst.de"
+  },
+  "beispiel-download": {
+   "id": "beispiel-download",
+   "art": "download",
+   "titel": "Beispiel: Begleitmaterial zum Download",
+   "text": "Platzhalter – im Wortlaut ist kein Download genannt. Zeigt nur die Darstellung.",
+   "url": "",
+   "beispiel": true
+  }
+ }
+}

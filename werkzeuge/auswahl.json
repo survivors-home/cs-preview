@@ -1,0 +1,35 @@
+{
+  "hinweis": "Von Hand gepflegt. Legt fest, welche Veranstaltungen exportiert werden und in welcher festen Reihenfolge Elemente als Vorschläge erscheinen. Keine Logik.",
+  "veranstaltungen": [
+    "2026-09-24_im-fokus_klinische-studien",
+    "2026-05-21_im-fokus_bewegung-sport-fatigue",
+    "2026-09-25_im-fokus_cll",
+    "2026-06-17_inforeihe-krebs_brca1-und-ich",
+    "2026-09-16_inforeihe-krebs_lymphome-aengste"
+  ],
+  "start": "2026-09-24_im-fokus_klinische-studien_s02",
+  "reihenfolge": [
+    "2026-09-24_im-fokus_klinische-studien_s05",
+    "2026-05-21_im-fokus_bewegung-sport-fatigue_s03",
+    "2026-09-16_inforeihe-krebs_lymphome-aengste_s05",
+    "platzhalter-einzelaussage",
+    "2026-09-25_im-fokus_cll_s16",
+    "2026-09-24_im-fokus_klinische-studien_s06",
+    "2026-06-17_inforeihe-krebs_brca1-und-ich_s06",
+    "2026-05-21_im-fokus_bewegung-sport-fatigue_s02",
+    "platzhalter-textbeitrag",
+    "2026-09-24_im-fokus_klinische-studien_s11",
+    "2026-09-16_inforeihe-krebs_lymphome-aengste_s08",
+    "2026-05-21_im-fokus_bewegung-sport-fatigue_s15",
+    "2026-09-25_im-fokus_cll_s06",
+    "platzhalter-selbsthilfegruppe",
+    "2026-06-17_inforeihe-krebs_brca1-und-ich_s18",
+    "2026-09-24_im-fokus_klinische-studien_s18",
+    "2026-05-21_im-fokus_bewegung-sport-fatigue_s18",
+    "2026-09-16_inforeihe-krebs_lymphome-aengste_s09",
+    "2026-09-24_im-fokus_klinische-studien_s21",
+    "2026-05-21_im-fokus_bewegung-sport-fatigue_s13",
+    "2026-09-25_im-fokus_cll_s17",
+    "2026-09-24_im-fokus_klinische-studien_s23"
+  ]
+}

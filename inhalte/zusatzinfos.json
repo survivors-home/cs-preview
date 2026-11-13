@@ -1,0 +1,28 @@
+[
+  {
+    "id": "link-landeskrebsgesellschaften",
+    "art": "link",
+    "titel": "Landeskrebsgesellschaften",
+    "text": "Übersicht der Krebsgesellschaften in den Bundesländern",
+    "url": "https://www.krebsgesellschaft.de/ueber-uns/landeskrebsgesellschaften",
+    "suchmuster": ["Landeskrebsgesellschaften", "Landeskrebsgesellschaft"]
+  },
+  {
+    "id": "link-krebsinformationsdienst",
+    "art": "link",
+    "titel": "Krebsinformationsdienst",
+    "text": "Informationsdienst des Deutschen Krebsforschungszentrums",
+    "url": "https://www.krebsinformationsdienst.de",
+    "suchmuster": ["Krebsinformationsdienst"]
+  },
+  {
+    "id": "beispiel-download",
+    "art": "download",
+    "titel": "Beispiel: Begleitmaterial zum Download",
+    "text": "Platzhalter – im Wortlaut ist kein Download genannt. Zeigt nur die Darstellung.",
+    "url": "",
+    "beispiel": true,
+    "segment": "2026-09-24_im-fokus_klinische-studien_s06",
+    "zeit_relativ": 20
+  }
+]

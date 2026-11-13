@@ -1,0 +1,26 @@
+[
+  {
+    "id": "platzhalter-einzelaussage",
+    "typ": "einzelaussage",
+    "typ_label": "Einzelaussage",
+    "titel": "Platzhalter: Einzelaussage aus dem Wohnzimmer",
+    "zusammenfassung": "Beispiel für eine kurze Videoaussage einer betroffenen Person mit Link zu ihrem Wohnzimmer. Kein echter Inhalt.",
+    "platzhalter": true
+  },
+  {
+    "id": "platzhalter-textbeitrag",
+    "typ": "textbeitrag",
+    "typ_label": "Textbeitrag",
+    "titel": "Platzhalter: Textbeitrag",
+    "zusammenfassung": "Beispiel für einen Beitrag der Mediathek mit Beitragsbild, Überschrift und Textauszug. Kein echter Inhalt.",
+    "platzhalter": true
+  },
+  {
+    "id": "platzhalter-selbsthilfegruppe",
+    "typ": "selbsthilfegruppe",
+    "typ_label": "Selbsthilfegruppe",
+    "titel": "Platzhalter: Selbsthilfegruppe",
+    "zusammenfassung": "Beispiel für eine Organisation mit Logo und Kontaktinformationen. Keine echten Kontaktdaten.",
+    "platzhalter": true
+  }
+]
