@@ -989,7 +989,14 @@
     document.body.classList.remove('laedt');
     requestAnimationFrame(takt);
     log('Start ' + startId + ', Modus ' + modus);
-    if (DIAGNOSE) window.MMKZustand = S; // nur zur Prüfung
+    if (DIAGNOSE) {
+      window.MMKZustand = S; // nur zur Prüfung
+      // Seitenzoom in Safari verkleinert die Layoutbreite in CSS-Pixeln; hier sichtbar machen
+      const ansicht = () => log('Ansicht ' + innerWidth + ' × ' + innerHeight + ' CSS-px, Pixeldichte ' + devicePixelRatio +
+        (window.visualViewport ? ', Lupe ' + visualViewport.scale.toFixed(2) : ''));
+      ansicht();
+      addEventListener('resize', ansicht);
+    }
   }
 
   start().catch((e) => {
