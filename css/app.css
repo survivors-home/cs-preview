@@ -178,9 +178,15 @@ body.ohne-video .steuerung { display: none; }
 .text { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
 .sprecher {
   flex: none; padding: 0.35rem var(--abstand); font-size: 0.9375rem; line-height: 1.35;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  display: flex; align-items: center; gap: 0.25rem;
   border-bottom: 1px solid #E4DCE2; border-left: 6px solid #BDBDBC; background: var(--weiss);
 }
+.sprecher-text { flex: 0 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sprecher-info {
+  flex: none; width: var(--touch); height: var(--touch); margin: -0.6rem 0 -0.6rem -0.35rem; padding: 0;
+  border: 0; background: transparent; color: var(--lila-dunkel); display: inline-flex; align-items: center; justify-content: center;
+}
+.sprecher-info svg { width: 1.3rem; height: 1.3rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 .sprecher .rolle { font-weight: 700; }
 .sprecher .rolle:not(:empty) + .name:not(:empty)::before { content: " · "; font-weight: 400; }
 .sprecher.typ-expertenwissen { border-left-color: var(--farbe-expertenwissen); }
@@ -267,6 +273,7 @@ body.ohne-video .steuerung { display: none; }
 .dialog { position: fixed; inset: 0; z-index: 80; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.45); padding: var(--abstand); }
 .dialog[hidden] { display: none; }
 .dialog-innen { width: 100%; max-width: 28rem; max-height: 90vh; overflow-y: auto; background: var(--weiss); border-radius: 0.75rem; padding: 1rem 1.25rem; }
+.dialog-foto { display: block; width: 6rem; height: 6rem; object-fit: cover; border-radius: 50%; margin: 0 0 0.6rem; background: #EEE; }
 .dialog-art { margin: 0; font-size: 0.8125rem; font-weight: 700; color: #5F5F5E; }
 .dialog-innen h2 { margin: 0.2rem 0 0.5rem; font-size: 1.25rem; color: var(--lila-dunkel); }
 .dialog-status { display: inline-block; font-size: 0.8125rem; font-weight: 700; color: #5A4300; background: #FFF1C9; padding: 0.1rem 0.4rem; border-radius: 0.3rem; margin: 0 0 0.5rem; }
