@@ -1,0 +1,285 @@
+/* Oberfläche des Funktionsdummys „Menschen mit Krebs“ – ergänzt css/basis.css */
+
+[hidden] { display: none !important; }
+
+:root {
+  --kopf: 3rem;
+  --anteil: 0.5; /* Höhe des aktiven Elements: 0.5 (Hälfte) oder 0.6667 (zwei Drittel) */
+  --rand: 0.75rem;
+  --dunkel-transparent: rgba(0, 0, 0, 0.58);
+}
+body.aufteilung-zwei-drittel { --anteil: 0.6667; }
+
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; overflow: hidden; }
+body.laedt .seite { visibility: hidden; }
+
+/* ---------- Kopf ---------- */
+.kopf {
+  flex: none; display: flex; flex-wrap: wrap; align-items: center; column-gap: 0.5rem;
+  min-height: var(--kopf); padding: 0 0.5rem 0 var(--abstand);
+  border-bottom: 1px solid #E4DCE2; background: var(--weiss);
+}
+.wortmarke { font-weight: 700; color: var(--lila-dunkel); white-space: nowrap; }
+.kopf-platz { margin-right: auto; }
+.kopf-knopf {
+  white-space: nowrap; border: 0; background: transparent; color: var(--lila-dunkel); font-weight: 600;
+  display: inline-flex; align-items: center; gap: 0.3rem; padding: 0 0.5rem;
+}
+.zahl {
+  display: inline-block; min-width: 1.4em; padding: 0 0.3em; border-radius: 1em;
+  background: var(--lila-dunkel); color: var(--weiss); font-size: 0.8125rem; text-align: center;
+}
+
+/* ---------- Seite: oben aktives Element, unten Vorschläge ---------- */
+.seite {
+  flex: 1; min-height: 0; display: flex; flex-direction: column;
+  width: 100%; max-width: 40rem; margin: 0 auto;
+}
+.buehne {
+  position: relative; flex: 0 0 calc(var(--anteil) * 100%); min-height: 0;
+  display: flex; padding: 0;
+}
+.karte {
+  touch-action: pan-y;
+  position: relative; z-index: 2; flex: 1; min-width: 0; min-height: 0;
+  display: flex; flex-direction: column; background: var(--weiss);
+  box-shadow: 0 1px 0 #E4DCE2;
+  transition: margin 0.3s ease;
+}
+body.hat-zurueck .karte { margin-left: var(--rand); }
+body.hat-vor .karte { margin-right: var(--rand); }
+
+/* Verlauf: vorheriges Element rückt nach hinten links */
+.karte-hinten {
+  position: absolute; z-index: 1; top: 0.6rem; bottom: 0.6rem; left: 0; width: 2rem;
+  border-radius: 0 0.5rem 0.5rem 0; background: var(--lila-hell); opacity: 0.55;
+}
+.karte-hinten.rechts { left: auto; right: 0; border-radius: 0.5rem 0 0 0.5rem; }
+.verlauf-knopf {
+  position: absolute; inset: 0; width: 100%; min-width: 0; border: 0; background: transparent; border-radius: inherit;
+}
+.geist {
+  position: fixed; z-index: 40; pointer-events: none; overflow: hidden;
+  background: var(--lila-dunkel); color: var(--weiss); border-radius: 0.5rem; padding: 0.75rem;
+  font-weight: 600; transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.geist.kachel-geist { background: var(--flaeche-hell); color: var(--grau-text); }
+
+/* ---------- Bildbereich ---------- */
+.bild {
+  position: relative; flex: none; width: 100%; aspect-ratio: 16 / 9; background: #1E1E1E; overflow: hidden;
+  -webkit-user-select: none; user-select: none;
+}
+.player-stapel, .player-platz, .player-platz iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.player-platz { opacity: 0; pointer-events: none; }
+.player-platz.aktiv { opacity: 1; }
+
+.startbild {
+  position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 54px 16px 60px; background: var(--lila-dunkel); color: var(--weiss); overflow: hidden;
+}
+.startbild.platzhalter { background: #6B6B6A; }
+.startbild-typ { margin: 0 0 0.25rem; font-size: min(0.8125rem, 16px); }
+.startbild-titel { margin: 0; font-size: min(1.125rem, 22px); font-weight: 700; line-height: 1.3; }
+body.spielt:not(.modus-simulation) .startbild { display: none; }
+
+.ebene {
+  position: absolute; z-index: 2; inset: 0;
+  -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; touch-action: pan-y;
+}
+.quelle, .bild-zeit {
+  position: absolute; z-index: 3; top: 0.4rem; margin: 0; max-width: calc(100% - 160px);
+  font-size: min(0.75rem, 15px); line-height: 1.3; color: var(--weiss); background: var(--dunkel-transparent);
+  padding: 0.15rem 0.45rem; border-radius: 0.3rem; pointer-events: none;
+}
+.quelle { left: 0.4rem; }
+.bild-zeit { top: auto; bottom: 3.35rem; right: 0.4rem; max-width: none; font-variant-numeric: tabular-nums; }
+.bild-aktionen { position: absolute; z-index: 4; top: 0.3rem; right: 0.3rem; display: flex; gap: 0.3rem; }
+.symbol {
+  width: var(--touch); height: var(--touch); padding: 0; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 50%; background: var(--dunkel-transparent); color: var(--weiss);
+}
+.symbol svg { width: 1.35rem; height: 1.35rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.symbol[aria-pressed="true"] svg polygon { fill: currentColor; }
+#merken[aria-pressed="true"] { background: var(--lila-hell); border-color: var(--lila-hell); }
+#gesamt[aria-pressed="true"], #gesamt.betont { background: var(--lila-dunkel); border-color: var(--weiss); }
+#gesamt.betont { box-shadow: 0 0 0 3px var(--lila-hell); }
+
+.bild-zeit:empty, .quelle:empty { display: none; }
+
+.gross-abspielen {
+  position: absolute; z-index: 4; left: 50%; top: 45%; transform: translate(-50%, -50%);
+  width: 4rem; height: 4rem; border-radius: 50%; border: 2px solid var(--weiss);
+  background: rgba(102, 36, 131, 0.92); color: var(--weiss); font-size: 1.5rem; padding-left: 0.2rem;
+}
+body.spielt .gross-abspielen, body.ohne-video .gross-abspielen, body.angehalten .gross-abspielen, body.startet .gross-abspielen { display: none; }
+
+.ladeanzeige, .halt-hinweis {
+  position: absolute; z-index: 4; left: 50%; top: 45%; transform: translate(-50%, -50%); margin: 0;
+  color: var(--weiss); background: var(--dunkel-transparent); padding: 0.3rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;
+}
+.ladeanzeige { top: 72%; }
+
+.ende-hinweis {
+  position: absolute; z-index: 5; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.5rem; background: rgba(0, 0, 0, 0.62); color: var(--weiss); text-align: center; padding: 1rem;
+}
+.ende-hinweis p { margin: 0; font-weight: 600; }
+.knopf-hell { background: var(--weiss); color: var(--lila-dunkel); border: 0; font-weight: 700; padding: 0.5rem 1rem; }
+
+.mini-info {
+  position: absolute; z-index: 4; left: 0.5rem; bottom: 3.35rem; max-width: calc(100% - 5.5rem); min-height: 2.75rem;
+  border: 2px solid var(--lila-hell); background: var(--weiss); color: var(--grau-text);
+  text-align: left; font-size: min(0.875rem, 18px); padding: 0.3rem 0.6rem; border-radius: 0.6rem;
+}
+.mini-info b { color: var(--lila-dunkel); }
+
+.steuerung {
+  position: absolute; z-index: 4; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; gap: 0.5rem;
+  padding: 0.35rem 0.5rem 0.45rem;
+}
+.steuerung button {
+  min-width: var(--touch); flex: 0 1 auto; border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 2rem;
+  background: var(--dunkel-transparent); color: var(--weiss); font-weight: 700; font-size: min(0.9375rem, 19px); padding: 0 0.6rem; white-space: nowrap;
+}
+.steuerung button[aria-pressed="true"] { background: var(--lila-hell); border-color: var(--lila-hell); }
+.steuerung button[hidden] { display: none; }
+body.ohne-video .steuerung { display: none; }
+
+.zeile-quer { display: none; }
+
+/* ---------- Zeitleiste ganze Veranstaltung ---------- */
+.zeitleiste-bereich { flex: none; padding: 0.4rem var(--abstand) 0.5rem; border-bottom: 1px solid #E4DCE2; background: #FBF8FA; }
+.zeitleiste-kopf { display: flex; justify-content: space-between; font-size: 0.8125rem; font-weight: 600; color: var(--lila-dunkel); }
+.zeitleiste-zeit { font-variant-numeric: tabular-nums; color: var(--grau-text); font-weight: 400; }
+.zeitleiste { position: relative; height: 2.75rem; margin: 0.35rem 0; background: #ECE6EB; border-radius: 0.4rem; cursor: pointer; touch-action: none; }
+.zl-seg { position: absolute; top: 0.35rem; bottom: 0.35rem; background: #CDB7CA; border-right: 1px solid var(--weiss); }
+.zl-seg.ursprung { background: var(--lila-hell); }
+.zl-seg.aktuell { outline: 2px solid var(--lila-dunkel); outline-offset: -2px; }
+.zl-pos { position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1px; background: var(--lila-dunkel); pointer-events: none; }
+.zeitleiste-knoepfe { display: flex; gap: 0.5rem; }
+.zeitleiste-knoepfe button { flex: 1; border: 2px solid var(--lila-dunkel); background: var(--weiss); color: var(--lila-dunkel); font-weight: 600; font-size: 0.875rem; }
+
+/* ---------- Textbereich ---------- */
+.text { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.sprecher {
+  flex: none; padding: 0.35rem var(--abstand); font-size: 0.9375rem; line-height: 1.35;
+  border-bottom: 1px solid #E4DCE2; border-left: 6px solid #BDBDBC; background: var(--weiss);
+}
+.sprecher .rolle { font-weight: 700; }
+.sprecher .rolle:not(:empty) + .name:not(:empty)::before { content: " · "; font-weight: 400; }
+.sprecher.typ-expertenwissen { border-left-color: var(--farbe-expertenwissen); }
+.sprecher.typ-expertenwissen .rolle { color: var(--farbe-expertenwissen); }
+.sprecher.typ-erfahrung { border-left-color: var(--farbe-erfahrung); }
+.sprecher.typ-erfahrung .rolle { color: #8E2F76; }
+.sprecher:empty, .sprecher.leer { display: none; }
+
+.transkript {
+  position: relative; flex: 1; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding: 0.5rem var(--abstand) 1rem; font-size: 1.0625rem; line-height: 1.55;
+}
+.transkript:focus-visible { outline-offset: -3px; }
+.absatz { margin: 0 0 0.9rem; padding-left: 0.6rem; border-left: 4px solid #BDBDBC; }
+.absatz.typ-expertenwissen { border-left-color: var(--farbe-expertenwissen); }
+.absatz.typ-erfahrung { border-left-color: var(--farbe-erfahrung); }
+.absatz-name { display: block; font-size: 0.8125rem; font-weight: 700; color: #5F5F5E; }
+.absatz.typ-expertenwissen .absatz-name { color: var(--farbe-expertenwissen); }
+.absatz.typ-erfahrung .absatz-name { color: #8E2F76; }
+.w.jetzt { background: var(--hervorhebung); box-shadow: 0 0 0 0.12em var(--hervorhebung); border-radius: 0.2em; }
+.marke { color: var(--lila-dunkel); text-decoration: underline dotted 2px; text-underline-offset: 0.2em; cursor: pointer; }
+.transkript-hinweis { font-size: 0.9375rem; color: #5F5F5E; }
+.platzhalter-text .kennzeichnung, .kennzeichnung {
+  display: inline-block; font-size: 0.8125rem; font-weight: 700; color: #5A4300; background: #FFF1C9; padding: 0.1rem 0.4rem; border-radius: 0.3rem;
+}
+
+.zur-stelle {
+  position: absolute; z-index: 3; right: var(--abstand); bottom: 0.6rem;
+  border: 0; border-radius: 2rem; background: var(--lila-dunkel); color: var(--weiss); font-weight: 600; padding: 0 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Vorschläge ---------- */
+.vorschlaege { flex: 1; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; border-top: 6px solid #F4EEF3; }
+.kacheln { list-style: none; margin: 0; padding: 0; }
+.kachel { position: relative; border-bottom: 1px solid #E4DCE2; transition: opacity 0.3s ease; }
+.kachel.neu { animation: einblenden 0.35s ease; }
+@keyframes einblenden { from { opacity: 0; } to { opacity: 1; } }
+.kachel-auswahl {
+  display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 12px; align-items: start; width: 100%;
+  border: 0; border-radius: 0; background: var(--weiss); color: var(--grau-text); text-align: left;
+  padding: 0.6rem 52px 0.6rem 16px;
+}
+.kachel-bild {
+  aspect-ratio: 16 / 9; border-radius: 0.4rem; background: var(--lila-dunkel); color: var(--weiss);
+  font-size: 0.6875rem; line-height: 1.2; padding: 0.3rem; overflow: hidden; display: flex; align-items: flex-end;
+}
+.kachel-bild.platzhalter { background: #6B6B6A; }
+.kachel-typ { display: block; font-size: 0.8125rem; font-weight: 700; color: #5F5F5E; }
+.kachel-typ.typ-expertenwissen { color: var(--farbe-expertenwissen); }
+.kachel-typ.typ-erfahrung, .kachel-typ.typ-gemischt { color: #8E2F76; }
+.kachel-titel { display: block; font-weight: 700; line-height: 1.3; margin: 0.1rem 0 0.2rem; }
+.kachel-text { display: block; font-size: 0.875rem; line-height: 1.4; }
+.ausblenden {
+  position: absolute; top: 0.25rem; right: 0.25rem; width: var(--touch); height: var(--touch);
+  border: 0; background: transparent; color: #5F5F5E; font-size: 1.125rem;
+}
+.keine-vorschlaege { padding: 0.75rem var(--abstand); color: #5F5F5E; }
+.fuss { padding: 0.75rem var(--abstand) 1.25rem; font-size: 0.8125rem; color: #5F5F5E; margin: 0; }
+
+/* ---------- Seitliche Leiste ---------- */
+.abdeckung { position: fixed; inset: 0; z-index: 55; background: rgba(0, 0, 0, 0.35); }
+.leiste {
+  position: fixed; z-index: 60; top: 0; right: 0; bottom: 0; width: min(23rem, 90vw); overflow-y: auto;
+  background: var(--weiss); box-shadow: -4px 0 16px rgba(0, 0, 0, 0.2); padding: 0 var(--abstand) 2rem;
+}
+.leiste h2 { font-size: 1.0625rem; color: var(--lila-dunkel); margin: 1.25rem 0 0.5rem; }
+.leiste-kopf { display: flex; align-items: center; justify-content: space-between; }
+.leiste-kopf h2 { margin-top: 0.75rem; }
+.schliessen { border: 0; background: transparent; font-size: 1.25rem; color: var(--grau-text); }
+.merkliste { list-style: none; margin: 0; padding: 0; }
+.merkliste li { display: flex; align-items: flex-start; gap: 0.25rem; border-bottom: 1px solid #E4DCE2; }
+.merkliste .oeffnen { flex: 1; text-align: left; border: 0; background: transparent; color: var(--grau-text); padding: 0.5rem 0; }
+.merkliste .art { display: block; font-size: 0.8125rem; color: #5F5F5E; }
+.merkliste .entfernen { border: 0; background: transparent; color: #5F5F5E; }
+.merkliste-leer { color: #5F5F5E; font-size: 0.9375rem; }
+.aufteilung { border: 0; padding: 0; margin: 0; }
+.aufteilung legend { font-size: 0.9375rem; margin-bottom: 0.25rem; }
+.aufteilung label { display: flex; align-items: center; gap: 0.5rem; min-height: var(--touch); }
+.aufteilung input { width: 1.25rem; height: 1.25rem; accent-color: var(--lila-dunkel); }
+.klein { font-size: 0.875rem; color: #5F5F5E; }
+
+/* ---------- Dialog für Zusatzinformationen ---------- */
+.dialog { position: fixed; inset: 0; z-index: 80; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.45); padding: var(--abstand); }
+.dialog[hidden] { display: none; }
+.dialog-innen { width: 100%; max-width: 28rem; max-height: 90vh; overflow-y: auto; background: var(--weiss); border-radius: 0.75rem; padding: 1rem 1.25rem; }
+.dialog-art { margin: 0; font-size: 0.8125rem; font-weight: 700; color: #5F5F5E; }
+.dialog-innen h2 { margin: 0.2rem 0 0.5rem; font-size: 1.25rem; color: var(--lila-dunkel); }
+.dialog-status { display: inline-block; font-size: 0.8125rem; font-weight: 700; color: #5A4300; background: #FFF1C9; padding: 0.1rem 0.4rem; border-radius: 0.3rem; margin: 0 0 0.5rem; }
+.dialog-innen a { color: var(--lila-dunkel); font-weight: 600; }
+.dialog-knoepfe { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
+.dialog-knoepfe button { flex: 1; border: 2px solid var(--lila-dunkel); background: var(--weiss); color: var(--lila-dunkel); font-weight: 600; }
+.dialog-knoepfe .knopf-voll { background: var(--lila-dunkel); color: var(--weiss); }
+
+.meldung {
+  position: fixed; z-index: 90; left: 50%; bottom: 1.25rem; transform: translateX(-50%); margin: 0;
+  background: var(--grau-text); color: var(--weiss); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.9375rem; max-width: 90vw;
+}
+.diagnose {
+  position: fixed; z-index: 95; left: 0; right: 0; bottom: 0; max-height: 30vh; overflow: auto; margin: 0;
+  background: rgba(0, 0, 0, 0.8); color: #9FE89F; font-size: 0.6875rem; padding: 0.4rem; white-space: pre-wrap;
+}
+
+/* ---------- Querformat ---------- */
+@media (orientation: landscape) and (max-height: 540px) {
+  body.spielt .bild, body.angehalten .bild {
+    position: fixed; z-index: 70; inset: 0; width: 100vw; height: 100vh; height: 100dvh; aspect-ratio: auto; background: #000;
+  }
+  body.spielt .zeile-quer, body.angehalten .zeile-quer {
+    display: block; position: absolute; z-index: 4; left: 1rem; right: 1rem; bottom: 3.4rem; margin: 0;
+    color: var(--weiss); background: var(--dunkel-transparent); padding: 0.3rem 0.6rem; border-radius: 0.4rem;
+    text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1rem;
+  }
+  body.spielt .mini-info { bottom: 6rem; }
+  body:not(.spielt):not(.angehalten) .seite { max-width: 30rem; }
+}
