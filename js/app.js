@@ -22,6 +22,7 @@
   const INFO_RUECKSPRUNG = 5;  // Sekunden zurück nach dem Schließen einer Zusatzinformation
   const UT_MAX = 84;           // Untertitel im Querformat: höchstens so viele Zeichen (zwei Zeilen)
   const UT_KURZ = 22;          // kürzere Blöcke werden mit einem Nachbarblock zusammengelegt
+  const ROLLE_LABEL = { experte: 'Expertenwissen', betroffen: 'Erfahrung', angehoerig: 'Erfahrung', moderation: 'Moderation' };
   const UT_PAUSE = 1.5;        // Sprechpause (Sekunden zwischen Wortanfängen), die einen Block beendet
 
   const S = {
@@ -36,7 +37,7 @@
     mitlaufen: true, nutzerBis: 0, programmBis: 0,
     gesamt: false, segmentEnde: false, imSegment: false,
     rate: 1, angehalten: false, startTimer: null, miniTimer: null,
-    merkliste: [], dialogInfo: null, dialogLiefVorher: false
+    merkliste: [], dialogInfo: null, dialogLiefVorher: false, sprecherPerson: null
   };
 
   /* ---------- Hilfen ---------- */
@@ -444,6 +445,12 @@
     const teile = ab ? sprecherText(ab) : [''];
     $('sprecherRolle').textContent = teile[0] || '';
     $('sprecherName').textContent = teile[1] || '';
+    // Info-Symbol nur bei Personen mit Eintrag (nicht bei Publikum, unbekannter Moderation usw.)
+    const pid = ab && ab.person;
+    S.sprecherPerson = pid && S.daten.personen && S.daten.personen[pid] ? pid : null;
+    const knopf = $('sprecherInfo');
+    knopf.hidden = !S.sprecherPerson;
+    if (S.sprecherPerson) knopf.setAttribute('aria-label', 'Mehr zu ' + S.daten.personen[pid].name);
   }
   function transkriptZeigen(seg, segId) {
     const box = $('transkript');
@@ -610,6 +617,7 @@
 
   /* ---------- Zusatzinformationen ---------- */
   function infoDaten(ref) {
+    if (ref.startsWith('person:')) return personDaten(ref.slice(7));
     const g = S.daten.glossar[ref];
     if (g) return { id: ref, art: 'Glossar', titel: g.begriff, text: g.text, status: g.status || '', url: '' };
     const z = S.daten.zusatzinfos[ref];
@@ -620,6 +628,19 @@
       };
     }
     return null;
+  }
+  // Person: Funktion und Rolle bevorzugt aus der Veranstaltung des aktiven Elements
+  function personDaten(pid) {
+    const p = S.daten.personen && S.daten.personen[pid];
+    if (!p) return null;
+    const alle = Object.values(S.daten.veranstaltungen).flatMap((v) => v.teilnehmer).filter((t) => t.person === pid);
+    const aktiv = istVideo(S.element) ? veranstaltung(S.element).teilnehmer.find((t) => t.person === pid) : null;
+    const t = (aktiv && aktiv.funktion ? aktiv : null) || alle.find((x) => x.funktion) || aktiv || alle[0];
+    const rolle = t ? ROLLE_LABEL[t.rolle] || '' : '';
+    return {
+      id: 'person:' + pid, art: 'Person' + (rolle ? ' · ' + rolle : ''), merkArt: 'Person', titel: p.name,
+      text: (t && t.funktion) || '', status: '', url: p.website || '', foto: p.foto || ''
+    };
   }
   function markerPruefen(t) {
     for (const m of S.marker) {
@@ -652,6 +673,16 @@
     $('infoStatus').hidden = !info.status;
     $('infoStatus').textContent = info.status;
     $('infoText').textContent = info.text;
+    $('infoText').hidden = !info.text;
+    const foto = $('infoFoto');
+    foto.hidden = !info.foto; // ohne Foto wird nichts angezeigt
+    if (info.foto) {
+      foto.onerror = () => { foto.hidden = true; };
+      foto.alt = 'Foto: ' + info.titel;
+      foto.src = info.foto;
+    } else {
+      foto.removeAttribute('src');
+    }
     const a = $('infoLink');
     a.hidden = !info.url;
     if (info.url) {
@@ -775,6 +806,7 @@
       if (S.vorrat.pausiert()) startUeberwachen();
     });
     $('tonAn').addEventListener('click', tonEinschalten);
+    $('sprecherInfo').addEventListener('click', () => { if (S.sprecherPerson) infoOeffnen('person:' + S.sprecherPerson); });
     $('zurueck10').addEventListener('click', () => S.vorrat.springen(Math.max(0, S.vorrat.zeit() - 10)));
     $('vor10').addEventListener('click', () => S.vorrat.springen(S.vorrat.zeit() + 10));
     $('tempo').addEventListener('click', () => {
@@ -889,7 +921,7 @@
     $('infoSchliessen').addEventListener('click', infoSchliessen);
     $('infoMerken').addEventListener('click', () => {
       const i = S.dialogInfo;
-      if (i) merkUmschalten({ id: i.id, typ: 'info', art: i.art, titel: i.titel });
+      if (i) merkUmschalten({ id: i.id, typ: 'info', art: i.merkArt || i.art, titel: i.titel });
     });
     $('infoDialog').addEventListener('click', (ev) => { if (ev.target === $('infoDialog')) infoSchliessen(); });
 
