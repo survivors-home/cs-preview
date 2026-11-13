@@ -51,17 +51,20 @@
     {
      "person": "marco-ammer",
      "name": "Marco Ammer",
-     "rolle": "moderation"
+     "rolle": "moderation",
+     "funktion": "Moderator für Gesundheitsthemen"
     },
     {
      "person": "mridul-agrawal",
      "name": "Dr. Mridul Agrawal",
-     "rolle": "experte"
+     "rolle": "experte",
+     "funktion": "Arzt, Gründer und Geschäftsführer iuvando"
     },
     {
      "person": "fluky",
      "name": "Fluky",
-     "rolle": "betroffen"
+     "rolle": "betroffen",
+     "funktion": "Patient Advocate"
     }
    ],
    "segmente": [
@@ -223,22 +226,26 @@
     {
      "person": "marco-ammer",
      "name": "Marco Ammer",
-     "rolle": "moderation"
+     "rolle": "moderation",
+     "funktion": "Moderator für Gesundheitsthemen"
     },
     {
      "person": "verena-krell",
      "name": "Verena Krell",
-     "rolle": "experte"
+     "rolle": "experte",
+     "funktion": "Sportwissenschaftlerin, wissenschaftliche Mitarbeiterin der Abteilung Sportmedizin der Charité – Universitätsmedizin Berlin, Koordinatorin des Netzwerks OnkoAktiv Berlin"
     },
     {
      "person": "anne-luise-kitzerow",
      "name": "Anne-Luise Kitzerow",
-     "rolle": "betroffen"
+     "rolle": "betroffen",
+     "funktion": "Autorin („Meine Familie, der Krebs und ich“), Bloggerin, Rehasport-Übungsleiterin (Wassergymnastik für Krebsbetroffene)"
     },
     {
      "person": "ralf-hafner",
      "name": "Prof. Ralf Hafner",
-     "rolle": "betroffen"
+     "rolle": "betroffen",
+     "funktion": "Professor für Betriebswirtschaftslehre an der HTW Berlin; stellvertretender Vorsitzender des Regionalverbands Prostatakrebs-Selbsthilfe Berlin-Brandenburg"
     }
    ],
    "segmente": [
@@ -394,17 +401,20 @@
     {
      "person": "marco-ammer",
      "name": "Marco Ammer",
-     "rolle": "moderation"
+     "rolle": "moderation",
+     "funktion": "Moderator für Gesundheitsthemen"
     },
     {
      "person": "ingo-schwaner",
      "name": "Dr. Ingo Schwaner",
-     "rolle": "experte"
+     "rolle": "experte",
+     "funktion": "Facharzt für Innere Medizin, Hämatologie und Internistische Onkologie sowie Palliativmedizin, Onkologische Schwerpunktpraxis Kurfürstendamm, Berlin"
     },
     {
      "person": "johannes-foerner",
      "name": "Johannes Förner",
-     "rolle": "betroffen"
+     "rolle": "betroffen",
+     "funktion": "Mitglied im Patientenbeirat Krebsforschung am Deutschen Krebsforschungszentrum"
     }
    ],
    "segmente": [
@@ -542,17 +552,20 @@
     {
      "person": "matea-tadic",
      "name": "Matea Tadic",
-     "rolle": "betroffen"
+     "rolle": "betroffen",
+     "funktion": "Betroffene und Patient Advocate für das Buusenkollektiv"
     },
     {
      "person": "martina-preisler",
      "name": "Dr. Martina Preisler",
-     "rolle": "moderation"
+     "rolle": "moderation",
+     "funktion": "Diplom-Psychologin und Psychoonkologin, Charité Comprehensive Cancer Center"
     },
     {
      "person": "ute-goerling",
      "name": "Ute Goerling",
-     "rolle": "moderation"
+     "rolle": "moderation",
+     "funktion": "Psychoonkologin, Charité Comprehensive Cancer Center"
     }
    ],
    "segmente": [
@@ -714,7 +727,8 @@
     {
      "person": "isabell-schultze",
      "name": "Isabell Schultze",
-     "rolle": "experte"
+     "rolle": "experte",
+     "funktion": "Psychoonkologin an der Medizinischen Klinik mit Schwerpunkt Hämatologie, Onkologie und Tumorimmunologie der Charité, Campus Benjamin Franklin"
     },
     {
      "person": "moderation",
@@ -3481,6 +3495,46 @@
    "titel": "Platzhalter: Selbsthilfegruppe",
    "zusammenfassung": "Beispiel für eine Organisation mit Logo und Kontaktinformationen. Keine echten Kontaktdaten.",
    "platzhalter": true
+  }
+ },
+ "personen": {
+  "anne-luise-kitzerow": {
+   "name": "Anne-Luise Kitzerow"
+  },
+  "fluky": {
+   "name": "Fluky"
+  },
+  "ingo-schwaner": {
+   "name": "Dr. Ingo Schwaner"
+  },
+  "isabell-schultze": {
+   "name": "Isabell Schultze"
+  },
+  "johannes-foerner": {
+   "name": "Johannes Förner"
+  },
+  "marco-ammer": {
+   "name": "Marco Ammer"
+  },
+  "martina-preisler": {
+   "name": "Dr. Martina Preisler",
+   "website": "https://www.martinapreisler.com/"
+  },
+  "matea-tadic": {
+   "name": "Matea Tadic"
+  },
+  "mridul-agrawal": {
+   "name": "Dr. Mridul Agrawal",
+   "website": "https://iuvando.de"
+  },
+  "ralf-hafner": {
+   "name": "Prof. Ralf Hafner"
+  },
+  "ute-goerling": {
+   "name": "Ute Goerling"
+  },
+  "verena-krell": {
+   "name": "Verena Krell"
   }
  },
  "glossar": {
