@@ -167,6 +167,14 @@
     }
     document.body.classList.toggle('angehalten', S.angehalten && !spielt);
   }
+  function stummSetzen(an) {
+    $('tonAn').hidden = !an;
+    document.body.classList.toggle('stumm', !!an);
+  }
+  function tonEinschalten() {
+    S.vorrat.tonAn();
+    if (S.vorrat.pausiert()) S.vorrat.abspielen();
+  }
   function startUeberwachen() {
     document.body.classList.add('startet');
     $('ladeanzeige').hidden = false;
@@ -686,6 +694,7 @@
       S.vorrat.abspielen();
       if (S.vorrat.pausiert()) startUeberwachen();
     });
+    $('tonAn').addEventListener('click', tonEinschalten);
     $('zurueck10').addEventListener('click', () => S.vorrat.springen(Math.max(0, S.vorrat.zeit() - 10)));
     $('vor10').addEventListener('click', () => S.vorrat.springen(S.vorrat.zeit() + 10));
     $('tempo').addEventListener('click', () => {
@@ -731,7 +740,9 @@
       if (timer) {
         clearTimeout(timer);
         timer = null;
-        if (!bewegt) {
+        if (!bewegt && S.vorrat.stumm() && !S.vorrat.pausiert()) {
+          tonEinschalten(); // stumm laufendes Video: Antippen schaltet den Ton ein statt anzuhalten
+        } else if (!bewegt) {
           if (S.vorrat.pausiert()) { S.vorrat.abspielen(); if (S.vorrat.pausiert()) startUeberwachen(); } else S.vorrat.pausieren();
         }
       } else if (gehalten) {
@@ -885,6 +896,7 @@
     S.daten = await fetch('daten/elemente.json').then((r) => r.json());
     S.vorrat = window.MMKVorrat.erzeugen($('playerStapel'), modus, {
       onStatus: statusSetzen,
+      onStumm: stummSetzen,
       onLog: log
     });
     modusAnzeigen();
