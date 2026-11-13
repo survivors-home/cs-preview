@@ -302,10 +302,13 @@ body.ohne-video .steuerung { display: none; }
     position: fixed; z-index: 70; inset: 0; width: 100vw; height: 100vh; height: 100dvh; aspect-ratio: auto; background: #000;
   }
   body.spielt .zeile-quer, body.angehalten .zeile-quer {
-    display: block; position: absolute; z-index: 4; left: 1rem; right: 1rem; bottom: 3.4rem; margin: 0;
-    color: var(--weiss); background: var(--dunkel-transparent); padding: 0.3rem 0.6rem; border-radius: 0.4rem;
-    text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1rem;
+    display: block; position: absolute; z-index: 4; left: 50%; transform: translateX(-50%); bottom: 3.4rem; margin: 0;
+    width: max-content; max-width: min(40rem, calc(100% - 2rem));
+    color: var(--weiss); background: rgba(0, 0, 0, 0.72); padding: 0.25rem 0.7rem; border-radius: 0.4rem;
+    text-align: center; font-size: min(1.125rem, 24px); line-height: 1.4; text-wrap: balance;
   }
-  body.spielt .mini-info { bottom: 6rem; }
+  body.spielt .zeile-quer:empty, body.angehalten .zeile-quer:empty { display: none; }
+  body.spielt .mini-info, body.angehalten .mini-info { bottom: auto; top: 3.4rem; }
+  body.spielt .bild-zeit, body.angehalten .bild-zeit { bottom: 0.75rem; }
   body:not(.spielt):not(.angehalten) .seite { max-width: 30rem; }
 }
