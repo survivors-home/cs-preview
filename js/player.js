@@ -21,6 +21,8 @@
   'use strict';
 
   const jetzt = () => performance.now();
+  // Wartet höchstens ms Millisekunden auf ein Promise; liefert true (erfüllt) oder false (Frist abgelaufen)
+  const frist = (p, ms) => Promise.race([p.then(() => true), new Promise((r) => setTimeout(() => r(false), ms))]);
 
   class Basis {
     constructor(opt) {
@@ -109,6 +111,7 @@
       this.container = container;
       this.player = null;
       this.aktuell = null;
+      this.ziel = null; // Sollzeit, falls ein Sprung vor dem Start nicht bestätigt wurde
     }
     static embedUrl(video) {
       const p = new URLSearchParams(EMBED);
@@ -134,7 +137,18 @@
     }
     ereignisse() {
       const p = this.player;
-      p.on('timeupdate', (d) => { this.t = d.seconds; this.tStempel = jetzt(); this.melde('Zeit', d.seconds); });
+      p.on('timeupdate', (d) => {
+        this.t = d.seconds;
+        this.tStempel = jetzt();
+        if (this.ziel !== null) {
+          if (Math.abs(d.seconds - this.ziel) > 1.5) {
+            this.log('Startposition nachgeholt: ' + this.ziel.toFixed(1) + ' s');
+            this.player.setCurrentTime(this.ziel).catch(() => {});
+          }
+          this.ziel = null;
+        }
+        this.melde('Zeit', d.seconds);
+      });
       p.on('play', () => this.log('Ereignis: play'));
       p.on('playing', () => {
         this.istPausiert = false;
@@ -181,8 +195,9 @@
     }
     async abspielen() {
       try {
-        await this.player.play();
-        return true;
+        const ok = await frist(this.player.play(), 4000);
+        if (!ok) this.log('play() nach 4 s ohne Antwort');
+        return ok;
       } catch (e) {
         this.log('play() abgelehnt: ' + e.name + ' – ' + e.message);
         this.melde('Fehler', e);
@@ -197,13 +212,21 @@
     async springen(s) {
       this.t = Math.max(0, s);
       this.tStempel = jetzt();
-      try { await this.player.setCurrentTime(this.t); } catch (e) { this.log('setCurrentTime: ' + e.name + ' – ' + e.message); }
+      this.ziel = this.t;
+      try {
+        const ok = await frist(this.player.setCurrentTime(this.t), 2000);
+        if (ok) this.ziel = null;
+        else this.log('setCurrentTime nach 2 s ohne Antwort, wird beim Start nachgeholt');
+      } catch (e) { this.log('setCurrentTime: ' + e.name + ' – ' + e.message); }
       this.melde('Zeit', this.t);
       return true;
     }
     async geschwindigkeit(r) {
       try {
-        await this.player.setPlaybackRate(r);
+        if (!(await frist(this.player.setPlaybackRate(r), 3000))) {
+          this.log('setPlaybackRate(' + r + ') nach 3 s ohne Antwort');
+          return false;
+        }
         this.t = this.zeit();
         this.tStempel = jetzt();
         this.rate = r;
@@ -214,7 +237,11 @@
       }
     }
     async stumm(an) {
-      try { await this.player.setMuted(!!an); return true; } catch (e) {
+      try {
+        const ok = await frist(this.player.setMuted(!!an), 2000);
+        if (!ok) this.log('setMuted nach 2 s ohne Antwort');
+        return ok;
+      } catch (e) {
         this.log('setMuted: ' + e.name + ' – ' + e.message);
         return false;
       }
